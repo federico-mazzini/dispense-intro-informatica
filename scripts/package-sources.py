@@ -9,7 +9,7 @@ root = Path(__file__).resolve().parent.parent
 argomento = sys.argv[1]
 ammessi = (
     '1-file-cartelle', '2-inviare-condividere-file', '3-bit-byte-dimensioni',
-    '4-introduzione-computer', '5-software', '6-hardware', '7-funzionamento-computer',
+    '4-introduzione-computer', '5-hardware', '6-software', '7-funzionamento-computer',
 )
 if argomento not in ammessi:
     raise SystemExit('Argomento non riconosciuto')

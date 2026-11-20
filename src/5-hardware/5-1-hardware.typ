@@ -6,7 +6,7 @@
 
 #let foto(nome, altezza: 33mm, didascalia: none) = block(width: 100%, breakable: false)[
   #align(center, image(
-    "/assets/immagini/6-hardware/" + nome + ".jpg",
+    "/assets/immagini/5-hardware/" + nome + ".jpg",
     width: 100%, height: altezza, fit: "contain",
   ))
   #if didascalia != none [

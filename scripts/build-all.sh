@@ -6,8 +6,8 @@ for argomento in \
   2-inviare-condividere-file \
   3-bit-byte-dimensioni \
   4-introduzione-computer \
-  5-software \
-  6-hardware \
+  5-hardware \
+  6-software \
   7-funzionamento-computer; do
   bash scripts/build-one.sh "$argomento"
 done

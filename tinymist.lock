@@ -31,16 +31,16 @@ root = "file:."
 system-fonts = true
 
 [[document]]
-id = "file:src/5-software/05 - Il software.typ"
+id = "file:src/5-hardware/05 - Hardware.typ"
 inputs = []
-main = "file:src/5-software/05 - Il software.typ"
+main = "file:src/5-hardware/05 - Hardware.typ"
 root = "file:."
 system-fonts = true
 
 [[document]]
-id = "file:src/6-hardware/06 - Hardware.typ"
+id = "file:src/6-software/06 - Il software.typ"
 inputs = []
-main = "file:src/6-hardware/06 - Hardware.typ"
+main = "file:src/6-software/06 - Il software.typ"
 root = "file:."
 system-fonts = true
 
@@ -68,11 +68,11 @@ id = "file:src/4-introduzione-computer/04 - Introduzione ai computer.typ"
 priority = 256
 
 [[route]]
-id = "file:src/5-software/05 - Il software.typ"
+id = "file:src/5-hardware/05 - Hardware.typ"
 priority = 256
 
 [[route]]
-id = "file:src/6-hardware/06 - Hardware.typ"
+id = "file:src/6-software/06 - Il software.typ"
 priority = 256
 
 [[route]]
@@ -108,16 +108,16 @@ type = "export-pdf"
 when = "onSave"
 
 [[task]]
-document = "file:src/5-software/05 - Il software.typ"
-id = "file:src/5-software/05 - Il software.typ"
-output = "dist/05 - Il software"
+document = "file:src/5-hardware/05 - Hardware.typ"
+id = "file:src/5-hardware/05 - Hardware.typ"
+output = "dist/05 - Hardware"
 type = "export-pdf"
 when = "onSave"
 
 [[task]]
-document = "file:src/6-hardware/06 - Hardware.typ"
-id = "file:src/6-hardware/06 - Hardware.typ"
-output = "dist/06 - Hardware"
+document = "file:src/6-software/06 - Il software.typ"
+id = "file:src/6-software/06 - Il software.typ"
+output = "dist/06 - Il software"
 type = "export-pdf"
 when = "onSave"
 

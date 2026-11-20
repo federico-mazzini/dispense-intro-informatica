@@ -4,17 +4,29 @@ Dispense didattiche in Typst, con teoria, schemi ed esercizi. Ogni documento ha 
 
 ## PDF completi
 
-La cartella `dist/` contiene soltanto i sette PDF completi generati, con teoria ed esercizi dove presenti:
+Nella radice di `dist/` si trovano i sette PDF completi delle dispense, con teoria ed esercizi dove presenti:
 
 - `01 - File e cartelle.pdf`
 - `02 - Inviare e condividere file.pdf`
 - `03 - Bit, byte e dimensioni dei file.pdf`
 - `04 - Introduzione ai computer.pdf`
-- `05 - Il software.pdf`
-- `06 - Hardware.pdf`
+- `05 - Hardware.pdf`
+- `06 - Il software.pdf`
 - `07 - Come funziona un computer.pdf`
 
 `dist/` è esclusa da Git: i PDF si generano localmente o si scaricano dall’artifact **dispense-informatica-pdf** di GitHub Actions. Non ci sono copie versionate dei PDF né ZIP in questa cartella.
+
+## Slide per la classe
+
+In [`slides/`](slides/) c’è una presentazione Typst per capitolo, con esempi, schemi e attività brevi. Le slide usano il formato 16:9 e riprendono la grafica delle [presentazioni ICDL](https://github.com/federico-mazzini/icdl). Il modello comune è in [`styles/slides.typ`](styles/slides.typ).
+
+I capitoli 04, 05 e 06 includono 22 pagine di [ICDL – Computer e dispositivi](https://github.com/federico-mazzini/icdl/blob/2415280d86bff968343166670cba272a323717c0/src/1_computer_dispositivi.typ), con testi, grafica e numeri di pagina originali. Le altre slide sviluppano esempi, approfondimenti ed esercizi delle dispense. Ogni file Typst contiene tutte le pagine del proprio capitolo.
+
+Per generare i sette PDF in `dist/slides/`, dalla radice del progetto:
+
+```bash
+bash scripts/build-slides.sh
+```
 
 ## Sorgenti
 
@@ -30,8 +42,8 @@ I file principali sono:
 - `src/2-inviare-condividere-file/02 - Inviare e condividere file.typ`
 - `src/3-bit-byte-dimensioni/03 - Bit, byte e dimensioni dei file.typ`
 - `src/4-introduzione-computer/04 - Introduzione ai computer.typ`
-- `src/5-software/05 - Il software.typ`
-- `src/6-hardware/06 - Hardware.typ`
+- `src/5-hardware/05 - Hardware.typ`
+- `src/6-software/06 - Il software.typ`
 - `src/7-funzionamento-computer/07 - Come funziona un computer.typ`
 
 Gli stili sono in `styles/`, i diagrammi in `assets/svg/` e le fotografie in `assets/immagini/`.
