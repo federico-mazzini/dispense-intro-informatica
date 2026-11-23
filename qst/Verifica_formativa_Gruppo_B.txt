@@ -1,0 +1,223 @@
+VERIFICA FORMATIVA - FILE E DIMENSIONI - GRUPPO B
+30 domande, 1 punto ciascuna. Calcolatrice consentita.
+Conversioni: 1 KB = 1024 B; 1 MB = 1024 KB; 1 GB = 1024 MB; 1 TB = 1024 GB.
+Domande 1-17: facili; 18-25: medie; 26-30: difficili.
+
+1. A che cosa serve principalmente una cartella?
+A) A navigare su Internet
+B) A organizzare file e altre cartelle
+C) A misurare la dimensione di un file
+D) A comprimere automaticamente tutti i documenti
+
+2. Nel file Bilancio_2026.xlsx, qual è il nome senza estensione?
+A) Bilancio_2026
+B) .xlsx
+C) Bilancio
+D) 2026.xlsx
+
+3. Quale estensione è tipica di un file immagine?
+A) .exe
+B) .pptx
+C) .mp3
+D) .png
+
+4. Quale di queste estensioni identifica generalmente un file audio?
+A) .mp4
+B) .mp3
+C) .docx
+D) .pdf
+
+5. Perché può essere utile distribuire un documento in PDF?
+A) Per trasformarlo automaticamente in un archivio compresso
+B) Per consentire al destinatario di modificarne sempre tutte le parti
+C) Per mantenere generalmente stabile la disposizione di testi e immagini
+D) Per proteggerlo automaticamente con una password
+
+6. Esportando un documento Word in PDF, il documento Word originale non viene automaticamente eliminato.
+A) Vero
+B) Falso
+
+7. Che cosa significa estrarre un archivio ZIP?
+A) Eliminare definitivamente tutti i file contenuti
+B) Rendere disponibili i file e le cartelle contenuti al di fuori dell'archivio
+C) Trasformare automaticamente tutti i file in PDF
+D) Trasferire automaticamente l'archivio su Internet
+
+8. Quale affermazione descrive correttamente il salvataggio nel cloud?
+A) I file sono conservati su server remoti e possono essere raggiunti tramite un servizio online
+B) I file sono sempre salvati soltanto sul disco del computer
+C) I file non possono mai essere scaricati sul dispositivo
+D) I file vengono automaticamente trasformati in archivi ZIP
+
+9. A quanti bit corrisponde un byte?
+A) 4 bit
+B) 8 bit
+C) 16 bit
+D) 1.024 bit
+
+10. Quali sono i due simboli utilizzati per rappresentare un bit?
+A) 1 e 2
+B) 0 e 8
+C) 0 e 1
+D) 0 e 10
+
+11. La lettera minuscola b indica il bit, mentre la lettera maiuscola B indica il byte.
+A) Vero
+B) Falso
+
+12. Il numero 23, preso da solo, è un dato. Sapere che indica una temperatura di 23 °C in un'aula permette di ricavarne un'informazione.
+A) Vero
+B) Falso
+
+13. Quale sequenza è ordinata dalla più grande alla più piccola?
+A) TB → GB → MB → KB → B
+B) TB → MB → GB → KB → B
+C) GB → TB → MB → KB → B
+D) TB → GB → KB → MB → B
+
+14. Quanti byte corrispondono a 9 KB?
+A) 9.088 B
+B) 9.216 B
+C) 9.344 B
+D) 9.000 B
+
+15. Quanti KB corrispondono a 20.480 byte?
+A) 19,5 KB
+B) 20,5 KB
+C) 21 KB
+D) 20 KB
+
+16. Quanti MB corrispondono a 0,875 GB?
+A) 896 MB
+B) 880 MB
+C) 888 MB
+D) 904 MB
+
+17. Quanti GB corrispondono a 11.264 MB?
+A) 10,5 GB
+B) 10,75 GB
+C) 11 GB
+D) 11,25 GB
+
+18. Considera il percorso C:\Utenti\Marco\Foto\Mare.png. Qual è il percorso della cartella che contiene direttamente il file?
+A) C:\Utenti\Foto
+B) C:\Utenti\Marco
+C) C:\Utenti\Marco\Mare.png
+D) C:\Utenti\Marco\Foto
+
+19. Condividi con un compagno il collegamento a un documento salvato nel cloud. Quale affermazione è corretta?
+A) Chiunque può aprire il documento, indipendentemente dai permessi
+B) Il compagno può accedere al documento soltanto se i permessi di condivisione lo consentono
+C) Il compagno deve necessariamente possedere una chiavetta USB
+D) Il documento deve obbligatoriamente essere in formato PDF
+
+20. Crei uno ZIP contenente una cartella di esercizi. Il giorno successivo aggiungi un nuovo esercizio alla cartella originale. Che cosa succede?
+A) Lo ZIP già creato rimane invariato; occorre aggiornarlo o ricrearlo per includere il nuovo esercizio
+B) Il nuovo esercizio viene aggiunto automaticamente allo ZIP
+C) Lo ZIP si aggiorna soltanto riavviando il computer
+D) Lo ZIP viene automaticamente eliminato
+
+21. Quanti KB corrispondono a 1,125 GB?
+A) 1.163.264 KB
+B) 1.196.032 KB
+C) 1.179.648 KB
+D) 1.212.416 KB
+
+22. Quanti GB corrispondono a 2.621.440 KB?
+A) 2,375 GB
+B) 2,5 GB
+C) 2,625 GB
+D) 2,75 GB
+
+23. Quanti GB corrispondono a 2,625 TB?
+A) 2.688 GB
+B) 2.656 GB
+C) 2.672 GB
+D) 2.704 GB
+
+24. Quanti KB corrispondono a 2.816 MB?
+A) 2.850.816 KB
+B) 2.867.200 KB
+C) 2.899.968 KB
+D) 2.883.584 KB
+
+25. Quali elementi possono occupare spazio nella memoria di uno smartphone?
+A) Soltanto le fotografie
+B) Soltanto i file scaricati da Internet
+C) Il sistema operativo, le applicazioni e i file personali
+D) Soltanto i documenti creati dall'utente
+
+26. Osserva la struttura:
+
+E:
+└── Scuola
+    ├── Materiali
+    │   ├── Tabelle
+    │   │   └── Dati.xlsx
+    │   └── Testi
+    │       └── Relazione.docx
+    └── Personali
+        └── Foto.png
+
+Qual è il percorso completo del file Dati.xlsx?
+A) E:\Scuola\Tabelle\Materiali\Dati.xlsx
+B) E:\Scuola\Materiali\Tabelle\Dati.xlsx
+C) E:\Materiali\Scuola\Tabelle\Dati.xlsx
+D) E:\Scuola\Materiali\Testi\Dati.xlsx
+
+27. Devi salvare 3 video da 1,25 GB ciascuno e un file audio da 512 MB. Quanto spazio occupano complessivamente, espresso in MB?
+A) 4.224 MB
+B) 4.096 MB
+C) 4.480 MB
+D) 4.352 MB
+
+28. Una memoria USB ha una capacità di 32 GB, di cui 23,75 GB sono già occupati. Vuoi copiarci una cartella da 4,5 GB e un'altra da 4,25 GB. Quale affermazione è corretta?
+A) Lo spazio disponibile è esattamente sufficiente
+B) Rimangono 0,5 GB liberi
+C) Lo spazio non è sufficiente: mancano 0,5 GB
+D) Lo spazio non è sufficiente: manca 1 GB
+
+29. Hai aggiornato tre file all'interno di una cartella che contiene anche alcune sottocartelle. Devi inviare tutto a un compagno, mantenendo l'organizzazione originale. Lo ZIP creato ieri non contiene gli aggiornamenti e supera il limite degli allegati email. Qual è la procedura più adatta?
+A) Cambiare il nome dello ZIP e inviarlo
+B) Inviare lo ZIP di ieri, perché i file modificati si aggiornano automaticamente
+C) Convertire un solo documento in PDF e inviare quello
+D) Creare un nuovo ZIP dalla cartella aggiornata, caricarlo nel cloud e condividere un collegamento accessibile
+
+30. Quanti KB corrispondono a 2,375 GB?
+A) 2.473.984 KB
+B) 2.490.368 KB
+C) 2.506.752 KB
+D) 2.457.600 KB
+
+SOLUZIONI
+
+1. B
+2. A
+3. D
+4. B
+5. C
+6. A
+7. B
+8. A
+9. B
+10. C
+11. A
+12. A
+13. A
+14. B
+15. D
+16. A
+17. C
+18. D
+19. B
+20. A
+21. C
+22. B
+23. A
+24. D
+25. C
+26. B
+27. D
+28. C
+29. D
+30. B

@@ -14,8 +14,8 @@ ammessi = (
 if argomento not in ammessi:
     raise SystemExit('Argomento non riconosciuto')
 files = set((root / 'src' / argomento).glob('*.typ'))
-if len(files) != 3:
-    raise SystemExit('Ogni argomento deve avere tre sorgenti Typst')
+if len(files) != 2:
+    raise SystemExit('Ogni argomento deve avere due sorgenti Typst: dispensa e slide')
 files.update((root / 'styles').glob('*.typ'))
 for p in tuple(files):
     for asset in re.findall(r'"(/assets/[^"\n]+)"', p.read_text()):
@@ -24,7 +24,7 @@ for p in tuple(files):
             files.update(p for p in resource.rglob('*') if p.is_file())
         else:
             files.add(resource)
-files.update(root / 'scripts' / name for name in ('build-one.sh', 'package-sources.py'))
+files.update(root / 'scripts' / name for name in ('build-one.sh', 'build-slides.sh', 'package-sources.py'))
 destinazione = root / 'tmp' / 'sorgenti'
 destinazione.mkdir(parents=True, exist_ok=True)
 with ZipFile(destinazione / (argomento + '.zip'), 'w', ZIP_DEFLATED) as archive:

@@ -2,23 +2,27 @@
 
 Dispense didattiche in Typst, con teoria, schemi ed esercizi. Ogni documento ha un colore distinto; font, impaginazione A4 e componenti grafici sono condivisi.
 
-## PDF completi
+## PDF aggiornati
 
-Nella radice di `dist/` si trovano i sette PDF completi delle dispense, con teoria ed esercizi dove presenti:
+I link mostrano l’ultima versione pubblicata con successo da un commit `[pdf]` su `main`.
 
-- `01 - File e cartelle.pdf`
-- `02 - Inviare e condividere file.pdf`
-- `03 - Bit, byte e dimensioni dei file.pdf`
-- `04 - Introduzione ai computer.pdf`
-- `05 - Hardware.pdf`
-- `06 - Il software.pdf`
-- `07 - Come funziona un computer.pdf`
+| Argomento | Dispensa | Slide |
+| --- | --- | --- |
+| 01 - File e cartelle | [PDF](https://federico-mazzini.github.io/dispense-intro-informatica/01%20-%20File%20e%20cartelle.pdf) | [PDF](https://federico-mazzini.github.io/dispense-intro-informatica/slides/01%20-%20File%20e%20cartelle.pdf) |
+| 02 - Inviare e condividere file | [PDF](https://federico-mazzini.github.io/dispense-intro-informatica/02%20-%20Inviare%20e%20condividere%20file.pdf) | [PDF](https://federico-mazzini.github.io/dispense-intro-informatica/slides/02%20-%20Inviare%20e%20condividere%20file.pdf) |
+| 03 - Bit, byte e dimensioni dei file | [PDF](https://federico-mazzini.github.io/dispense-intro-informatica/03%20-%20Bit%2C%20byte%20e%20dimensioni%20dei%20file.pdf) | [PDF](https://federico-mazzini.github.io/dispense-intro-informatica/slides/03%20-%20Bit%2C%20byte%20e%20dimensioni%20dei%20file.pdf) |
+| 04 - Introduzione ai computer | [PDF](https://federico-mazzini.github.io/dispense-intro-informatica/04%20-%20Introduzione%20ai%20computer.pdf) | [PDF](https://federico-mazzini.github.io/dispense-intro-informatica/slides/04%20-%20Introduzione%20ai%20computer.pdf) |
+| 05 - Hardware | [PDF](https://federico-mazzini.github.io/dispense-intro-informatica/05%20-%20Hardware.pdf) | [PDF](https://federico-mazzini.github.io/dispense-intro-informatica/slides/05%20-%20Hardware.pdf) |
+| 06 - Il software | [PDF](https://federico-mazzini.github.io/dispense-intro-informatica/06%20-%20Il%20software.pdf) | [PDF](https://federico-mazzini.github.io/dispense-intro-informatica/slides/06%20-%20Il%20software.pdf) |
+| 07 - Come funziona un computer | [PDF](https://federico-mazzini.github.io/dispense-intro-informatica/07%20-%20Come%20funziona%20un%20computer.pdf) | [PDF](https://federico-mazzini.github.io/dispense-intro-informatica/slides/07%20-%20Come%20funziona%20un%20computer.pdf) |
 
-`dist/` è esclusa da Git: i PDF si generano localmente o si scaricano dall’artifact **dispense-informatica-pdf** di GitHub Actions. Non ci sono copie versionate dei PDF né ZIP in questa cartella.
+[Indice di tutti i PDF](https://federico-mazzini.github.io/dispense-intro-informatica/)
+
+`dist/` è esclusa da Git. I PDF sono disponibili anche nell’artifact **dispense-informatica-pdf** di GitHub Actions.
 
 ## Slide per la classe
 
-In [`slides/`](slides/) c’è una presentazione Typst per capitolo, con esempi, schemi e attività brevi. Le slide usano il formato 16:9 e riprendono la grafica delle [presentazioni ICDL](https://github.com/federico-mazzini/icdl). Il modello comune è in [`styles/slides.typ`](styles/slides.typ).
+In ogni cartella numerata di `src/` c’è una presentazione Typst `Slide - NN - Titolo.typ`, con esempi, schemi e attività brevi. Le slide usano il formato 16:9 e riprendono la grafica delle [presentazioni ICDL](https://github.com/federico-mazzini/icdl). Il modello comune è in [`styles/slides.typ`](styles/slides.typ).
 
 I capitoli 04, 05 e 06 includono 22 pagine di [ICDL – Computer e dispositivi](https://github.com/federico-mazzini/icdl/blob/2415280d86bff968343166670cba272a323717c0/src/1_computer_dispositivi.typ), con testi, grafica e numeri di pagina originali. Le altre slide sviluppano esempi, approfondimenti ed esercizi delle dispense. Ogni file Typst contiene tutte le pagine del proprio capitolo.
 
@@ -30,11 +34,10 @@ bash scripts/build-slides.sh
 
 ## Sorgenti
 
-Ogni cartella numerata di `src/` contiene tre file:
+Ogni cartella numerata di `src/` contiene due file Typst:
 
-- `NN - Titolo.typ`: documento principale da compilare, che applica lo stile e unisce teoria ed esercizi.
-- `N-1-argomento.typ`: teoria.
-- `N-2-esercizi.typ`: esercizi; dove non previsti, il file è vuoto.
+- `NN - Titolo.typ`: dispensa completa con teoria ed esercizi.
+- `Slide - NN - Titolo.typ`: presentazione del medesimo argomento.
 
 I file principali sono:
 
@@ -86,7 +89,7 @@ bash scripts/setup-vscode.sh
 
 Lo script registra in `tinymist.lock` i sette documenti completi e aggiorna la cache delle dipendenze. Poi eseguire **Developer: Reload Window** dalla palette comandi di VS Code.
 
-Si può lavorare direttamente sulla teoria o sugli esercizi: Tinymist compila il documento principale corrispondente. Il nome del PDF coincide con quello del file principale, per esempio `dist/01 - File e cartelle.pdf`. Se ci sono errori nel sorgente, il PDF si aggiorna dopo averli corretti.
+Si lavora direttamente sul file unico della dispensa: Tinymist lo compila al salvataggio. Il nome del PDF coincide con quello del file principale, per esempio `dist/01 - File e cartelle.pdf`. Se ci sono errori nel sorgente, il PDF si aggiorna dopo averli corretti.
 
 Per seguire le modifiche anche dal terminale:
 
@@ -96,9 +99,11 @@ typst watch --root . "src/1-file-cartelle/01 - File e cartelle.typ" "dist/01 - F
 
 ## Compilazione su GitHub
 
-Il workflow **Genera PDF delle dispense** si avvia sui push a `main` quando il messaggio dell’ultimo commit contiene `[pdf]`, oppure manualmente da **Actions → Genera PDF delle dispense → Run workflow**.
+Il workflow **Compila e pubblica PDF** compila dispense e slide sui push a `main` quando il messaggio dell’ultimo commit contiene `[pdf]`, oppure manualmente da **Actions → Compila e pubblica PDF → Run workflow**.
 
-Usa lo stesso comando locale `bash scripts/build-all.sh`. L’artifact **dispense-informatica-pdf** contiene soltanto i sette PDF completi con gli stessi nomi di `dist/`; è conservato per 90 giorni, salvo limiti del repository. Il workflow non crea commit automatici.
+Pubblica i PDF su GitHub Pages con nomi stabili: le dispense nella radice e le slide in `slides/`. I link sopra vengono aggiornati a ogni pubblicazione riuscita. L’artifact **dispense-informatica-pdf** contiene entrambi i gruppi di PDF ed è conservato per 90 giorni. Il workflow non crea commit automatici.
+
+In **Settings → Pages → Build and deployment**, la sorgente deve essere **GitHub Actions**.
 
 ## Contenuti e provenienza
 

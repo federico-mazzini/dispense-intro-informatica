@@ -1,4 +1,4 @@
-name: Genera PDF delle dispense
+name: Compila e pubblica PDF
 
 on:
   push:
@@ -26,12 +26,41 @@ jobs:
         run: |
           sudo apt-get update
           sudo apt-get install --no-install-recommends -y fonts-liberation
-      - name: Compila tutte le dispense
-        run: bash scripts/build-all.sh
-      - name: Pubblica i PDF
+      - name: Compila dispense e slide
+        run: |
+          bash scripts/build-all.sh
+          bash scripts/build-slides.sh
+          python3 scripts/build-index.py
+      - name: Carica i PDF scaricabili
         uses: actions/upload-artifact@v4
         with:
           name: dispense-informatica-pdf
-          path: dist/*.pdf
+          path: |
+            dist/*.pdf
+            dist/slides/*.pdf
           if-no-files-found: error
           retention-days: 90
+      - name: Prepara i PDF per GitHub Pages
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: dist
+
+  publish:
+    name: Pubblica su GitHub Pages
+    needs: genera-pdf
+    if: github.ref == 'refs/heads/main'
+    runs-on: ubuntu-24.04
+    timeout-minutes: 10
+    permissions:
+      pages: write
+      id-token: write
+    concurrency:
+      group: github-pages
+      cancel-in-progress: false
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Pubblica su GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
