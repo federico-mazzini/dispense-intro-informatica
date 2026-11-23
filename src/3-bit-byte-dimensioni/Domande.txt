@@ -28,166 +28,152 @@ B) B → MB → KB → GB → TB
 C) B → KB → GB → MB → TB
 D) B → KB → MB → GB → TB
 
-6. Quanti KB corrispondono a 6 MB?
-A) 6.080 KB
+6. Quanti KB corrispondono a 6 MB? Usa la convenzione 1 KB = 1024 B, 1 MB = 1024 KB, 1 GB = 1024 MB, 1 TB = 1024 GB.
+A) 6.000 KB
 B) 6.144 KB
-C) 6.208 KB
-D) 6.048 KB
+C) 0,005859375 KB
+D) 6.291.456 KB
 
-7. Quanti MB corrispondono a 9.216 KB?
-A) 8,5 MB
-B) 9,25 MB
+7. Quanti MB corrispondono a 9.216 KB? Usa la convenzione 1 KB = 1024 B, 1 MB = 1024 KB, 1 GB = 1024 MB, 1 TB = 1024 GB.
+A) 9.437.184 MB
+B) 9,216 MB
 C) 9 MB
-D) 9,5 MB
+D) 0,0087890625 MB
 
-8. Quanti MB corrispondono a 1,25 GB?
+8. Quanti MB corrispondono a 1,25 GB? Usa la convenzione 1 KB = 1024 B, 1 MB = 1024 KB, 1 GB = 1024 MB, 1 TB = 1024 GB.
 A) 1.250 MB
-B) 1.260 MB
-C) 1.300 MB
-D) 1.280 MB
+B) 0,001220703125 MB
+C) 1.280 MB
+D) 1.310.720 MB
 
-9. Quanti GB corrispondono a 4.608 MB?
-A) 4,5 GB
-B) 4,25 GB
-C) 4,4 GB
-D) 4,6 GB
+9. Quanti GB corrispondono a 4.608 MB? Usa la convenzione 1 KB = 1024 B, 1 MB = 1024 KB, 1 GB = 1024 MB, 1 TB = 1024 GB.
+A) 4.608.000 GB
+B) 4.608 GB
+C) 4,608 GB
+D) 4,5 GB
 
-10. Quanti MB corrispondono a 0,625 GB?
-A) 625 MB
-B) 630 MB
-C) 650 MB
-D) 640 MB
-
-11. Quanti GB corrispondono a 2.359.296 KB?
-A) 2,2 GB
-B) 2,3 GB
+10. Quanti GB corrispondono a 2.359.296 KB? Usa la convenzione 1 KB = 1024 B, 1 MB = 1024 KB, 1 GB = 1024 MB, 1 TB = 1024 GB.
+A) 2.304 GB
+B) 2,359296 GB
 C) 2,25 GB
-D) 2,35 GB
+D) 2.359.296 GB
 
-12. Quanti GB corrispondono a 3,75 TB?
-A) 3.860 GB
-B) 3.840 GB
-C) 3.820 GB
-D) 3.800 GB
+11. Quanti GB corrispondono a 3,75 TB? Usa la convenzione 1 KB = 1024 B, 1 MB = 1024 KB, 1 GB = 1024 MB, 1 TB = 1024 GB.
+A) 3.750 GB
+B) 3,75 GB
+C) 0,003662109375 GB
+D) 3.840 GB
 
-13. Quanti MB corrispondono a 1.474.560 KB?
-A) 1.440 MB
-B) 1.408 MB
-C) 1.472 MB
-D) 1.504 MB
-
-14. Una cartella contiene 5 fotografie da 2,25 MB ciascuna e un documento da 1.536 KB. Quanto spazio occupano complessivamente questi file?
+12. Una cartella contiene 5 fotografie da 2,25 MB ciascuna e un documento da 1.536 KB. Quanto spazio occupano complessivamente questi file? Usa 1 GB = 1024 MB e 1 MB = 1024 KB.
 A) 12.800 KB
 B) 13.312 KB
 C) 13.568 KB
 D) 13.056 KB
 
-15. Un dispositivo ha una capacità di 128 GB, di cui 93,5 GB sono già occupati. Vuoi installare un programma da 18 GB e salvare un video da 19,75 GB. Quale affermazione è corretta?
+13. Un dispositivo ha una capacità di 128 GB, di cui 93,5 GB sono già occupati. Vuoi installare un programma da 18 GB e salvare un video da 19,75 GB. Quale affermazione è corretta?
 A) Rimangono 3,25 GB liberi
 B) Lo spazio non è sufficiente: mancano 3,25 GB
 C) Lo spazio non è sufficiente: mancano 2,75 GB
 D) Lo spazio disponibile è esattamente sufficiente
 
-16. Quanti KB corrispondono a 1,75 GB?
-A) 1.835.008 KB
-B) 1.802.240 KB
-C) 1.851.392 KB
-D) 1.867.776 KB
-
-17. A quanti bit corrisponde un byte?
-A) 4 bit
-B) 8 bit
-C) 16 bit
-D) 1.024 bit
-
-18. Quali sono i due simboli utilizzati per rappresentare un bit?
-A) 1 e 2
-B) 0 e 8
-C) 0 e 1
-D) 0 e 10
-
-19. La lettera minuscola b indica il bit, mentre la lettera maiuscola B indica il byte.
-A) Vero
-B) Falso
-
-20. Il numero 23, preso da solo, è un dato. Sapere che indica una temperatura di 23 °C in un'aula permette di ricavarne un'informazione.
-A) Vero
-B) Falso
-
-21. Quale sequenza è ordinata dalla più grande alla più piccola?
-A) TB → GB → MB → KB → B
-B) TB → MB → GB → KB → B
-C) GB → TB → MB → KB → B
-D) TB → GB → KB → MB → B
-
-22. Quanti byte corrispondono a 9 KB?
-A) 9.088 B
+14. Quanti byte corrispondono a 9 KB? Usa la convenzione 1 KB = 1024 B, 1 MB = 1024 KB, 1 GB = 1024 MB, 1 TB = 1024 GB.
+A) 9.000 B
 B) 9.216 B
-C) 9.344 B
-D) 9.000 B
+C) 0,0087890625 B
+D) 9 B
 
-23. Quanti KB corrispondono a 20.480 byte?
-A) 19,5 KB
-B) 20,5 KB
-C) 21 KB
-D) 20 KB
-
-24. Quanti MB corrispondono a 0,875 GB?
-A) 896 MB
-B) 880 MB
-C) 888 MB
-D) 904 MB
-
-25. Quanti GB corrispondono a 11.264 MB?
-A) 10,5 GB
-B) 10,75 GB
-C) 11 GB
-D) 11,25 GB
-
-26. Quanti KB corrispondono a 1,125 GB?
-A) 1.163.264 KB
-B) 1.196.032 KB
-C) 1.179.648 KB
-D) 1.212.416 KB
-
-27. Quanti GB corrispondono a 2.621.440 KB?
-A) 2,375 GB
-B) 2,5 GB
-C) 2,625 GB
-D) 2,75 GB
-
-28. Quanti GB corrispondono a 2,625 TB?
-A) 2.688 GB
-B) 2.656 GB
-C) 2.672 GB
-D) 2.704 GB
-
-29. Quanti KB corrispondono a 2.816 MB?
-A) 2.850.816 KB
-B) 2.867.200 KB
-C) 2.899.968 KB
-D) 2.883.584 KB
-
-30. Quali elementi possono occupare spazio nella memoria di uno smartphone?
+15. Quali elementi possono occupare lo spazio di archiviazione di uno smartphone?
 A) Soltanto le fotografie
 B) Soltanto i file scaricati da Internet
 C) Il sistema operativo, le applicazioni e i file personali
 D) Soltanto i documenti creati dall'utente
 
-31. Devi salvare 3 video da 1,25 GB ciascuno e un file audio da 512 MB. Quanto spazio occupano complessivamente, espresso in MB?
+16. Devi salvare 3 video da 1,25 GB ciascuno e un file audio da 512 MB. Quanto spazio occupano complessivamente, espresso in MB? Usa 1 GB = 1024 MB e 1 MB = 1024 KB.
 A) 4.224 MB
 B) 4.096 MB
 C) 4.480 MB
 D) 4.352 MB
 
-32. Una memoria USB ha una capacità di 32 GB, di cui 23,75 GB sono già occupati. Vuoi copiarci una cartella da 4,5 GB e un'altra da 4,25 GB. Quale affermazione è corretta?
+17. Una memoria USB ha una capacità di 32 GB, di cui 23,75 GB sono già occupati. Vuoi copiarci una cartella da 4,5 GB e un'altra da 4,25 GB. Quale affermazione è corretta?
 A) Lo spazio disponibile è esattamente sufficiente
 B) Rimangono 0,5 GB liberi
 C) Lo spazio non è sufficiente: mancano 0,5 GB
 D) Lo spazio non è sufficiente: manca 1 GB
 
-33. Quanti KB corrispondono a 2,375 GB?
-A) 2.473.984 KB
-B) 2.490.368 KB
-C) 2.506.752 KB
-D) 2.457.600 KB
+18. Osserva la sequenza 01101001 11001010 00111101. Quanti bit e quanti byte contiene? Gli spazi servono solo a separare i gruppi.
+A) 3 bit e 24 byte
+B) 24 bit e 3 byte
+C) 8 bit e 3 byte
+D) 24 bit e 24 byte
+
+19. Un file contiene 40 bit. A quanti byte corrispondono?
+A) 320 byte
+B) 40 byte
+C) 5 byte
+D) 8 byte
+
+20. Due file hanno la stessa dimensione in byte. Che cosa puoi concludere con certezza?
+A) Contengono lo stesso numero di byte
+B) Contengono lo stesso testo
+C) Hanno la stessa estensione
+D) Sono due copie dello stesso file
+
+21. Un file di testo può occupare più spazio di una fotografia?
+A) No, perché ogni fotografia occupa sempre più spazio di qualsiasi testo
+B) No, perché tutti i file di testo hanno la stessa dimensione
+C) Sì, ma soltanto se i due file hanno lo stesso nome
+D) Sì, dipende dalla quantità di dati contenuta nei due file
+
+22. Hai due fotografie salvate entrambe in formato JPG. Quale affermazione sulle loro dimensioni è corretta?
+A) Devono occupare lo stesso numero di byte perché hanno la stessa estensione
+B) Possono avere dimensioni diverse: l'estensione non indica quanti byte contengono
+C) La fotografia con il nome più lungo occupa necessariamente più spazio
+D) Devono occupare entrambe esattamente 1 MB
+
+23. Quale file occupa più spazio? Usa 1 MB = 1024 KB.
+A) Appunti.txt: 900 KB
+B) Foto.jpg: 1 MB
+C) Relazione.pdf: 1200 KB
+D) Audio.mp3: 800 KB
+
+24. Quale sequenza ordina i file dal più piccolo al più grande? Usa 1 MB = 1024 KB e 1 GB = 1024 MB.
+A) 500 KB → 2 MB → 1 GB
+B) 2 MB → 500 KB → 1 GB
+C) 1 GB → 2 MB → 500 KB
+D) 500 KB → 1 GB → 2 MB
+
+25. Un file occupa 3 GB. Vuoi esprimere la stessa dimensione in MB, usando 1 GB = 1024 MB. Che cosa succede?
+A) Il file diventa più grande perché il numero aumenta
+B) Il file viene compresso perché si cambia unità
+C) Cambia il contenuto del file
+D) Cambia il numero usato per descriverlo, ma la dimensione del file resta la stessa
+
+26. Per confrontare un file da 2 MB con un file da 1800 KB, quale procedimento è corretto? Usa 1 MB = 1024 KB.
+A) Confrontare soltanto 2 e 1800, ignorando le unità
+B) Convertire una delle due dimensioni per esprimerle nella stessa unità, poi confrontarle
+C) Stabilire che il file con il nome più lungo è più grande
+D) Stabilire che i due file sono uguali perché entrambi contengono dati
+
+27. Uno studente scrive: «2 GB = 2 × 1024 = 2048 KB». Quale errore ha commesso? Usa multipli di 1024.
+A) Doveva dividere per 1024 per ottenere i KB
+B) Doveva moltiplicare per 8 per ottenere i KB
+C) Ha effettuato un solo passaggio: 2048 è il risultato in MB; per arrivare ai KB serve un'altra moltiplicazione per 1024
+D) Non ha commesso errori
+
+28. Il dato «18» compare in due situazioni: «18 °C in aula» e «18 studenti presenti». Che cosa mostra questo esempio?
+A) Lo stesso numero può assumere significati diversi in base al contesto
+B) Il numero 18 indica sempre una temperatura
+C) Un dato numerico non può fornire informazioni
+D) Il contesto cambia il valore numerico da 18 a un altro numero
+
+29. Il numero di byte di un file indica direttamente quanto tempo occorre per leggerlo e comprenderlo?
+A) Sì, un file due volte più grande richiede sempre il doppio del tempo
+B) Sì, perché ogni byte corrisponde a una parola
+C) Sì, indipendentemente dal tipo di contenuto
+D) No, indica la quantità di dati, non il tempo necessario per comprenderne il contenuto
+
+30. Una chiavetta ha 1024 MB liberi. Devi copiarci due file da 600 MB ciascuno. Che cosa puoi concludere, considerando soltanto le dimensioni indicate?
+A) Entrambi i file entrano perché ciascuno è più piccolo di 1024 MB
+B) I due file occupano 1200 MB e non entrano insieme
+C) I due file occupano complessivamente 600 MB
+D) I due file entrano e restano 424 MB liberi
