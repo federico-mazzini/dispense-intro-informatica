@@ -17,8 +17,8 @@ if [[ ! -x "$tinymist_bin" ]]; then
   exit 1
 fi
 
-mkdir -p dist
+mkdir -p dist/dispense
 for principale in src/*/[0-9][0-9]" - "*.typ; do
   nome="$(basename "$principale" .typ)"
-  "$tinymist_bin" compile --save-lock --when onSave --root . "$principale" "dist/${nome}.pdf"
+  "$tinymist_bin" compile --save-lock --when onSave --root . "$principale" "dist/dispense/${nome}.pdf"
 done

@@ -36,8 +36,8 @@ jobs:
         with:
           name: dispense-informatica-pdf
           path: |
-            dist/*.pdf
-            dist/slides/*.pdf
+            dist/dispense/*.pdf
+            dist/slide/*.pdf
           if-no-files-found: error
           retention-days: 90
       - name: Prepara i PDF per GitHub Pages

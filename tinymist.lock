@@ -82,48 +82,48 @@ priority = 256
 [[task]]
 document = "file:src/1-file-cartelle/01 - File e cartelle.typ"
 id = "file:src/1-file-cartelle/01 - File e cartelle.typ"
-output = "dist/01 - File e cartelle"
+output = "dist/dispense/01 - File e cartelle"
 type = "export-pdf"
 when = "onSave"
 
 [[task]]
 document = "file:src/2-inviare-condividere-file/02 - Inviare e condividere file.typ"
 id = "file:src/2-inviare-condividere-file/02 - Inviare e condividere file.typ"
-output = "dist/02 - Inviare e condividere file"
+output = "dist/dispense/02 - Inviare e condividere file"
 type = "export-pdf"
 when = "onSave"
 
 [[task]]
 document = "file:src/3-bit-byte-dimensioni/03 - Bit, byte e dimensioni dei file.typ"
 id = "file:src/3-bit-byte-dimensioni/03 - Bit, byte e dimensioni dei file.typ"
-output = "dist/03 - Bit, byte e dimensioni dei file"
+output = "dist/dispense/03 - Bit, byte e dimensioni dei file"
 type = "export-pdf"
 when = "onSave"
 
 [[task]]
 document = "file:src/4-introduzione-computer/04 - Introduzione ai computer.typ"
 id = "file:src/4-introduzione-computer/04 - Introduzione ai computer.typ"
-output = "dist/04 - Introduzione ai computer"
+output = "dist/dispense/04 - Introduzione ai computer"
 type = "export-pdf"
 when = "onSave"
 
 [[task]]
 document = "file:src/5-hardware/05 - Hardware.typ"
 id = "file:src/5-hardware/05 - Hardware.typ"
-output = "dist/05 - Hardware"
+output = "dist/dispense/05 - Hardware"
 type = "export-pdf"
 when = "onSave"
 
 [[task]]
 document = "file:src/6-software/06 - Il software.typ"
 id = "file:src/6-software/06 - Il software.typ"
-output = "dist/06 - Il software"
+output = "dist/dispense/06 - Il software"
 type = "export-pdf"
 when = "onSave"
 
 [[task]]
 document = "file:src/7-funzionamento-computer/07 - Come funziona un computer.typ"
 id = "file:src/7-funzionamento-computer/07 - Come funziona un computer.typ"
-output = "dist/07 - Come funziona un computer"
+output = "dist/dispense/07 - Come funziona un computer"
 type = "export-pdf"
 when = "onSave"

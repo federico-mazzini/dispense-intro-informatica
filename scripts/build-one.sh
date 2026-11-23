@@ -12,5 +12,5 @@ if [[ ${#principali[@]} -ne 1 || ! -f "${principali[0]}" ]]; then
   exit 1
 fi
 nome="$(basename "${principali[0]}" .typ)"
-mkdir -p dist
-typst compile --root . "${principali[0]}" "dist/${nome}.pdf"
+mkdir -p dist/dispense
+typst compile --root . "${principali[0]}" "dist/dispense/${nome}.pdf"

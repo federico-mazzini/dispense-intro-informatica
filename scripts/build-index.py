@@ -7,13 +7,13 @@ from urllib.parse import quote
 root = Path(__file__).resolve().parent.parent
 dist = root / "dist"
 rows = []
-for pdf in sorted(dist.glob("*.pdf")):
-    slide = dist / "slides" / pdf.name
+for pdf in sorted((dist / "dispense").glob("*.pdf")):
+    slide = dist / "slide" / pdf.name
     if not slide.is_file():
         continue
     href = quote(pdf.name)
-    rows.append(f'<tr><td>{escape(pdf.stem)}</td><td><a href="{href}">Dispensa</a></td>'
-                f'<td><a href="slides/{href}">Slide</a></td></tr>')
+    rows.append(f'<tr><td>{escape(pdf.stem)}</td><td><a href="dispense/{href}">Dispensa</a></td>'
+                f'<td><a href="slide/{href}">Slide</a></td></tr>')
 (dist / "index.html").write_text(
     '<!doctype html><html lang="it"><meta charset="utf-8">'
     '<meta name="viewport" content="width=device-width, initial-scale=1">'

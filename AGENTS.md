@@ -11,8 +11,8 @@
 ## Compilazione e verifica
 
 - Usa Typst 0.15.1. Compila dalla radice con `--root .`: le risorse usano percorsi dalla radice Typst.
-- `bash scripts/build-all.sh`: genera le sette dispense in `dist/`.
-- `bash scripts/build-slides.sh`: genera le sette presentazioni in `dist/slides/`.
+- `bash scripts/build-all.sh`: genera le sette dispense in `dist/dispense/`.
+- `bash scripts/build-slides.sh`: genera le sette presentazioni in `dist/slide/`.
 - `python3 scripts/build-index.py`: genera l’indice HTML di download in `dist/index.html`.
 - `bash scripts/build-one.sh 1-file-cartelle`: compila una sola dispensa; sostituisci l’argomento secondo necessità.
 - `python3 scripts/package-sources.py 1-file-cartelle`: crea uno ZIP autonomo in `tmp/sorgenti/`, con entrambi i sorgenti, stili, risorse e script.
@@ -25,7 +25,7 @@
 - Il workflow `.github/workflows/genera-pdf.yml`, **Compila e pubblica PDF**, compila e pubblica sui push a `main` se il messaggio dell’ultimo commit contiene `[pdf]`. È disponibile anche l’avvio manuale da Actions.
 - Per aggiornare i PDF pubblici, inserisci `[pdf]` nel commit del push. Per sole modifiche alla documentazione non serve una nuova compilazione dei PDF.
 - GitHub Pages usa **Settings → Pages → Build and deployment → GitHub Actions**.
-- Base pubblica: https://federico-mazzini.github.io/dispense-intro-informatica/. Le dispense sono nella radice, le presentazioni in `slides/`, con gli stessi nomi dei PDF locali.
+- Base pubblica: https://federico-mazzini.github.io/dispense-intro-informatica/. Le dispense sono in `dispense/`, le presentazioni in `slide/`, con gli stessi nomi dei PDF locali.
 - Il workflow conserva anche l’artifact `dispense-informatica-pdf` per 90 giorni e non crea commit automatici.
 - Dopo una pubblicazione verifica l’esito dell’Action e l’accessibilità dei link ai PDF.
 
@@ -33,7 +33,7 @@
 
 - `.vscode/settings.json` abilita l’esportazione PDF al salvataggio con Tinymist.
 - `bash scripts/setup-vscode.sh` registra le sette dispense in `tinymist.lock`. Usalo dopo rinomine dei documenti o se l’associazione si perde; poi esegui **Developer: Reload Window**.
-- Per la compilazione continua puoi usare `typst watch --root . "src/1-file-cartelle/01 - File e cartelle.typ" "dist/01 - File e cartelle.pdf"`.
+- Per la compilazione continua puoi usare `typst watch --root . "src/1-file-cartelle/01 - File e cartelle.typ" "dist/dispense/01 - File e cartelle.pdf"`.
 
 ## Contenuti e riferimenti
 
