@@ -3,21 +3,30 @@
 ## Struttura e documentazione
 
 - Mantieni `README.md` con i soli link ai PDF: una riga per argomento, con dispensa e slide. Le note operative vanno in questo file.
-- Ogni cartella numerata di `src/` contiene due sorgenti: `NN - Titolo.typ` per la dispensa completa di teoria ed esercizi e `Slide - NN - Titolo.typ` per la presentazione. Non separare nuovamente teoria, esercizi e main.
+- Ogni cartella numerata di `src/` contiene due sorgenti: `Dispense - Titolo.typ` per la dispensa completa di teoria ed esercizi e `Slide - Titolo.typ` per la presentazione. Non separare nuovamente teoria, esercizi e main.
 - Conserva le eventuali traduzioni nelle sottocartelle dedicate, come `src/3-bit-byte-dimensioni/ar/`.
-- Gli stili condivisi sono in `styles/`, i diagrammi in `assets/svg/`, le fotografie in `assets/immagini/`. Le domande disponibili sono distribuite per argomento nei file `Domande.txt` delle cartelle numerate di `src/` (attualmente 1, 2 e 3). Mantieni solo domande e alternative, con numerazione progressiva per argomento, senza gruppi, soluzioni o indicazioni della risposta esatta; non creare un archivio duplicato in `qst/`.
+- Gli stili condivisi sono in `styles/`, i diagrammi in `assets/svg/`, le fotografie in `assets/immagini/`. Le domande disponibili sono distribuite per argomento nei file `Test - Titolo.txt` delle cartelle numerate di `src/` (attualmente 1, 2 e 3). Mantieni solo domande e alternative, con numerazione progressiva per argomento, senza gruppi, soluzioni o indicazioni della risposta esatta; non creare un archivio duplicato in `qst/`.
+- I nomi dei sorgenti non contengono numeri. I PDF conservano il formato `NN - Titolo.pdf`: il numero si ricava dalla cartella numerata, senza aggiungere i prefissi Dispense o Slide. Mantieni questa corrispondenza anche nella configurazione Tinymist.
 - Non versionare `dist/`, `tmp/` o `backup/`. Mantieni stabili i nomi dei PDF e i link pubblici.
 
 ## Compilazione e verifica
 
 - Usa Typst 0.15.1. Compila dalla radice con `--root .`: le risorse usano percorsi dalla radice Typst.
-- `bash scripts/build-all.sh`: genera le sette dispense in `dist/dispense/`.
-- `bash scripts/build-slides.sh`: genera le sette presentazioni in `dist/slide/`.
-- `python3 scripts/build-index.py`: genera l’indice HTML di download in `dist/index.html`.
-- `bash scripts/build-one.sh 1-file-cartelle`: compila una sola dispensa; sostituisci l’argomento secondo necessità.
-- `python3 scripts/package-sources.py 1-file-cartelle`: crea uno ZIP autonomo in `tmp/sorgenti/`, con entrambi i sorgenti, stili, risorse e script.
 - Libertinus Serif è incluso in Typst. Gli SVG usano Arial su macOS e Liberation Sans su Linux; su Ubuntu installa `fonts-liberation`.
 - Dopo modifiche al contenuto o all’impaginazione, compila e controlla visivamente le pagine interessate, soprattutto tabelle, diagrammi e spazi delle risposte. Per riorganizzazioni dei sorgenti che devono preservare i PDF, confronta il numero di pagine e il rendering prima e dopo.
+
+## File in scripts
+
+Mantieni solo gli script con una funzione distinta. Non aggiungere scorciatoie per singoli argomenti: usa `build-one.sh` con il nome della cartella.
+
+| File | A cosa serve | Uso |
+| --- | --- | --- |
+| `scripts/build-all.sh` | Compila tutte le dispense richiamando `build-one.sh`; è usato dalle Actions. Scrive in `dist/dispense/`. | `bash scripts/build-all.sh` |
+| `scripts/build-one.sh` | Compila la dispensa di un argomento e ricava dalla cartella il numero del PDF, preservandone il nome pubblico. È usato anche da `build-all.sh`. | `bash scripts/build-one.sh 1-file-cartelle` |
+| `scripts/build-slides.sh` | Compila tutte le presentazioni in `dist/slide/`, preservando numeri e nomi dei PDF; è usato dalle Actions. | `bash scripts/build-slides.sh` |
+| `scripts/build-index.py` | Genera `dist/index.html` con i link alle dispense e alle slide compilate. È l’indice pubblicato su GitHub Pages. | `python3 scripts/build-index.py` |
+| `scripts/package-sources.py` | Crea uno ZIP autonomo per argomento con dispensa, slide, eventuali test, stili, risorse e script necessari. Lo salva in `tmp/sorgenti/`. | `python3 scripts/package-sources.py 1-file-cartelle` |
+| `scripts/setup-vscode.sh` | Registra dispense e slide in `tinymist.lock` per l’esportazione al salvataggio, usando gli stessi nomi PDF della compilazione normale. Serve dopo rinomine o su un nuovo ambiente VS Code. | `bash scripts/setup-vscode.sh` |
 
 ## Pubblicazione
 
@@ -32,8 +41,8 @@
 ## VS Code
 
 - `.vscode/settings.json` abilita l’esportazione PDF al salvataggio con Tinymist.
-- `bash scripts/setup-vscode.sh` registra le sette dispense in `tinymist.lock`. Usalo dopo rinomine dei documenti o se l’associazione si perde; poi esegui **Developer: Reload Window**.
-- Per la compilazione continua puoi usare `typst watch --root . "src/1-file-cartelle/01 - File e cartelle.typ" "dist/dispense/01 - File e cartelle.pdf"`.
+- `bash scripts/setup-vscode.sh` registra le sette dispense e le sette presentazioni in `tinymist.lock`. Usalo dopo rinomine dei documenti o se l’associazione si perde; poi esegui **Developer: Reload Window**.
+- Per la compilazione continua puoi usare `typst watch --root . "src/1-file-cartelle/Dispense - File e cartelle.typ" "dist/dispense/01 - File e cartelle.pdf"`.
 
 ## Contenuti e riferimenti
 

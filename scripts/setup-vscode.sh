@@ -17,8 +17,14 @@ if [[ ! -x "$tinymist_bin" ]]; then
   exit 1
 fi
 
-mkdir -p dist/dispense
-for principale in src/*/[0-9][0-9]" - "*.typ; do
-  nome="$(basename "$principale" .typ)"
-  "$tinymist_bin" compile --save-lock --when onSave --root . "$principale" "dist/dispense/${nome}.pdf"
+mkdir -p dist/dispense dist/slide
+for principale in src/*/"Dispense - "*.typ src/*/"Slide - "*.typ; do
+  titolo="$(basename "$principale" .typ)"
+  cartella="$(basename "$(dirname "$principale")")"
+  printf -v numero "%02d" "${cartella%%-*}"
+  case "$titolo" in
+    "Dispense - "*) destinazione="dispense"; titolo="${titolo#Dispense - }" ;;
+    "Slide - "*) destinazione="slide"; titolo="${titolo#Slide - }" ;;
+  esac
+  "$tinymist_bin" compile --save-lock --when onSave --root . "$principale" "dist/${destinazione}/${numero} - ${titolo}.pdf"
 done

@@ -3,127 +3,253 @@
 version = "0.1.0-beta0"
 
 [[document]]
-id = "file:src/1-file-cartelle/01 - File e cartelle.typ"
+id = "file:src/1-file-cartelle/Dispense - File e cartelle.typ"
 inputs = []
-main = "file:src/1-file-cartelle/01 - File e cartelle.typ"
+main = "file:src/1-file-cartelle/Dispense - File e cartelle.typ"
 root = "file:."
 system-fonts = true
 
 [[document]]
-id = "file:src/2-inviare-condividere-file/02 - Inviare e condividere file.typ"
+id = "file:src/1-file-cartelle/Slide - File e cartelle.typ"
 inputs = []
-main = "file:src/2-inviare-condividere-file/02 - Inviare e condividere file.typ"
+main = "file:src/1-file-cartelle/Slide - File e cartelle.typ"
 root = "file:."
 system-fonts = true
 
 [[document]]
-id = "file:src/3-bit-byte-dimensioni/03 - Bit, byte e dimensioni dei file.typ"
+id = "file:src/2-inviare-condividere-file/Dispense - Inviare e condividere file.typ"
 inputs = []
-main = "file:src/3-bit-byte-dimensioni/03 - Bit, byte e dimensioni dei file.typ"
+main = "file:src/2-inviare-condividere-file/Dispense - Inviare e condividere file.typ"
 root = "file:."
 system-fonts = true
 
 [[document]]
-id = "file:src/4-introduzione-computer/04 - Introduzione ai computer.typ"
+id = "file:src/2-inviare-condividere-file/Slide - Inviare e condividere file.typ"
 inputs = []
-main = "file:src/4-introduzione-computer/04 - Introduzione ai computer.typ"
+main = "file:src/2-inviare-condividere-file/Slide - Inviare e condividere file.typ"
 root = "file:."
 system-fonts = true
 
 [[document]]
-id = "file:src/5-hardware/05 - Hardware.typ"
+id = "file:src/3-bit-byte-dimensioni/Dispense - Bit, byte e dimensioni dei file.typ"
 inputs = []
-main = "file:src/5-hardware/05 - Hardware.typ"
+main = "file:src/3-bit-byte-dimensioni/Dispense - Bit, byte e dimensioni dei file.typ"
 root = "file:."
 system-fonts = true
 
 [[document]]
-id = "file:src/6-software/06 - Il software.typ"
+id = "file:src/3-bit-byte-dimensioni/Slide - Bit, byte e dimensioni dei file.typ"
 inputs = []
-main = "file:src/6-software/06 - Il software.typ"
+main = "file:src/3-bit-byte-dimensioni/Slide - Bit, byte e dimensioni dei file.typ"
 root = "file:."
 system-fonts = true
 
 [[document]]
-id = "file:src/7-funzionamento-computer/07 - Come funziona un computer.typ"
+id = "file:src/4-introduzione-computer/Dispense - Introduzione ai computer.typ"
 inputs = []
-main = "file:src/7-funzionamento-computer/07 - Come funziona un computer.typ"
+main = "file:src/4-introduzione-computer/Dispense - Introduzione ai computer.typ"
+root = "file:."
+system-fonts = true
+
+[[document]]
+id = "file:src/4-introduzione-computer/Slide - Introduzione ai computer.typ"
+inputs = []
+main = "file:src/4-introduzione-computer/Slide - Introduzione ai computer.typ"
+root = "file:."
+system-fonts = true
+
+[[document]]
+id = "file:src/5-hardware/Dispense - Hardware.typ"
+inputs = []
+main = "file:src/5-hardware/Dispense - Hardware.typ"
+root = "file:."
+system-fonts = true
+
+[[document]]
+id = "file:src/5-hardware/Slide - Hardware.typ"
+inputs = []
+main = "file:src/5-hardware/Slide - Hardware.typ"
+root = "file:."
+system-fonts = true
+
+[[document]]
+id = "file:src/6-software/Dispense - Il software.typ"
+inputs = []
+main = "file:src/6-software/Dispense - Il software.typ"
+root = "file:."
+system-fonts = true
+
+[[document]]
+id = "file:src/6-software/Slide - Il software.typ"
+inputs = []
+main = "file:src/6-software/Slide - Il software.typ"
+root = "file:."
+system-fonts = true
+
+[[document]]
+id = "file:src/7-funzionamento-computer/Dispense - Come funziona un computer.typ"
+inputs = []
+main = "file:src/7-funzionamento-computer/Dispense - Come funziona un computer.typ"
+root = "file:."
+system-fonts = true
+
+[[document]]
+id = "file:src/7-funzionamento-computer/Slide - Come funziona un computer.typ"
+inputs = []
+main = "file:src/7-funzionamento-computer/Slide - Come funziona un computer.typ"
 root = "file:."
 system-fonts = true
 
 [[route]]
-id = "file:src/1-file-cartelle/01 - File e cartelle.typ"
+id = "file:src/1-file-cartelle/Dispense - File e cartelle.typ"
 priority = 256
 
 [[route]]
-id = "file:src/2-inviare-condividere-file/02 - Inviare e condividere file.typ"
+id = "file:src/2-inviare-condividere-file/Dispense - Inviare e condividere file.typ"
 priority = 256
 
 [[route]]
-id = "file:src/3-bit-byte-dimensioni/03 - Bit, byte e dimensioni dei file.typ"
+id = "file:src/3-bit-byte-dimensioni/Dispense - Bit, byte e dimensioni dei file.typ"
 priority = 256
 
 [[route]]
-id = "file:src/4-introduzione-computer/04 - Introduzione ai computer.typ"
+id = "file:src/4-introduzione-computer/Dispense - Introduzione ai computer.typ"
 priority = 256
 
 [[route]]
-id = "file:src/5-hardware/05 - Hardware.typ"
+id = "file:src/5-hardware/Dispense - Hardware.typ"
 priority = 256
 
 [[route]]
-id = "file:src/6-software/06 - Il software.typ"
+id = "file:src/6-software/Dispense - Il software.typ"
 priority = 256
 
 [[route]]
-id = "file:src/7-funzionamento-computer/07 - Come funziona un computer.typ"
+id = "file:src/7-funzionamento-computer/Dispense - Come funziona un computer.typ"
+priority = 256
+
+[[route]]
+id = "file:src/1-file-cartelle/Slide - File e cartelle.typ"
+priority = 256
+
+[[route]]
+id = "file:src/2-inviare-condividere-file/Slide - Inviare e condividere file.typ"
+priority = 256
+
+[[route]]
+id = "file:src/3-bit-byte-dimensioni/Slide - Bit, byte e dimensioni dei file.typ"
+priority = 256
+
+[[route]]
+id = "file:src/4-introduzione-computer/Slide - Introduzione ai computer.typ"
+priority = 256
+
+[[route]]
+id = "file:src/5-hardware/Slide - Hardware.typ"
+priority = 256
+
+[[route]]
+id = "file:src/6-software/Slide - Il software.typ"
+priority = 256
+
+[[route]]
+id = "file:src/7-funzionamento-computer/Slide - Come funziona un computer.typ"
 priority = 256
 
 [[task]]
-document = "file:src/1-file-cartelle/01 - File e cartelle.typ"
-id = "file:src/1-file-cartelle/01 - File e cartelle.typ"
+document = "file:src/1-file-cartelle/Dispense - File e cartelle.typ"
+id = "file:src/1-file-cartelle/Dispense - File e cartelle.typ"
 output = "dist/dispense/01 - File e cartelle"
 type = "export-pdf"
 when = "onSave"
 
 [[task]]
-document = "file:src/2-inviare-condividere-file/02 - Inviare e condividere file.typ"
-id = "file:src/2-inviare-condividere-file/02 - Inviare e condividere file.typ"
+document = "file:src/1-file-cartelle/Slide - File e cartelle.typ"
+id = "file:src/1-file-cartelle/Slide - File e cartelle.typ"
+output = "dist/slide/01 - File e cartelle"
+type = "export-pdf"
+when = "onSave"
+
+[[task]]
+document = "file:src/2-inviare-condividere-file/Dispense - Inviare e condividere file.typ"
+id = "file:src/2-inviare-condividere-file/Dispense - Inviare e condividere file.typ"
 output = "dist/dispense/02 - Inviare e condividere file"
 type = "export-pdf"
 when = "onSave"
 
 [[task]]
-document = "file:src/3-bit-byte-dimensioni/03 - Bit, byte e dimensioni dei file.typ"
-id = "file:src/3-bit-byte-dimensioni/03 - Bit, byte e dimensioni dei file.typ"
+document = "file:src/2-inviare-condividere-file/Slide - Inviare e condividere file.typ"
+id = "file:src/2-inviare-condividere-file/Slide - Inviare e condividere file.typ"
+output = "dist/slide/02 - Inviare e condividere file"
+type = "export-pdf"
+when = "onSave"
+
+[[task]]
+document = "file:src/3-bit-byte-dimensioni/Dispense - Bit, byte e dimensioni dei file.typ"
+id = "file:src/3-bit-byte-dimensioni/Dispense - Bit, byte e dimensioni dei file.typ"
 output = "dist/dispense/03 - Bit, byte e dimensioni dei file"
 type = "export-pdf"
 when = "onSave"
 
 [[task]]
-document = "file:src/4-introduzione-computer/04 - Introduzione ai computer.typ"
-id = "file:src/4-introduzione-computer/04 - Introduzione ai computer.typ"
+document = "file:src/3-bit-byte-dimensioni/Slide - Bit, byte e dimensioni dei file.typ"
+id = "file:src/3-bit-byte-dimensioni/Slide - Bit, byte e dimensioni dei file.typ"
+output = "dist/slide/03 - Bit, byte e dimensioni dei file"
+type = "export-pdf"
+when = "onSave"
+
+[[task]]
+document = "file:src/4-introduzione-computer/Dispense - Introduzione ai computer.typ"
+id = "file:src/4-introduzione-computer/Dispense - Introduzione ai computer.typ"
 output = "dist/dispense/04 - Introduzione ai computer"
 type = "export-pdf"
 when = "onSave"
 
 [[task]]
-document = "file:src/5-hardware/05 - Hardware.typ"
-id = "file:src/5-hardware/05 - Hardware.typ"
+document = "file:src/4-introduzione-computer/Slide - Introduzione ai computer.typ"
+id = "file:src/4-introduzione-computer/Slide - Introduzione ai computer.typ"
+output = "dist/slide/04 - Introduzione ai computer"
+type = "export-pdf"
+when = "onSave"
+
+[[task]]
+document = "file:src/5-hardware/Dispense - Hardware.typ"
+id = "file:src/5-hardware/Dispense - Hardware.typ"
 output = "dist/dispense/05 - Hardware"
 type = "export-pdf"
 when = "onSave"
 
 [[task]]
-document = "file:src/6-software/06 - Il software.typ"
-id = "file:src/6-software/06 - Il software.typ"
+document = "file:src/5-hardware/Slide - Hardware.typ"
+id = "file:src/5-hardware/Slide - Hardware.typ"
+output = "dist/slide/05 - Hardware"
+type = "export-pdf"
+when = "onSave"
+
+[[task]]
+document = "file:src/6-software/Dispense - Il software.typ"
+id = "file:src/6-software/Dispense - Il software.typ"
 output = "dist/dispense/06 - Il software"
 type = "export-pdf"
 when = "onSave"
 
 [[task]]
-document = "file:src/7-funzionamento-computer/07 - Come funziona un computer.typ"
-id = "file:src/7-funzionamento-computer/07 - Come funziona un computer.typ"
+document = "file:src/6-software/Slide - Il software.typ"
+id = "file:src/6-software/Slide - Il software.typ"
+output = "dist/slide/06 - Il software"
+type = "export-pdf"
+when = "onSave"
+
+[[task]]
+document = "file:src/7-funzionamento-computer/Dispense - Come funziona un computer.typ"
+id = "file:src/7-funzionamento-computer/Dispense - Come funziona un computer.typ"
 output = "dist/dispense/07 - Come funziona un computer"
+type = "export-pdf"
+when = "onSave"
+
+[[task]]
+document = "file:src/7-funzionamento-computer/Slide - Come funziona un computer.typ"
+id = "file:src/7-funzionamento-computer/Slide - Come funziona un computer.typ"
+output = "dist/slide/07 - Come funziona un computer"
 type = "export-pdf"
 when = "onSave"

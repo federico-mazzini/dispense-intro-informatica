@@ -1,6 +1,5 @@
 {
   "tinymist.rootPath": "${workspaceFolder}",
   "tinymist.projectResolution": "lockDatabase",
-  "tinymist.exportPdf": "onSave",
-  "tinymist.outputPath": "$root/dist/dispense/$name"
+  "tinymist.exportPdf": "onSave"
 }
