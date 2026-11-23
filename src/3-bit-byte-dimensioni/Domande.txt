@@ -1,243 +1,193 @@
-DOMANDE - BIT, BYTE E DIMENSIONI DEI FILE
-
-Gruppi A e B: numerazione originale delle verifiche formative.
-Ogni domanda vale 1 punto. Livelli originali: 1-17 facili, 18-25 medie, 26-30 difficili.
-
-Calcolatrice consentita. Conversioni: 1 KB = 1024 B; 1 MB = 1024 KB; 1 GB = 1024 MB; 1 TB = 1024 GB.
-
-GRUPPO A - 16 DOMANDE
-
-9. Quali valori può assumere un bit?
+1. Quali valori può assumere un bit?
 A) 1 e 2
 B) 0 e 1
 C) 0 e 8
 D) 1 e 10
 
-10. Quanti bit formano un byte?
+2. Quanti bit formano un byte?
 A) 2
 B) 4
 C) 8
 D) 16
 
-11. Qual è la differenza tra le sigle b e B?
+3. Qual è la differenza tra le sigle b e B?
 A) b indica il bit e B indica il byte
 B) b indica il byte e B indica il bit
 C) Entrambe indicano il byte
 D) Entrambe indicano il kilobyte
 
-12. Quando un dato diventa un'informazione?
+4. Quando un dato diventa un'informazione?
 A) Quando viene interpretato e assume un significato in un contesto
 B) Quando viene trasformato obbligatoriamente in un numero
 C) Quando viene salvato in formato PDF
 D) Quando viene trasferito su Internet
 
-13. Quale sequenza di unità di misura è ordinata dalla più piccola alla più grande?
+5. Quale sequenza di unità di misura è ordinata dalla più piccola alla più grande?
 A) KB → B → MB → GB → TB
 B) B → MB → KB → GB → TB
 C) B → KB → GB → MB → TB
 D) B → KB → MB → GB → TB
 
-14. Quanti KB corrispondono a 6 MB?
+6. Quanti KB corrispondono a 6 MB?
 A) 6.080 KB
 B) 6.144 KB
 C) 6.208 KB
 D) 6.048 KB
 
-15. Quanti MB corrispondono a 9.216 KB?
+7. Quanti MB corrispondono a 9.216 KB?
 A) 8,5 MB
 B) 9,25 MB
 C) 9 MB
 D) 9,5 MB
 
-16. Quanti MB corrispondono a 1,25 GB?
+8. Quanti MB corrispondono a 1,25 GB?
 A) 1.250 MB
 B) 1.260 MB
 C) 1.300 MB
 D) 1.280 MB
 
-17. Quanti GB corrispondono a 4.608 MB?
+9. Quanti GB corrispondono a 4.608 MB?
 A) 4,5 GB
 B) 4,25 GB
 C) 4,4 GB
 D) 4,6 GB
 
-21. Quanti MB corrispondono a 0,625 GB?
+10. Quanti MB corrispondono a 0,625 GB?
 A) 625 MB
 B) 630 MB
 C) 650 MB
 D) 640 MB
 
-22. Quanti GB corrispondono a 2.359.296 KB?
+11. Quanti GB corrispondono a 2.359.296 KB?
 A) 2,2 GB
 B) 2,3 GB
 C) 2,25 GB
 D) 2,35 GB
 
-23. Quanti GB corrispondono a 3,75 TB?
+12. Quanti GB corrispondono a 3,75 TB?
 A) 3.860 GB
 B) 3.840 GB
 C) 3.820 GB
 D) 3.800 GB
 
-24. Quanti MB corrispondono a 1.474.560 KB?
+13. Quanti MB corrispondono a 1.474.560 KB?
 A) 1.440 MB
 B) 1.408 MB
 C) 1.472 MB
 D) 1.504 MB
 
-27. Una cartella contiene 5 fotografie da 2,25 MB ciascuna e un documento da 1.536 KB. Quanto spazio occupano complessivamente questi file?
+14. Una cartella contiene 5 fotografie da 2,25 MB ciascuna e un documento da 1.536 KB. Quanto spazio occupano complessivamente questi file?
 A) 12.800 KB
 B) 13.312 KB
 C) 13.568 KB
 D) 13.056 KB
 
-28. Un dispositivo ha una capacità di 128 GB, di cui 93,5 GB sono già occupati. Vuoi installare un programma da 18 GB e salvare un video da 19,75 GB. Quale affermazione è corretta?
+15. Un dispositivo ha una capacità di 128 GB, di cui 93,5 GB sono già occupati. Vuoi installare un programma da 18 GB e salvare un video da 19,75 GB. Quale affermazione è corretta?
 A) Rimangono 3,25 GB liberi
 B) Lo spazio non è sufficiente: mancano 3,25 GB
 C) Lo spazio non è sufficiente: mancano 2,75 GB
 D) Lo spazio disponibile è esattamente sufficiente
 
-30. Quanti KB corrispondono a 1,75 GB?
+16. Quanti KB corrispondono a 1,75 GB?
 A) 1.835.008 KB
 B) 1.802.240 KB
 C) 1.851.392 KB
 D) 1.867.776 KB
 
-SOLUZIONI - GRUPPO A
-
-9. B
-10. C
-11. A
-12. A
-13. D
-14. B
-15. C
-16. D
-17. A
-21. D
-22. C
-23. B
-24. A
-27. D
-28. B
-30. A
-
-GRUPPO B - 17 DOMANDE
-
-9. A quanti bit corrisponde un byte?
+17. A quanti bit corrisponde un byte?
 A) 4 bit
 B) 8 bit
 C) 16 bit
 D) 1.024 bit
 
-10. Quali sono i due simboli utilizzati per rappresentare un bit?
+18. Quali sono i due simboli utilizzati per rappresentare un bit?
 A) 1 e 2
 B) 0 e 8
 C) 0 e 1
 D) 0 e 10
 
-11. La lettera minuscola b indica il bit, mentre la lettera maiuscola B indica il byte.
+19. La lettera minuscola b indica il bit, mentre la lettera maiuscola B indica il byte.
 A) Vero
 B) Falso
 
-12. Il numero 23, preso da solo, è un dato. Sapere che indica una temperatura di 23 °C in un'aula permette di ricavarne un'informazione.
+20. Il numero 23, preso da solo, è un dato. Sapere che indica una temperatura di 23 °C in un'aula permette di ricavarne un'informazione.
 A) Vero
 B) Falso
 
-13. Quale sequenza è ordinata dalla più grande alla più piccola?
+21. Quale sequenza è ordinata dalla più grande alla più piccola?
 A) TB → GB → MB → KB → B
 B) TB → MB → GB → KB → B
 C) GB → TB → MB → KB → B
 D) TB → GB → KB → MB → B
 
-14. Quanti byte corrispondono a 9 KB?
+22. Quanti byte corrispondono a 9 KB?
 A) 9.088 B
 B) 9.216 B
 C) 9.344 B
 D) 9.000 B
 
-15. Quanti KB corrispondono a 20.480 byte?
+23. Quanti KB corrispondono a 20.480 byte?
 A) 19,5 KB
 B) 20,5 KB
 C) 21 KB
 D) 20 KB
 
-16. Quanti MB corrispondono a 0,875 GB?
+24. Quanti MB corrispondono a 0,875 GB?
 A) 896 MB
 B) 880 MB
 C) 888 MB
 D) 904 MB
 
-17. Quanti GB corrispondono a 11.264 MB?
+25. Quanti GB corrispondono a 11.264 MB?
 A) 10,5 GB
 B) 10,75 GB
 C) 11 GB
 D) 11,25 GB
 
-21. Quanti KB corrispondono a 1,125 GB?
+26. Quanti KB corrispondono a 1,125 GB?
 A) 1.163.264 KB
 B) 1.196.032 KB
 C) 1.179.648 KB
 D) 1.212.416 KB
 
-22. Quanti GB corrispondono a 2.621.440 KB?
+27. Quanti GB corrispondono a 2.621.440 KB?
 A) 2,375 GB
 B) 2,5 GB
 C) 2,625 GB
 D) 2,75 GB
 
-23. Quanti GB corrispondono a 2,625 TB?
+28. Quanti GB corrispondono a 2,625 TB?
 A) 2.688 GB
 B) 2.656 GB
 C) 2.672 GB
 D) 2.704 GB
 
-24. Quanti KB corrispondono a 2.816 MB?
+29. Quanti KB corrispondono a 2.816 MB?
 A) 2.850.816 KB
 B) 2.867.200 KB
 C) 2.899.968 KB
 D) 2.883.584 KB
 
-25. Quali elementi possono occupare spazio nella memoria di uno smartphone?
+30. Quali elementi possono occupare spazio nella memoria di uno smartphone?
 A) Soltanto le fotografie
 B) Soltanto i file scaricati da Internet
 C) Il sistema operativo, le applicazioni e i file personali
 D) Soltanto i documenti creati dall'utente
 
-27. Devi salvare 3 video da 1,25 GB ciascuno e un file audio da 512 MB. Quanto spazio occupano complessivamente, espresso in MB?
+31. Devi salvare 3 video da 1,25 GB ciascuno e un file audio da 512 MB. Quanto spazio occupano complessivamente, espresso in MB?
 A) 4.224 MB
 B) 4.096 MB
 C) 4.480 MB
 D) 4.352 MB
 
-28. Una memoria USB ha una capacità di 32 GB, di cui 23,75 GB sono già occupati. Vuoi copiarci una cartella da 4,5 GB e un'altra da 4,25 GB. Quale affermazione è corretta?
+32. Una memoria USB ha una capacità di 32 GB, di cui 23,75 GB sono già occupati. Vuoi copiarci una cartella da 4,5 GB e un'altra da 4,25 GB. Quale affermazione è corretta?
 A) Lo spazio disponibile è esattamente sufficiente
 B) Rimangono 0,5 GB liberi
 C) Lo spazio non è sufficiente: mancano 0,5 GB
 D) Lo spazio non è sufficiente: manca 1 GB
 
-30. Quanti KB corrispondono a 2,375 GB?
+33. Quanti KB corrispondono a 2,375 GB?
 A) 2.473.984 KB
 B) 2.490.368 KB
 C) 2.506.752 KB
 D) 2.457.600 KB
-
-SOLUZIONI - GRUPPO B
-
-9. B
-10. C
-11. A
-12. A
-13. A
-14. B
-15. D
-16. A
-17. C
-21. C
-22. B
-23. A
-24. D
-25. C
-27. D
-28. C
-30. B

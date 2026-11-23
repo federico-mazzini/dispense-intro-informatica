@@ -5,7 +5,7 @@
 - Mantieni `README.md` con i soli link ai PDF: una riga per argomento, con dispensa e slide. Le note operative vanno in questo file.
 - Ogni cartella numerata di `src/` contiene due sorgenti: `NN - Titolo.typ` per la dispensa completa di teoria ed esercizi e `Slide - NN - Titolo.typ` per la presentazione. Non separare nuovamente teoria, esercizi e main.
 - Conserva le eventuali traduzioni nelle sottocartelle dedicate, come `src/3-bit-byte-dimensioni/ar/`.
-- Gli stili condivisi sono in `styles/`, i diagrammi in `assets/svg/`, le fotografie in `assets/immagini/`. Le domande disponibili sono distribuite per argomento nei file `Domande.txt` delle cartelle numerate di `src/` (attualmente 1, 2 e 3). Conserva gruppi A/B, numerazione originale, opzioni e soluzioni; non creare un archivio duplicato in `qst/`.
+- Gli stili condivisi sono in `styles/`, i diagrammi in `assets/svg/`, le fotografie in `assets/immagini/`. Le domande disponibili sono distribuite per argomento nei file `Domande.txt` delle cartelle numerate di `src/` (attualmente 1, 2 e 3). Mantieni solo domande e alternative, con numerazione progressiva per argomento, senza gruppi, soluzioni o indicazioni della risposta esatta; non creare un archivio duplicato in `qst/`.
 - Non versionare `dist/`, `tmp/` o `backup/`. Mantieni stabili i nomi dei PDF e i link pubblici.
 
 ## Compilazione e verifica
