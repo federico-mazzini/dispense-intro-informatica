@@ -1,0 +1,181 @@
+DOMANDE - FILE E CARTELLE
+
+Gruppi A e B: numerazione originale delle verifiche formative.
+Ogni domanda vale 1 punto. Livelli originali: 1-17 facili, 18-25 medie, 26-30 difficili.
+
+GRUPPO A - 11 DOMANDE
+
+1. Che cos'è un file?
+A) Un dispositivo utilizzato per memorizzare informazioni
+B) Un insieme di dati digitali salvati con un nome
+C) Un programma utilizzato per navigare su Internet
+D) Una cartella che contiene obbligatoriamente altre cartelle
+
+2. Nel file Relazione_finale.docx, qual è l'estensione?
+A) .finale
+B) .docx
+C) .Relazione
+D) .documento
+
+3. Quale estensione è tipica di un file video?
+A) .xlsx
+B) .txt
+C) .mp4
+D) .pdf
+
+4. Quale estensione è tipica di una presentazione PowerPoint?
+A) .pptx
+B) .jpg
+C) .mp3
+D) .zip
+
+5. Una cartella può contenere contemporaneamente file e altre cartelle.
+A) Vero
+B) Falso
+
+6. Qual è il principale vantaggio di esportare un documento in PDF?
+A) Ridurre sempre la dimensione del documento
+B) Mantenere generalmente stabile l'impaginazione del documento
+C) Rendere impossibile qualsiasi modifica
+D) Consentire l'apertura soltanto tramite Internet
+
+7. A che cosa serve principalmente un archivio ZIP?
+A) A correggere automaticamente gli errori nei file
+B) Ad aprire pagine Web
+C) A trasformare i file in immagini
+D) A raccogliere file e cartelle in un unico archivio
+
+18. Osserva il percorso D:\Scuola\Informatica\Verifiche\Prova.pdf. Qual è la cartella che contiene direttamente il file?
+A) Scuola
+B) Informatica
+C) Verifiche
+D) Prova.pdf
+
+20. Esporti Tesina.docx in Tesina.pdf. Successivamente modifichi il documento Word. Come ottieni un PDF che includa le correzioni?
+A) Esportando nuovamente il documento aggiornato
+B) Aspettando che il PDF si aggiorni automaticamente
+C) Cambiando il nome del PDF
+D) Non puoi ottenere un PDF aggiornato
+
+25. Rinomini il file Foto.jpg in Foto.pdf, cambiando soltanto l'estensione. Che cosa succede?
+A) L'immagine viene convertita correttamente in un PDF
+B) Il file viene automaticamente eliminato
+C) La dimensione del file viene ridotta
+D) Cambia il nome, ma il contenuto non viene convertito in PDF
+
+26. Osserva la struttura:
+
+D:
+└── Lavori
+    ├── Storia
+    │   └── Testo.docx
+    └── Informatica
+        ├── Lezioni
+        │   └── Appunti.pdf
+        └── Esercizi
+            └── Soluzioni.xlsx
+
+Qual è il percorso completo del file Soluzioni.xlsx?
+A) D:\Lavori\Informatica\Lezioni\Soluzioni.xlsx
+B) D:\Lavori\Esercizi\Informatica\Soluzioni.xlsx
+C) D:\Lavori\Informatica\Esercizi\Soluzioni.xlsx
+D) D:\Informatica\Lavori\Esercizi\Soluzioni.xlsx
+
+SOLUZIONI - GRUPPO A
+
+1. B
+2. B
+3. C
+4. A
+5. A
+6. B
+7. D
+18. C
+20. A
+25. D
+26. C
+
+GRUPPO B - 10 DOMANDE
+
+1. A che cosa serve principalmente una cartella?
+A) A navigare su Internet
+B) A organizzare file e altre cartelle
+C) A misurare la dimensione di un file
+D) A comprimere automaticamente tutti i documenti
+
+2. Nel file Bilancio_2026.xlsx, qual è il nome senza estensione?
+A) Bilancio_2026
+B) .xlsx
+C) Bilancio
+D) 2026.xlsx
+
+3. Quale estensione è tipica di un file immagine?
+A) .exe
+B) .pptx
+C) .mp3
+D) .png
+
+4. Quale di queste estensioni identifica generalmente un file audio?
+A) .mp4
+B) .mp3
+C) .docx
+D) .pdf
+
+5. Perché può essere utile distribuire un documento in PDF?
+A) Per trasformarlo automaticamente in un archivio compresso
+B) Per consentire al destinatario di modificarne sempre tutte le parti
+C) Per mantenere generalmente stabile la disposizione di testi e immagini
+D) Per proteggerlo automaticamente con una password
+
+6. Esportando un documento Word in PDF, il documento Word originale non viene automaticamente eliminato.
+A) Vero
+B) Falso
+
+7. Che cosa significa estrarre un archivio ZIP?
+A) Eliminare definitivamente tutti i file contenuti
+B) Rendere disponibili i file e le cartelle contenuti al di fuori dell'archivio
+C) Trasformare automaticamente tutti i file in PDF
+D) Trasferire automaticamente l'archivio su Internet
+
+18. Considera il percorso C:\Utenti\Marco\Foto\Mare.png. Qual è il percorso della cartella che contiene direttamente il file?
+A) C:\Utenti\Foto
+B) C:\Utenti\Marco
+C) C:\Utenti\Marco\Mare.png
+D) C:\Utenti\Marco\Foto
+
+20. Crei uno ZIP contenente una cartella di esercizi. Il giorno successivo aggiungi un nuovo esercizio alla cartella originale. Che cosa succede?
+A) Lo ZIP già creato rimane invariato; occorre aggiornarlo o ricrearlo per includere il nuovo esercizio
+B) Il nuovo esercizio viene aggiunto automaticamente allo ZIP
+C) Lo ZIP si aggiorna soltanto riavviando il computer
+D) Lo ZIP viene automaticamente eliminato
+
+26. Osserva la struttura:
+
+E:
+└── Scuola
+    ├── Materiali
+    │   ├── Tabelle
+    │   │   └── Dati.xlsx
+    │   └── Testi
+    │       └── Relazione.docx
+    └── Personali
+        └── Foto.png
+
+Qual è il percorso completo del file Dati.xlsx?
+A) E:\Scuola\Tabelle\Materiali\Dati.xlsx
+B) E:\Scuola\Materiali\Tabelle\Dati.xlsx
+C) E:\Materiali\Scuola\Tabelle\Dati.xlsx
+D) E:\Scuola\Materiali\Testi\Dati.xlsx
+
+SOLUZIONI - GRUPPO B
+
+1. B
+2. A
+3. D
+4. B
+5. C
+6. A
+7. B
+18. D
+20. A
+26. B

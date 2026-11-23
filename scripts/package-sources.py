@@ -16,6 +16,7 @@ if argomento not in ammessi:
 files = set((root / 'src' / argomento).glob('*.typ'))
 if len(files) != 2:
     raise SystemExit('Ogni argomento deve avere due sorgenti Typst: dispensa e slide')
+files.update((root / 'src' / argomento).glob('*.txt'))
 files.update((root / 'styles').glob('*.typ'))
 for p in tuple(files):
     for asset in re.findall(r'"(/assets/[^"\n]+)"', p.read_text()):
