@@ -107,9 +107,6 @@ In **Settings → Pages → Build and deployment**, la sorgente deve essere **Gi
 
 ## Contenuti e provenienza
 
-La prima dispensa deriva dai sorgenti forniti nell’archivio `dispensa_bit_byte_libro_classico_revisionata_sorgenti.zip`. Le altre due riprendono le pagine didattiche Notion indicate nei rispettivi documenti di progetto:
+La dispensa su bit e byte deriva dai sorgenti forniti nell’archivio `dispensa_bit_byte_libro_classico_revisionata_sorgenti.zip`. Le dispense su file e cartelle e sull’invio e la condivisione dei file riprendono le pagine didattiche Notion.
 
-- [File e cartelle: contenuti e fonti](README-file-cartelle.md).
-- [Inviare e condividere file: contenuti e fonte](README-inviare-condividere.md).
-
-La convenzione scolastica delle equivalenze basate su 1024 è mantenuta nella prima dispensa. Gli elenchi di parole negli esercizi da completare sono mescolati. Prima di consegnare nuove versioni, controllare visivamente i PDF, soprattutto tabelle, diagrammi e spazi delle risposte.
+La convenzione scolastica delle equivalenze basate su 1024 è mantenuta nella dispensa su bit e byte. Gli elenchi di parole negli esercizi da completare sono mescolati. Prima di consegnare nuove versioni, controllare visivamente i PDF, soprattutto tabelle, diagrammi e spazi delle risposte.
