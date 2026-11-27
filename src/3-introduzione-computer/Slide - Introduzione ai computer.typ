@@ -1,132 +1,219 @@
 #import "/styles/slides.typ": *
-#import "/styles/slides-icdl.typ": pagina-icdl, riga
 
 #show: presentazione.with("Introduzione ai computer")
-#let foto(nome, didascalia, altezza: 155pt) = figura(
-  "/assets/immagini/3-introduzione-computer/" + nome + ".jpg", didascalia, altezza: altezza,
+
+// Testi: capitolo 1 della dispensa 03; conclusione introduttiva dal capitolo 2.
+// Disposizione e sequenza: “Intro al computer.pdf”, fornito dal docente.
+// Esempi visivi → definizione e funzionamento → tipologie → embedded → server.
+#let immagine(nome, altezza: 200pt) = align(center,
+  image("/assets/immagini/3-introduzione-computer/" + nome + ".jpg",
+    width: 100%, height: altezza, fit: "contain"),
+)
+#let tipo(titolo, nome, body) = grid(
+  columns: (116pt, 1fr), column-gutter: 23pt, align: horizon,
+  immagine(nome, altezza: 69pt),
+  [#set text(size: 22pt)
+    *#titolo* \
+    #body],
 )
 
-#apertura("Introduzione ai computer", "Dispositivi, hardware e software")
+#apertura("Introduzione ai computer", "")
 
-// Pagina 5 del PDF ICDL “Computer e dispositivi”.
-#pagina-icdl(5, grafica: "/assets/icdl/introduzione-02.svg")[
-  #riga(480, 82.34, 35, tinta: rosso, centro: true, ampiezza: 221.172)[#text(weight: "bold", "Il computer")]
-  #riga(480, 115.79, 27, centro: true, ampiezza: 182.331)[#text(weight: "bold", "Alcuni esempi")]
-  #riga(29.8, 528.275, 9.68, ampiezza: 170.755)[#text("IIS Polo Tecnico Professionale di Lugo")]
-  #riga(831.386, 528.275, 9.68, ampiezza: 98.813)[#text("Prof. Federico Mazzini")]
-  #riga(699.39, 221.805, 40, tinta: rosso, centro: true, ampiezza: 225.8)[#text(weight: "bold", "Questi sono ")]
-  #riga(695.55, 264.685, 40, tinta: rosso, centro: true, ampiezza: 192.6)[#text(weight: "bold", "computer!")]
-]
-
-// Pagina 6 del PDF ICDL “Computer e dispositivi”.
-#pagina-icdl(6, grafica: "/assets/icdl/introduzione-03.svg")[
-  #riga(480, 115.79, 27, centro: true, ampiezza: 182.331)[#text(weight: "bold", "Alcuni esempi")]
-  #riga(29.8, 528.275, 9.68, ampiezza: 170.755)[#text("IIS Polo Tecnico Professionale di Lugo")]
-  #riga(831.386, 528.275, 9.68, ampiezza: 98.813)[#text("Prof. Federico Mazzini")]
-  #riga(242.673, 243.205, 40, tinta: rosso, centro: true, ampiezza: 305.88)[#text(weight: "bold", "Ma anche questi ")]
-  #riga(238.833, 286.085, 40, tinta: rosso, centro: true, ampiezza: 289.52)[#text(weight: "bold", "sono computer!")]
-  #riga(480, 82.34, 35, tinta: rosso, centro: true, ampiezza: 221.172)[#text(weight: "bold", "Il computer")]
-]
-
-#slide("I computer oggi", "Forme diverse, lo stesso principio")[
-  Un computer *riceve dati*, li *elabora* seguendo le istruzioni di un programma e *produce risultati*.
-
-  #esempio[
-    Uno smartwatch riceve dati dai suoi sensori e mostra informazioni sul quadrante. Quali dati usa per stimare quanti passi hai fatto?
-  ]
-]
-
-// Pagina 7 del PDF ICDL “Computer e dispositivi”.
-#pagina-icdl(7, grafica: "/assets/icdl/introduzione-04.svg")[
-  #riga(480, 115.79, 27, centro: true, ampiezza: 120.258)[#text(weight: "bold", "Tipologie")]
-  #riga(480, 82.34, 35, tinta: rosso, centro: true, ampiezza: 221.172)[#text(weight: "bold", "Il computer")]
-  #riga(204.386, 162, 15, ampiezza: 693.912)[#text(weight: "bold", "I COMPUTER")#text(" ")#text(weight: "bold", "DESKTOP")#text(" (chiamati anche computer fissi) vengono chiamati così proprio perché ")]
-  #riga(204.386, 182, 15, ampiezza: 693.912)[#text("sono progettati per poter essere posizionati su una scrivania o su un tavolo. I PC, in generale, ")]
-  #riga(204.386, 202, 15, ampiezza: 610.185)[#text("offrono delle prestazioni mediamente superiori rispetto alle altre tipologie di computer.")]
-  #riga(209.386, 257.663, 15, ampiezza: 693.921)[#text(weight: "bold", "I COMPUTER")#text(" ")#text(weight: "bold", "PORTATILI")#text(" (chiamati anche semplicemente notebook o laptop) sono dei computer ")]
-  #riga(209.386, 277.663, 15, ampiezza: 693.921)[#text("di dimensioni ridotte proprio per poter essere facilmente trasportati ovunque (infatti sono dotati ")]
-  #riga(209.386, 297.663, 15, ampiezza: 192.105)[#text("di una batteria ricaricabile).")]
-  #riga(209.386, 347.775, 15, ampiezza: 693.911)[#text(weight: "bold", "GLI")#text(" ")#text(weight: "bold", "SMARTPHONE")#text(" non sono altro che dei telefoni cellulari dotati di uno schermo touchscreen ")]
-  #riga(209.386, 367.775, 15, ampiezza: 693.915)[#text("nonché di funzionalità proprie dei computer. Con uno smartphone è possibile infatti effettuare ")]
-  #riga(209.386, 387.775, 15, ampiezza: 693.924)[#text("delle telefonate, navigare su Internet, inviare e/o ricevere dei messaggi di testo o di posta ")]
-  #riga(209.386, 407.775, 15, ampiezza: 113.355)[#text("elettronica, ecc.")]
-  #riga(204.386, 452.596, 15, ampiezza: 616.41)[#text(weight: "bold", "I TABLET")#text(" sono dei dispositivi dotati di caratteristiche hardware e software proprie degli ")]
-  #riga(204.386, 472.596, 15, ampiezza: 586.065)[#text("smartphone che, a seconda dei casi, consentono o meno di sostituire un computer ")]
-  #riga(204.386, 492.596, 15, ampiezza: 63.345)[#text("portatile.")]
-  #riga(29.8, 528.275, 9.68, ampiezza: 170.755)[#text("IIS Polo Tecnico Professionale di Lugo")]
-  #riga(831.386, 528.275, 9.68, ampiezza: 98.813)[#text("Prof. Federico Mazzini")]
-]
-
-#slide("Console e dispositivi indossabili", "Computer pensati per attività diverse")[
-  - Una *console* è progettata soprattutto per i videogiochi. Il giocatore usa un *controller* per inviare comandi.
-  - Uno *smartwatch* è un computer *indossabile* (_wearable_). I suoi sensori possono raccogliere dati sul battito o sul movimento e mostrarli sul quadrante.
-
-  #esempio[
-    Un controller e un sensore di movimento ricevono dati in modi diversi. Quali dati raccolgono?
-  ]
-]
-
-#slide("I sistemi embedded", "Computer incorporati in altri dispositivi")[
+#slide("Il computer", "Alcuni esempi")[
   #due-colonne(
-    [
-      Un *sistema embedded* è un computer incorporato in un dispositivo o in un macchinario. Svolge compiti precisi.
-
-      In una lavatrice controlla le fasi del lavaggio. In un’auto un sistema incorporato può gestire l’ABS. Altri esempi si trovano nei pacemaker e nei robot industriali.
-    ],
-    foto("robot", [Robot in una catena di montaggio.], altezza: 230pt),
-    rapporto: (1.3fr, 1fr),
+    grid(columns: (1fr, 1fr), column-gutter: 14pt,
+      immagine("portatile", altezza: 250pt),
+      immagine("desktop", altezza: 250pt),
+    ),
+    [#align(center)[#text(size: 39pt, weight: "bold", fill: rosso)[Questi sono computer!]]],
+    rapporto: (1.5fr, 1fr),
   )
 ]
 
-#slide("I server", "Richieste e risposte attraverso la rete")[
-  Un *server* mette dati e servizi a disposizione di altri dispositivi. Il dispositivo che fa la richiesta svolge il ruolo di *client*.
-
-  #tavola("/assets/svg/hardware-software/client-server.svg", altezza: 200pt)
-
-  Quando apri un sito o guardi un video in streaming, il tuo dispositivo riceve dati da uno o più server.
-]
-
-#slide("Servizi che usano i server", "Web, streaming, gioco online e cloud")[
+#slide("Il computer", "Alcuni esempi")[
   #due-colonne(
+    [#align(center)[#text(size: 39pt, weight: "bold", fill: rosso)[Ma anche questi sono computer!]]],
     [
-      - *Web e posta.* I server forniscono pagine web e gestiscono le email.
-      - *Streaming.* Inviano i dati mentre guardiamo o ascoltiamo.
-      - *Gioco online.* Coordinano le azioni dei giocatori.
-      - *Cloud.* Conservano i file e li rendono accessibili tramite l’account.
+      #grid(columns: (1fr, 1fr), column-gutter: 15pt,
+        immagine("smartphone", altezza: 160pt),
+        immagine("console", altezza: 160pt),
+      )
+      #v(9pt)
+      #immagine("smartwatch", altezza: 144pt)
     ],
-    foto("server-ibm", [Sistemi server.], altezza: 225pt),
-    rapporto: (1.35fr, 1fr),
+    rapporto: (1fr, 1.45fr),
   )
 ]
 
-// Pagina 9 del PDF ICDL “Computer e dispositivi”.
-#pagina-icdl(9, grafica: "/assets/icdl/introduzione-10.svg")[
-  #riga(480, 82.34, 35, tinta: rosso, centro: true, ampiezza: 402.486)[#text(weight: "bold", "Software e Hardware")]
-  #riga(29.8, 528.275, 9.68, ampiezza: 170.755)[#text("IIS Polo Tecnico Professionale di Lugo")]
-  #riga(831.386, 528.275, 9.68, ampiezza: 98.813)[#text("Prof. Federico Mazzini")]
-  #riga(41.476, 181.475, 17.5, ampiezza: 100.328)[#text(weight: "bold", "HARDWARE ")]
-  #riga(41.476, 200.31, 17.5, ampiezza: 412.802)[#text("Per HARDWARE (HW) si intende tutto ciò che ")]
-  #riga(41.476, 223.81, 17.5, ampiezza: 412.802)[#text("riguarda il computer e che è tangibile, materiale, ")]
-  #riga(41.476, 247.31, 17.5, ampiezza: 412.8)[#text("che ha un peso fisico. In sostanza è l’insieme ")]
-  #riga(41.476, 270.81, 17.5, ampiezza: 412.798)[#text("delle componenti fisiche (meccaniche, elettriche, ")]
-  #riga(41.476, 294.31, 17.5, ampiezza: 412.78)[#text("elettroniche, magnetiche e ottiche) che ")]
-  #riga(41.476, 317.81, 17.5, ampiezza: 221.568)[#text("costituiscono l’elaboratore.")]
-  #riga(507.71, 181.548, 17.5, ampiezza: 96.443)[#text(weight: "bold", "SOFTWARE ")]
-  #riga(507.71, 200.383, 17.5, ampiezza: 412.793)[#text("Per SOFTWARE (SW) si intende tutto ciò che c’è ")]
-  #riga(507.71, 223.883, 17.5, ampiezza: 412.797)[#text("ma non è tangibile. È la parte invisibile di un ")]
-  #riga(507.71, 247.383, 17.5, ampiezza: 412.8)[#text("elaboratore, costituita dai programmi residenti ")]
-  #riga(507.71, 270.883, 17.5, ampiezza: 412.806)[#text("nella memoria del computer o nei supporti di ")]
-  #riga(507.71, 294.383, 17.5, ampiezza: 138.757)[#text("memorizzazione.")]
+#slide("Che cos’è un computer?", "Un dispositivo elettronico programmabile")[
+  Un *computer* è una macchina che usa l’energia elettrica per eseguire le istruzioni di un *programma*.
+
+  Un *programma* è una sequenza di istruzioni: indica al computer che cosa deve fare.
+
+  *Programmabile* significa che la stessa macchina può svolgere compiti diversi usando programmi diversi.
 ]
 
-#slide("Completa la mappa", "Tipi di computer e loro componenti")[
-  *Parole da inserire:* software, server, hardware, wearable, embedded, portatile.
+#slide("Come funziona un computer", "Riceve dati, li elabora e produce risultati")[
+  #set text(size: 24pt)
+  I *dati* possono essere numeri, testi, immagini e suoni. *Elaborarli* significa eseguire operazioni su di essi per ottenere un risultato.
 
-  #tavola("/assets/svg/mappa-esercizi-introduzione-computer.svg", altezza: 265pt)
+  #tavola("/assets/svg/computer-dati-programma-risultati.svg", altezza: 185pt)
+  #v(8pt)
+  *Calcolatrice:* inseriamo 2 e 3 → il programma esegue la somma → sullo schermo compare 5.
 ]
 
-#slide("Prova a classificare", "Dispositivi, componenti e programmi")[
-  + Una lavatrice regola da sola le fasi del programma. Che tipo di computer lo permette?
-  + Apri un video online. Quale ruolo svolge il server?
-  + Classifica batteria, Android, schermo e un’app di messaggistica come hardware o software. Motiva le risposte.
+#slide("La stessa macchina, tanti usi", "Cambia il programma, cambia ciò che possiamo fare")[
+  Un’*applicazione*, o *app*, è un programma che usiamo per svolgere un’attività.
+
+  #v(12pt)
+  #grid(columns: (1fr, 1fr, 1fr), column-gutter: 28pt,
+    [*Calcolatrice* \
+      Con il programma Calcolatrice facciamo i conti.],
+    [*Macchina da scrivere* \
+      Con un programma di scrittura prepariamo un documento.],
+    [*Telefono* \
+      Con un’app per le chiamate parliamo con un’altra persona.],
+  )
+  #v(16pt)
+  La macchina rimane la stessa: sono i *programmi* a permetterci di usarla in modi diversi.
+]
+
+#slide("Il computer", "Le principali tipologie")[
+  #set block(spacing: 0pt)
+  #tipo([Computer desktop], "desktop")[Computer fissi da usare su una scrivania, con monitor, tastiera e mouse.]
+  #v(11pt)
+  #tipo([Computer portatili], "portatile")[Detti anche *notebook* o *laptop*: facili da trasportare, con schermo, tastiera e batteria ricaricabile.]
+  #v(11pt)
+  #tipo([Smartphone], "smartphone")[Telefoni che eseguono app. Lo schermo *touchscreen* riconosce il tocco delle dita.]
+  #v(11pt)
+  #tipo([Tablet], "tablet")[Computer portatili con touchscreen, in genere più grande di quello di uno smartphone.]
+]
+
+#slide("Il computer", "Le principali tipologie")[
+  #set block(spacing: 0pt)
+  #tipo([Console], "console")[Computer pensati soprattutto per i videogiochi. Il giocatore invia comandi con un *controller*.]
+  #v(11pt)
+  #tipo([Server], "server")[Computer che forniscono dati e servizi ad altri dispositivi collegati attraverso una rete.]
+  #v(11pt)
+  #tipo([Dispositivi wearable], "smartwatch")[Computer *indossabili*, come gli smartwatch. I sensori rilevano dati, per esempio sul movimento.]
+  #v(11pt)
+  #tipo([Sistemi embedded], "embedded")[Computer *incorporati* in altri dispositivi per controllarne il funzionamento.]
+]
+
+#slide("Tipologie di computer", "I sistemi embedded")[
+  #due-colonne(
+    [#set text(size: 24pt)
+      Un *sistema embedded* è un computer inserito in un dispositivo o in un macchinario per controllarne una o più funzioni.
+
+      _Embedded_ significa *«incorporato»*.
+
+      È progettato per *compiti specifici*: in una lavatrice, per esempio, controlla le fasi del lavaggio.
+    ],
+    immagine("robot", altezza: 292pt),
+    rapporto: (1fr, 1.2fr),
+  )
+]
+
+#slide("I sistemi embedded", "Esempi nell’uso quotidiano")[
+  #set text(size: 25pt)
+  - *Elettrodomestici:* controllano il funzionamento di lavatrici, forni a microonde e frigoriferi.
+  - *Automobili:* gestiscono il motore, gli airbag e l’*ABS*, che aiuta a evitare il bloccaggio delle ruote in frenata.
+  - *Dispositivi medici:* nel pacemaker aiutano il cuore a mantenere un ritmo regolare.
+  - *Robotica:* controllano i robot industriali nelle catene di montaggio.
+]
+
+#slide("Un computer che aiuta il cuore", "Il pacemaker")[
+  #due-colonne(
+    immagine("pacemaker", altezza: 300pt),
+    [#set text(size: 24pt)
+      Il *pacemaker* contiene un piccolo computer che aiuta il cuore a battere con regolarità.
+
+      Il modello illustrato viene impiantato *sotto la pelle, nella parte alta del torace*, ed è collegato al cuore da sottili fili.
+
+      Funziona grazie a una *batteria* e rimane attivo *giorno e notte*.
+    ],
+    rapporto: (1fr, 1.35fr),
+  )
+]
+
+#slide("Il computer nel pacemaker", "Gli stessi tre passaggi")[
+  #set text(size: 25pt)
+  #table(columns: (1fr, 2.7fr),
+    table.header([*Passaggio*], [*Che cosa succede*]),
+    [*Riceve dati*], [Rileva i segnali elettrici del cuore.],
+    [*Li elabora*], [Il programma controlla il tempo trascorso tra i battiti.],
+    [*Produce un risultato*], [Se il cuore batte troppo lentamente, invia piccoli impulsi elettrici che lo stimolano a battere.],
+  )
+  #v(15pt)
+  Un computer può quindi produrre anche *un’azione*, come un impulso elettrico: il risultato non deve essere per forza mostrato su uno schermo.
+]
+
+#slide("Tipologie di computer", "I server")[
+  #due-colonne(
+    [#set text(size: 24pt)
+      Un *server* è un computer che mette *dati e servizi* a disposizione di altri dispositivi.
+
+      I dispositivi comunicano attraverso una *rete*: un insieme di dispositivi collegati per scambiarsi dati.
+
+      Per rendere disponibili i servizi in ogni momento, normalmente resta acceso *24 ore al giorno, 7 giorni su 7*.
+    ],
+    immagine("server-ibm", altezza: 305pt),
+    rapporto: (1.15fr, 1fr),
+  )
+]
+
+#slide("I server e Internet", "Una richiesta, una risposta")[
+  #set text(size: 24pt)
+  Quando apriamo un *sito Internet*, il nostro dispositivo chiede a un server i dati necessari per visualizzarlo.
+
+  #grid(columns: (1fr, 65pt, 1fr), column-gutter: 18pt, align: horizon,
+    [#align(center)[*Il nostro dispositivo* \
+      Chiede i dati del sito.]],
+    [#align(center)[#text(size: 43pt, fill: rosso)[⇄]]],
+    [#align(center)[*Il server* \
+      Riceve la richiesta e invia i dati.]],
+  )
+  #v(18pt)
+  Il *browser*, cioè il programma con cui navighiamo, usa i dati ricevuti per mostrare la pagina sullo schermo.
+]
+
+#slide("Dove si trova il cloud?", "I nostri file nella memoria di un server")[
+  #set text(size: 25pt)
+  Quando salviamo un file nel *cloud*, lo inviamo attraverso Internet a un *server*, per esempio di Google Drive.
+
+  Quel server è un computer in un *luogo fisico del mondo*, anche molto lontano da noi: conserva il file e ce lo rende accessibile online.
+
+  Per aprire o aggiornare il file online dobbiamo poter *contattare il server*: serve una connessione Internet.
+]
+
+#slide("I server", "Esempi nell’uso quotidiano")[
+  #set text(size: 24pt)
+  - *Video e musica in streaming:* il server invia i dati mentre guardiamo o ascoltiamo, senza dover scaricare prima tutto il contenuto.
+  - *Giochi online:* i server scambiano con i giocatori dati come posizioni, azioni e punteggi della partita.
+  - *Cloud:* servizi come Drive e iCloud conservano i file. Li ritroviamo da dispositivi diversi entrando nel nostro *account*, il profilo personale del servizio.
+  - *Siti Internet e posta elettronica:* i server forniscono i dati dei siti e ricevono e inoltrano le email.
+]
+
+// Ultima slide mantenuta come introduzione, senza gli approfondimenti successivi.
+#slide("Hardware e software", "Le due parti fondamentali di un computer")[
+  #grid(columns: (1fr, 1fr), column-gutter: 32pt, align: top,
+    [#set text(size: 24pt)
+      #text(size: 28pt, weight: "bold", fill: rosso)[Hardware]
+
+      I *componenti fisici*: le parti interne e i dispositivi come tastiera e schermo.
+
+      Ci permettono di *usare il computer* e di ricevere i risultati.
+      #v(6pt)
+      #tavola("/assets/immagini/4-hardware/scheda-madre.jpg", altezza: 105pt)
+    ],
+    [#set text(size: 24pt)
+      #text(size: 28pt, weight: "bold", fill: rosso)[Software]
+
+      I *programmi* contengono le istruzioni che stabiliscono che cosa fa il computer.
+
+      Per scrivere un documento usiamo un *programma di scrittura*.
+      #v(6pt)
+      #galleria(immagine("windows", altezza: 68pt), immagine("android", altezza: 68pt), immagine("drive", altezza: 68pt))
+    ],
+  )
 ]
