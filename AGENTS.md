@@ -48,6 +48,6 @@ Mantieni solo gli script con una funzione distinta. Non aggiungere scorciatoie p
 ## Contenuti e riferimenti
 
 - Le dispense hanno formato A4 e colori distinti, con font e componenti grafici condivisi. Le presentazioni sono in formato 16:9 e riprendono la grafica del repository `federico-mazzini/icdl`; il modello comune è `styles/slides.typ`.
-- Le presentazioni 03, 04 e 05 includono 22 pagine di ICDL – Computer e dispositivi con testi, grafica e numeri originali. Riferimento: https://github.com/federico-mazzini/icdl/blob/2415280d86bff968343166670cba272a323717c0/src/1_computer_dispositivi.typ.
+- Le presentazioni 04 Hardware e 05 Il software riprendono le rispettive sezioni del sorgente locale `icdl/src/1_computer_dispositivi.typ`: 18 slide Hardware (escluse le due slide su Von Neumann e quella sulla docking station) e 11 Software (escluse le due slide di approfondimento sugli applicativi e le tre sulle licenze), con testi, grafica e ordine originali. La 03 conserva alcune slide ICDL introduttive. I modelli delle sezioni integrali sono incorporati nei due sorgenti; le risorse sono in `assets/icdl/`.
 - La dispensa su bit e byte deriva dall’archivio `dispensa_bit_byte_libro_classico_revisionata_sorgenti.zip`; quella su file e cartelle, invio e condivisione riprende pagine didattiche Notion.
 - Mantieni la convenzione scolastica delle conversioni basate su 1024 nella dispensa su bit e byte e gli elenchi di parole degli esercizi mescolati.

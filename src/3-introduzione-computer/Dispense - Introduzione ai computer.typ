@@ -1,5 +1,5 @@
 #import "/styles/percorso-computer.typ": *
-#show: percorso.with(titolo: "Introduzione ai computer", numero: "03", accento: rgb("#963B36"), sfondo: rgb("#FBF1EF"))
+#show: percorso.with(titolo: "Introduzione ai computer", numero: "03", mostra-sottotitolo: false, accento: rgb("#963B36"), sfondo: rgb("#FBF1EF"))
 
 #[
 #import "/styles/percorso-computer.typ": *
@@ -302,17 +302,9 @@ All’esterno troviamo anche il pulsante di accensione e piccole spie luminose, 
 
 == La CPU
 
-La *CPU* (_Central Processing Unit_, cioè *unità centrale di elaborazione*), chiamata anche *processore*, è il componente che esegue le istruzioni dei programmi. Viene spesso descritta come il *«cervello» del computer*, perché svolge le operazioni necessarie al suo funzionamento. Segue le istruzioni dei programmi: non pensa come una persona.
-
-=== Che cosa significa eseguire operazioni?
-
 #grid(columns: (1.85fr, 1fr), column-gutter: 6mm,
   [
-    I programmi suddividono le attività in tante operazioni semplici che la CPU può eseguire, per esempio:
-
-    - *Fare calcoli*, come sommare due numeri.
-    - *Confrontare dati*, per stabilire, ad esempio, quale numero è più grande.
-    - *Leggere e spostare dati*, recuperandoli dalla memoria o registrando il risultato di un’operazione.
+    La *CPU* (_Central Processing Unit_, cioè *unità centrale di elaborazione*), chiamata anche *processore*, è il componente che esegue le istruzioni dei programmi. Viene spesso descritta come il *«cervello» del computer*, perché svolge le operazioni necessarie al suo funzionamento. Segue le istruzioni dei programmi: non pensa come una persona.
   ],
   foto("processore", altezza: 40mm, didascalia: [Un processore visto sopra e sotto.]),
 )
@@ -361,7 +353,7 @@ La *memoria secondaria*, chiamata anche *memoria di archiviazione*, conserva fil
   [
     Un *HDD* (_Hard Disk Drive_), detto anche *disco rigido*, conserva i dati su dischi che ruotano. Piccoli componenti chiamati *testine* leggono e registrano i dati sulla superficie magnetica dei dischi. Il movimento di queste parti richiede tempo e può produrre rumore. Gli HDD offrono generalmente molto spazio a costo contenuto, ma possono danneggiarsi se subiscono forti urti.
 
-    Un *SSD* (_Solid State Drive_), o *unità a stato solido*, conserva i dati in componenti elettronici e non ha parti meccaniche in movimento. Per questo è silenzioso e, in genere, recupera i dati più velocemente di un HDD. Sia gli SSD sia gli HDD mantengono i dati a computer spento. Anche smartphone e tablet usano memorie elettroniche per conservare i file.
+    Un *SSD* (_Solid State Drive_), o *unità a stato solido*, conserva i dati in componenti elettronici e non ha parti meccaniche in movimento. Per questo è silenzioso e, in genere, recupera i dati più velocemente di un HDD. Sia gli SSD sia gli HDD mantengono i dati a computer spento.
   ],
   foto("hdd", altezza: 58mm, didascalia: [All’interno di un HDD, la testina si sposta sopra il disco magnetico.]),
 )

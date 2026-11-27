@@ -1,15 +1,107 @@
-#import "/styles/slides.typ": *
-#import "/styles/slides-icdl.typ": pagina-icdl, riga, lezione-icdl
+// Sezione Software di ICDL: src/1_computer_dispositivi.typ.
+// Escluse le slide di approfondimento sugli applicativi e quelle sulle licenze.
 
-#show: presentazione.with("Il software")
-#let foto(nome, didascalia, altezza: 155pt) = figura(
-  "/assets/immagini/5-software/" + nome + ".jpg", didascalia, altezza: altezza,
-)
+#let rosso = rgb("#c00000")
+#let grigio = rgb("#555555")
+#let larghezza = 864pt
+#let altezza-corpo = 390pt
+#let sfondo = rgb("#fbf4f3")
 
-#apertura("Il software", "Programmi, sistema operativo e applicazioni")
+#let presentazione(body) = {
+  set document(title: "Il software", author: "Federico Mazzini")
+  set page(width: 960pt, height: 540pt, margin: 0pt)
+  set text(font: "Libertinus Serif", size: 26pt, lang: "it", hyphenate: false,
+    fill: rgb("#202020"), top-edge: 0pt, bottom-edge: 0pt)
+  set par(leading: 0.44em, spacing: 0.8em, justify: false)
+  set list(indent: 4pt, body-indent: 11pt, tight: false, spacing: 0.5em)
+  set enum(numbering: "1", indent: 4pt, body-indent: 10pt, tight: false, spacing: 0.5em)
+  body
+}
 
-// Pagina 33 del PDF ICDL “Computer e dispositivi”.
-#pagina-icdl(33)[
+// Le coordinate sono in punti nel formato 16:9 del modello.
+// Ogni riga mantiene posizione, capoversi ed enfasi del PDF di origine.
+#let riga(x, y, corpo, body, tinta: rgb("#202020"), peso: "regular", angolo: 0deg,
+    centro: false, ampiezza: none, url: none) = context {
+  let contenuto = text(size: corpo * 1pt, fill: tinta, weight: peso, body)
+  if url != none { contenuto = link(url, contenuto) }
+  let misura = measure(contenuto)
+  // Riduce solo le righe che supererebbero il loro ingombro originale.
+  if ampiezza != none and misura.width > ampiezza * 1pt {
+    contenuto = scale(x: ampiezza * 1pt / misura.width * 100%, y: 100%,
+      origin: left + top, reflow: true, contenuto)
+  }
+  let offset = if centro { measure(contenuto).width / 2 } else { 0pt }
+  place(top + left, dx: x * 1pt - offset, dy: y * 1pt,
+    rotate(angolo, origin: left + top, reflow: false, contenuto))
+}
+
+#let slide(grafica: none, titolo: "", body) = page[
+  #if grafica != none {
+    place(top + left, image(grafica, width: 960pt, height: 540pt))
+  }
+  #body
+  // Il piccolo fregio rosso è il segno grafico del modello.
+  #place(top + left, dx: 48pt, dy: 26pt,
+    rect(width: 40pt, height: 3pt, fill: rosso, stroke: none))
+  // I crediti originali restano nella fascia inferiore; il contatore è progressivo.
+  #place(top + left, dx: 370pt, dy: 525pt, box(width: 220pt)[
+    #context align(center)[#text(size: 11pt, fill: grigio)[#counter(page).display() / #counter(page).final().first()]]
+  ])
+]
+
+
+// Nuove slide: stessi caratteri, titoli centrati, colori e piè di pagina.
+// Il corpo scorre in paragrafi modificabili, senza coordinate per ogni riga.
+#let area-nuova(body) = context {
+  for corpo in (26, 25, 24, 23) {
+    let prova = block(width: 832pt, breakable: false)[
+      #set text(size: corpo * 1pt, top-edge: "cap-height", bottom-edge: "descender")
+      #set par(leading: 0.32em, spacing: 0.58em)
+      #set list(indent: 5pt, body-indent: 12pt, spacing: 0.45em)
+      #body
+    ]
+    if measure(prova, width: 832pt).height <= 338pt { return prova }
+  }
+  panic("Il testo della nuova slide supera l'area disponibile.")
+}
+#let lezione(titolo, sottotitolo, body) = slide(titolo: titolo)[
+  #riga(480, 82.34, 35, tinta: rosso, centro: true, ampiezza: 864)[#text(weight: "bold", titolo)]
+  #riga(480, 115.79, 27, centro: true, ampiezza: 864)[#text(weight: "bold", sottotitolo)]
+  #place(top + left, dx: 64pt, dy: 158pt, area-nuova(body))
+  #riga(29.8, 528.275, 9.68)[#text("Polo Tecnico Professionale di Lugo")]
+  #riga(831.386, 528.275, 9.68)[#text("Prof. Federico Mazzini")]
+]
+#let apertura(titolo, sottotitolo) = slide(titolo: titolo)[
+  #riga(480, 292, 48, tinta: rosso, centro: true, ampiezza: 864)[#text(weight: "bold", titolo)]
+  #riga(480, 334, 28, centro: true, ampiezza: 864)[#text(weight: "bold", sottotitolo)]
+  #riga(29.8, 528.275, 9.68)[#text("Polo Tecnico Professionale di Lugo")]
+  #riga(831.386, 528.275, 9.68)[#text("Prof. Federico Mazzini")]
+]
+
+#show: presentazione
+
+// 40. Software.pdf, pagina 1 — Software
+#slide(titolo: "Software")[
+  #riga(480, 267.16, 58, tinta: rosso, centro: true, ampiezza: 241.396)[#text(weight: "bold", "Software")]
+  #riga(480, 312.14, 32, centro: true, ampiezza: 515.2)[#text(weight: "bold", "Il comportamento di un computer")]
+  #riga(29.8, 528.275, 9.68, ampiezza: 156.758)[#text("Polo Tecnico Professionale di Lugo")]
+  #riga(831.386, 528.275, 9.68, ampiezza: 98.813)[#text("Prof. Federico Mazzini")]
+]
+
+// 41. Software.pdf, pagina 2 — Software
+#slide(titolo: "Software")[
+  #riga(480, 82.34, 35, tinta: rosso, centro: true, ampiezza: 174.804)[#text(weight: "bold", "Software")]
+  #riga(483.213, 115.768, 27, centro: true, ampiezza: 441.126)[#text(weight: "bold", "Il comportamento di un computer ")]
+  #riga(85.759, 180.449, 17.5, ampiezza: 716.864)[#text("•")#text(" ")#text("Tutto ciò che in un computer è non fisico e non tangibile prende il nome di software.  ")]
+  #riga(85.759, 216.449, 17.5, ampiezza: 756.099)[#text("•")#text(" ")#text("Il software da al computer un comportamento e uno scopo ed è costituito dai programmi. ")]
+  #riga(85.759, 252.449, 17.5, ampiezza: 776.837)[#text("•")#text(" ")#text("In ogni computer, vi è una netta ")#text(weight: "bold", "separazione")#text(" tra la macchina fisica, l’")#text(weight: "bold", "hardware")#text(", dal ")]
+  #riga(101.801, 275.949, 17.5, ampiezza: 463.452)[#text("programma che la macchina sta eseguendo, il ")#text(weight: "bold", "software.")]
+  #riga(29.8, 528.275, 9.68, ampiezza: 156.758)[#text("Polo Tecnico Professionale di Lugo")]
+  #riga(831.386, 528.275, 9.68, ampiezza: 98.813)[#text("Prof. Federico Mazzini")]
+]
+
+// 42. Software.pdf, pagina 3 — Software / I computer sono macchine universali
+#slide(titolo: "Software / I computer sono macchine universali")[
   #riga(150.468, 402.599, 20, ampiezza: 663.002)[#text(weight: "bold", "Il comportamento di un computer è definito dalle istruzioni che la ")]
   #riga(150.468, 429.099, 20, ampiezza: 527.64)[#text(weight: "bold", "macchina segue, non da come è costruita fisicamente.")]
   #riga(480, 82.34, 35, tinta: rosso, centro: true, ampiezza: 174.804)[#text(weight: "bold", "Software")]
@@ -23,8 +115,8 @@
   #riga(831.386, 528.275, 9.68, ampiezza: 98.813)[#text("Prof. Federico Mazzini")]
 ]
 
-// Pagina 34 del PDF ICDL “Computer e dispositivi”.
-#pagina-icdl(34, grafica: "/assets/icdl/software-04.svg")[
+// 43. Software.pdf, pagina 4 — Software
+#slide(grafica: "/assets/icdl/software-04.svg", titolo: "Software")[
   #riga(480, 82.34, 35, tinta: rosso, centro: true, ampiezza: 174.804)[#text(weight: "bold", "Software")]
   #riga(480, 115.79, 27, centro: true, ampiezza: 150.498)[#text(weight: "bold", "Programma")]
   #riga(51.745, 180.48, 17.5, ampiezza: 868.105)[#text("Un programma è un ")#text(weight: "bold", "insieme di istruzioni")#text(", ")#text(weight: "bold", "leggibili")#text(" da un computer, per ")#text(weight: "bold", "risolvere")#text(" in maniera ")#text(weight: "bold", "automatica")#text(" ")]
@@ -40,16 +132,8 @@
   #riga(831.386, 528.275, 9.68, ampiezza: 98.813)[#text("Prof. Federico Mazzini")]
 ]
 
-#slide("Il codice sorgente", "Programmi di dimensioni diverse")[
-  Un programma può contenere poche righe di codice oppure milioni. Le cifre mostrate nella slide precedente sono stime. Il conteggio dipende dalla versione del programma e da quali parti si includono.
-
-  #esempio[
-    Un semplice programma può calcolare il totale di due numeri. Un sistema operativo deve anche gestire file, memoria, periferiche e applicazioni.
-  ]
-]
-
-// Pagina 35 del PDF ICDL “Computer e dispositivi”.
-#pagina-icdl(35, grafica: "/assets/icdl/software-05.svg")[
+// 44. Software.pdf, pagina 5 — Software
+#slide(grafica: "/assets/icdl/software-05.svg", titolo: "Software")[
   #riga(527.058, 224.842, 17.325, ampiezza: 385.859)[#text("Tutti i software (programmi) che permettono di ")]
   #riga(527.058, 247.842, 17.325, ampiezza: 275.658)[#text("svolgere attività utili per gli utenti ")]
   #riga(549.058, 283.217, 17.325, ampiezza: 234.887)[#text("•")#text(" ")#text("Scrivere testi, mail, codice ")]
@@ -67,8 +151,15 @@
   #riga(831.386, 528.275, 9.68, ampiezza: 98.813)[#text("Prof. Federico Mazzini")]
 ]
 
-// Pagina 37 del PDF ICDL “Computer e dispositivi”.
-#pagina-icdl(37, grafica: "/assets/icdl/software-07.svg")[
+// 45. Software.pdf, pagina 6 — Sistema operativo
+#slide(titolo: "Sistema operativo")[
+  #riga(480, 267.16, 58, tinta: rosso, centro: true, ampiezza: 477.978)[#text(weight: "bold", "Sistema operativo")]
+  #riga(29.8, 528.275, 9.68, ampiezza: 156.758)[#text("Polo Tecnico Professionale di Lugo")]
+  #riga(831.386, 528.275, 9.68, ampiezza: 98.813)[#text("Prof. Federico Mazzini")]
+]
+
+// 46. Software.pdf, pagina 7 — Sistema operativo
+#slide(grafica: "/assets/icdl/software-07.svg", titolo: "Sistema operativo")[
   #riga(480, 82.34, 35, tinta: rosso, centro: true, ampiezza: 346.122)[#text(weight: "bold", "Sistema operativo")]
   #riga(480, 115.768, 27, centro: true, ampiezza: 481.005)[#text(weight: "bold", "Funzioni principali e astrazioni fornite")]
   #riga(235.41, 337.059, 15, ampiezza: 159.48)[#text("Esegue le applicazioni ")]
@@ -92,8 +183,8 @@
   #riga(831.386, 528.275, 9.68, ampiezza: 98.813)[#text("Prof. Federico Mazzini")]
 ]
 
-// Pagina 38 del PDF ICDL “Computer e dispositivi”.
-#lezione-icdl(38, "Sistema operativo", "Alcuni esempi")[
+// Integrazione syllabus: 1.3.2
+#lezione("Sistema operativo", "Alcuni esempi")[
 Il *sistema operativo* gestisce le risorse del dispositivo e fornisce gli strumenti per eseguire le applicazioni.
 
 - Nei *computer desktop e portatili* troviamo sistemi come Windows, macOS e le distribuzioni GNU/Linux, ad esempio Ubuntu.
@@ -102,28 +193,15 @@ Il *sistema operativo* gestisce le risorse del dispositivo e fornisce gli strume
 Un’applicazione deve essere compatibile con il sistema operativo e con il dispositivo su cui viene eseguita. Per questo un programma per Windows non si installa automaticamente su un telefono Android.
 ]
 
-#slide("Il sistema operativo al lavoro", "Processi, memoria e richieste delle app")[
-  Quando avvii un’applicazione, il sistema operativo gestisce il programma in esecuzione, chiamato *processo*, e gli assegna la RAM necessaria.
-
-  Un’applicazione può chiedere al sistema operativo di aprire un file o di usare la rete. Queste richieste si chiamano *chiamate di sistema* (_system call_).
+// 48. Software.pdf, pagina 9 — Software applicativo
+#slide(titolo: "Software applicativo")[
+  #riga(480, 267.16, 58, tinta: rosso, centro: true, ampiezza: 544.504)[#text(weight: "bold", "Software applicativo")]
+  #riga(29.8, 528.275, 9.68, ampiezza: 156.758)[#text("Polo Tecnico Professionale di Lugo")]
+  #riga(831.386, 528.275, 9.68, ampiezza: 98.813)[#text("Prof. Federico Mazzini")]
 ]
 
-#slide("Il file system", "File, cartelle e percorsi")[
-  #due-colonne(
-    [
-      Il *file system* organizza e ritrova i dati nella memoria secondaria.
-
-      Vediamo i dati come *file e cartelle*, senza dover conoscere la loro posizione fisica sull’unità. Questa semplificazione si chiama *astrazione*.
-
-      Il percorso indica quale ramo dell’albero seguire. Nell’esempio, il percorso della cartella *Grades* parte dall’unità *D:*.
-    ],
-    foto("albero-file", [Un albero di file e cartelle.], altezza: 244pt),
-    rapporto: (1.1fr, 1fr),
-  )
-]
-
-// Pagina 40 del PDF ICDL “Computer e dispositivi”.
-#pagina-icdl(40, grafica: "/assets/icdl/software-10.svg")[
+// 49. Software.pdf, pagina 10 — Software applicativo
+#slide(grafica: "/assets/icdl/software-10.svg", titolo: "Software applicativo")[
   #riga(38.801, 164.772, 17.5, ampiezza: 566.23)[#text("È il software che serve all’utente finale per fare qualcosa di concreto. ")]
   #riga(38.801, 200.772, 17.5, ampiezza: 893.997)[#text("Viene sempre eseguito dal sistema operativo, non comunica direttamente con l’hardware o la rete. Il S.O. ")]
   #riga(38.801, 224.272, 17.5, ampiezza: 894.005)[#text("fornisce gli strumenti, il software applicativo li usa per realizzare un obiettivo (scrittura di documenti, ")]
@@ -136,25 +214,11 @@ Un’applicazione deve essere compatibile con il sistema operativo e con il disp
   #riga(831.386, 528.275, 9.68, ampiezza: 98.813)[#text("Prof. Federico Mazzini")]
 ]
 
-#slide("Un messaggio su Telegram", "Come un’app usa i servizi del sistema operativo")[
-  + Scrivi un messaggio e premi *Invia*.
-  + Telegram gestisce il testo e la conversazione. Per trasmettere i dati usa i servizi di rete del *sistema operativo*.
+// Integrazione syllabus: 1.3.1
+#lezione("Software", "Installato localmente o disponibile online")[
+Il software *locale* è installato sul dispositivo. Ad esempio, posso aprire un programma di scrittura già presente sul computer e lavorare a un documento anche senza Internet, se le sue funzioni lo consentono.
 
-  #esempio[
-    Quando salvi un documento, l’applicazione usa un altro servizio del sistema operativo per registrare il file nella memoria secondaria.
-  ]
-]
+Il software *online* viene utilizzato attraverso Internet, spesso dal browser. Ad esempio, posso scrivere un documento condiviso senza installare sul computer l’intera applicazione.
 
-#slide("La scelta della piattaforma", "La versione adatta al sistema operativo")[
-  Prima di installare un’applicazione, controlla il *sistema operativo* del dispositivo. La stessa app può offrire versioni diverse.
-
-  #esempio[
-    La pagina di Telegram Desktop mostra download per Windows, macOS e Linux. Se il tuo computer usa macOS, scegli la versione dedicata a quel sistema.
-  ]
-]
-
-#slide("Prova a ragionare", "Il sistema operativo nel lavoro quotidiano")[
-  + Stai scrivendo con un programma mentre ascolti musica con un altro. Quale funzione del sistema operativo ti permette di usarli nello stesso periodo?
-  + Salvi la relazione nella cartella di informatica. Quale parte del sistema organizza e ritrova quel file?
-  + Una pagina di download offre versioni per Windows, Linux e macOS. Come scegli quella giusta?
+Alcuni programmi combinano le due modalità. Lavorare online può richiedere una connessione e un account; alcune applicazioni offrono anche funzioni offline.
 ]

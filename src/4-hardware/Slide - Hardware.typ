@@ -1,46 +1,95 @@
-#import "/styles/slides.typ": *
-#import "/styles/slides-icdl.typ": pagina-icdl, riga
+// Sezione Hardware di ICDL: src/1_computer_dispositivi.typ.
+// Escluse le due slide su Von Neumann e la docking station; numerazione progressiva.
 
-#show: presentazione.with("Hardware")
-#let foto(nome, didascalia, altezza: 155pt) = figura(
-  "/assets/immagini/4-hardware/" + nome + ".jpg", didascalia, altezza: altezza,
-)
+#let rosso = rgb("#c00000")
+#let grigio = rgb("#555555")
+#let larghezza = 864pt
+#let altezza-corpo = 390pt
+#let sfondo = rgb("#fbf4f3")
 
-#apertura("Hardware", "Componenti, periferiche e memorie")
+#let presentazione(body) = {
+  set document(title: "Hardware", author: "Federico Mazzini")
+  set page(width: 960pt, height: 540pt, margin: 0pt)
+  set text(font: "Libertinus Serif", size: 26pt, lang: "it", hyphenate: false,
+    fill: rgb("#202020"), top-edge: 0pt, bottom-edge: 0pt)
+  set par(leading: 0.44em, spacing: 0.8em, justify: false)
+  set list(indent: 4pt, body-indent: 11pt, tight: false, spacing: 0.5em)
+  set enum(numbering: "1", indent: 4pt, body-indent: 10pt, tight: false, spacing: 0.5em)
+  body
+}
 
-// Pagina 11 del PDF ICDL “Computer e dispositivi”.
-#pagina-icdl(11, grafica: "/assets/icdl/hardware-03.svg")[
-  #riga(480, 82.34, 35, tinta: rosso, centro: true, ampiezza: 555.576)[#text(weight: "bold", "Architettura di Von Neumann")]
-  #riga(480, 115.79, 27, centro: true, ampiezza: 552.042)[#text(weight: "bold", "Funzionamento di un computer in generale")]
-  #riga(47, 171.475, 17.5, ampiezza: 562.328)[#text("Possiamo schematizzare il lavoro di un computer nel modo seguente")]
-  #riga(47, 376.459, 17.5, ampiezza: 686.893)[#text(weight: "bold", "Input")#text(": il computer riceve dati dall’esterno, ad esempio da tastiera, mouse o sensori. ")]
-  #riga(47, 411.959, 17.5, ampiezza: 782.705)[#text(weight: "bold", "Elaborazione")#text(": i dati vengono processati dal processore, seguendo istruzioni memorizzate nella ")]
-  #riga(47, 435.459, 17.5, ampiezza: 207.988)[#text("memoria (il programma). ")]
-  #riga(47, 470.959, 17.5, ampiezza: 808.378)[#text(weight: "bold", "Output")#text(": viene elaborato un risultato e restituito in output, ad esempio mostrandolo sullo schermo, ")]
-  #riga(47, 494.459, 17.5, ampiezza: 518.49)[#text("stampandolo su un foglio, salvandolo su un dispositivo esterno.")]
+// Le coordinate sono in punti nel formato 16:9 del modello.
+// Ogni riga mantiene posizione, capoversi ed enfasi del PDF di origine.
+#let riga(x, y, corpo, body, tinta: rgb("#202020"), peso: "regular", angolo: 0deg,
+    centro: false, ampiezza: none, url: none) = context {
+  let contenuto = text(size: corpo * 1pt, fill: tinta, weight: peso, body)
+  if url != none { contenuto = link(url, contenuto) }
+  let misura = measure(contenuto)
+  // Riduce solo le righe che supererebbero il loro ingombro originale.
+  if ampiezza != none and misura.width > ampiezza * 1pt {
+    contenuto = scale(x: ampiezza * 1pt / misura.width * 100%, y: 100%,
+      origin: left + top, reflow: true, contenuto)
+  }
+  let offset = if centro { measure(contenuto).width / 2 } else { 0pt }
+  place(top + left, dx: x * 1pt - offset, dy: y * 1pt,
+    rotate(angolo, origin: left + top, reflow: false, contenuto))
+}
+
+#let slide(grafica: none, titolo: "", body) = page[
+  #if grafica != none {
+    place(top + left, image(grafica, width: 960pt, height: 540pt))
+  }
+  #body
+  // Il piccolo fregio rosso è il segno grafico del modello.
+  #place(top + left, dx: 48pt, dy: 26pt,
+    rect(width: 40pt, height: 3pt, fill: rosso, stroke: none))
+  // I crediti originali restano nella fascia inferiore; il contatore è progressivo.
+  #place(top + left, dx: 370pt, dy: 525pt, box(width: 220pt)[
+    #context align(center)[#text(size: 11pt, fill: grigio)[#counter(page).display() / #counter(page).final().first()]]
+  ])
+]
+
+
+// Nuove slide: stessi caratteri, titoli centrati, colori e piè di pagina.
+// Il corpo scorre in paragrafi modificabili, senza coordinate per ogni riga.
+#let area-nuova(body) = context {
+  for corpo in (26, 25, 24, 23) {
+    let prova = block(width: 832pt, breakable: false)[
+      #set text(size: corpo * 1pt, top-edge: "cap-height", bottom-edge: "descender")
+      #set par(leading: 0.32em, spacing: 0.58em)
+      #set list(indent: 5pt, body-indent: 12pt, spacing: 0.45em)
+      #body
+    ]
+    if measure(prova, width: 832pt).height <= 338pt { return prova }
+  }
+  panic("Il testo della nuova slide supera l'area disponibile.")
+}
+#let lezione(titolo, sottotitolo, body) = slide(titolo: titolo)[
+  #riga(480, 82.34, 35, tinta: rosso, centro: true, ampiezza: 864)[#text(weight: "bold", titolo)]
+  #riga(480, 115.79, 27, centro: true, ampiezza: 864)[#text(weight: "bold", sottotitolo)]
+  #place(top + left, dx: 64pt, dy: 158pt, area-nuova(body))
+  #riga(29.8, 528.275, 9.68)[#text("Polo Tecnico Professionale di Lugo")]
+  #riga(831.386, 528.275, 9.68)[#text("Prof. Federico Mazzini")]
+]
+#let apertura(titolo, sottotitolo) = slide(titolo: titolo)[
+  #riga(480, 292, 48, tinta: rosso, centro: true, ampiezza: 864)[#text(weight: "bold", titolo)]
+  #riga(480, 334, 28, centro: true, ampiezza: 864)[#text(weight: "bold", sottotitolo)]
+  #riga(29.8, 528.275, 9.68)[#text("Polo Tecnico Professionale di Lugo")]
+  #riga(831.386, 528.275, 9.68)[#text("Prof. Federico Mazzini")]
+]
+
+#show: presentazione
+
+// 11. Hardware.pdf, pagina 1 — Hardware
+#slide(titolo: "Hardware")[
+  #riga(480, 267.16, 58, tinta: rosso, centro: true, ampiezza: 261.58)[#text(weight: "bold", "Hardware")]
+  #riga(480, 312.14, 32, centro: true, ampiezza: 469.184)[#text(weight: "bold", "Le componenti di un computer")]
   #riga(29.8, 528.275, 9.68, ampiezza: 156.758)[#text("Polo Tecnico Professionale di Lugo")]
   #riga(831.386, 528.275, 9.68, ampiezza: 98.813)[#text("Prof. Federico Mazzini")]
 ]
 
-// Pagina 12 del PDF ICDL “Computer e dispositivi”.
-#pagina-icdl(12, grafica: "/assets/icdl/hardware-04.svg")[
-  #riga(480, 82.34, 35, tinta: rosso, centro: true, ampiezza: 555.576)[#text(weight: "bold", "Architettura di Von Neumann")]
-  #riga(480, 115.79, 27, centro: true, ampiezza: 154.494)[#text(weight: "bold", "Idea di base")]
-  #riga(47, 171.475, 17.5, ampiezza: 475.885)[#text("L’architettura di Von Neumann è il ")#text(weight: "bold", "modello alla base dei ")]
-  #riga(47, 194.975, 17.5, ampiezza: 477.078)[#text(weight: "bold", "computer moderni")#text(". L’idea è quella di avere un unica ")]
-  #riga(47, 218.475, 17.5, ampiezza: 477.078)[#text("memoria in cui vengono mantenuti sia i ")#text(weight: "bold", "dati")#text(" sia le ")]
-  #riga(47, 241.975, 17.5, ampiezza: 196.962)[#text(weight: "bold", "istruzioni")#text(" (programmi). ")]
-  #riga(47, 277.475, 17.5, ampiezza: 187.915)[#text("Componenti principali ")]
-  #riga(72, 312.975, 17.5, ampiezza: 57.552)[#text(weight: "bold", "•")#text(weight: "bold", " ")#text(weight: "bold", "CPU ")]
-  #riga(72, 348.475, 17.5, ampiezza: 171.109)[#text(weight: "bold", "•")#text(weight: "bold", " ")#text(weight: "bold", "Memoria centrale ")]
-  #riga(72, 383.975, 17.5, ampiezza: 129.337)[#text(weight: "bold", "•")#text(weight: "bold", " ")#text(weight: "bold", "Input/output ")]
-  #riga(72, 419.475, 17.5, ampiezza: 47.839)[#text(weight: "bold", "•")#text(weight: "bold", " ")#text(weight: "bold", "Bus")]
-  #riga(29.8, 528.275, 9.68, ampiezza: 156.758)[#text("Polo Tecnico Professionale di Lugo")]
-  #riga(831.386, 528.275, 9.68, ampiezza: 98.813)[#text("Prof. Federico Mazzini")]
-]
-
-// Pagina 13 del PDF ICDL “Computer e dispositivi”.
-#pagina-icdl(13, grafica: "/assets/icdl/hardware-06.svg")[
+// 16. Hardware.pdf, pagina 6 — Componenti di un computer
+#slide(grafica: "/assets/icdl/hardware-06.svg", titolo: "Componenti di un computer")[
   #riga(480, 82.34, 35, tinta: rosso, centro: true, ampiezza: 539.574)[#text(weight: "bold", "Componenti di un computer")]
   #riga(480, 115.79, 27, centro: true, ampiezza: 64.206)[#text(weight: "bold", "Case")]
   #riga(49.819, 194.914, 20, ampiezza: 670)[#text("Il ")#text(weight: "bold", "case ")#text("è il contenitore che ospita e protegge i componenti interni di un ")]
@@ -56,8 +105,8 @@
   #riga(831.386, 528.275, 9.68, ampiezza: 98.813)[#text("Prof. Federico Mazzini")]
 ]
 
-// Pagina 14 del PDF ICDL “Computer e dispositivi”.
-#pagina-icdl(14, grafica: "/assets/icdl/hardware-07.svg")[
+// 17. Hardware.pdf, pagina 7 — Componenti di un computer
+#slide(grafica: "/assets/icdl/hardware-07.svg", titolo: "Componenti di un computer")[
   #riga(480, 82.34, 35, tinta: rosso, centro: true, ampiezza: 539.574)[#text(weight: "bold", "Componenti di un computer")]
   #riga(480, 115.79, 27, centro: true, ampiezza: 186.219)[#text(weight: "bold", "Scheda madre")]
   #riga(75.884, 181.752, 20, ampiezza: 786.16)[#text("La ")#text(weight: "bold", "scheda")#text(" ")#text(weight: "bold", "madre")#text(" è il cuore di ogni computer. Si tratta di una ")#text(weight: "bold", "piastra")#text(" ")#text(weight: "bold", "che raccoglie ")]
@@ -67,66 +116,8 @@
   #riga(831.386, 528.275, 9.68, ampiezza: 98.813)[#text("Prof. Federico Mazzini")]
 ]
 
-// Pagina 24 del PDF ICDL “Computer e dispositivi”.
-#pagina-icdl(24, grafica: "/assets/icdl/hardware-11.svg")[
-  #riga(480, 82.34, 35, tinta: rosso, centro: true, ampiezza: 539.574)[#text(weight: "bold", "Componenti di un computer")]
-  #riga(480, 115.79, 27, centro: true, ampiezza: 244.566)[#text(weight: "bold", "Periferiche di input")]
-  #riga(75.884, 180.027, 17.5, ampiezza: 808.833)[#text("Una periferica di input è qualsiasi dispositivo che permette al computer di ")#text(weight: "bold", "ricevere dati e comandi ")]
-  #riga(75.884, 203.86, 17.5, ampiezza: 745.57)[#text(weight: "bold", "dall’esterno")#text(". Senza periferiche di input, il computer sarebbe come una scatola chiusa: ")#text(weight: "bold", "non ")]
-  #riga(75.884, 227.692, 17.5, ampiezza: 545.177)[#text(weight: "bold", "riceverebbe alcuna informazione")#text(" e quindi non potrebbe fare nulla.")]
-  #riga(29.8, 528.275, 9.68, ampiezza: 156.758)[#text("Polo Tecnico Professionale di Lugo")]
-  #riga(831.386, 528.275, 9.68, ampiezza: 98.813)[#text("Prof. Federico Mazzini")]
-]
-
-// Pagina 25 del PDF ICDL “Computer e dispositivi”.
-#pagina-icdl(25, grafica: "/assets/icdl/hardware-12.svg")[
-  #riga(480, 82.34, 35, tinta: rosso, centro: true, ampiezza: 539.574)[#text(weight: "bold", "Componenti di un computer")]
-  #riga(480, 115.79, 27, centro: true, ampiezza: 263.628)[#text(weight: "bold", "Periferiche di output")]
-  #riga(75.884, 192.022, 17.5, ampiezza: 795.148)[#text("Una periferica di output è qualsiasi dispositivo che permette al computer di mostrare risultati e/o ")]
-  #riga(75.884, 215.522, 17.5, ampiezza: 682.682)[#text("comunicare con l’esterno")#text(". Senza output, nessun risultato sarebbe visibile o utilizzabile.")]
-  #riga(29.8, 528.275, 9.68, ampiezza: 156.758)[#text("Polo Tecnico Professionale di Lugo")]
-  #riga(831.386, 528.275, 9.68, ampiezza: 98.813)[#text("Prof. Federico Mazzini")]
-]
-
-// Pagina 26 del PDF ICDL “Computer e dispositivi”.
-#pagina-icdl(26, grafica: "/assets/icdl/hardware-13.svg")[
-  #riga(480, 82.34, 35, tinta: rosso, centro: true, ampiezza: 539.574)[#text(weight: "bold", "Componenti di un computer")]
-  #riga(480, 115.79, 27, centro: true, ampiezza: 339.984)[#text(weight: "bold", "Periferiche di input/output")]
-  #riga(75.884, 180.027, 17.5, ampiezza: 785.698)[#text("Una periferica di input/output è un dispositivo con duplice funzione, permette di ")#text(weight: "bold", "ricevere dati e ")]
-  #riga(75.884, 203.86, 17.5, ampiezza: 785.698)[#text(weight: "bold", "fornire risultati")#text(". È quindi necessario che svolga entrambe le funzioni: input e output.")]
-  #riga(29.8, 528.275, 9.68, ampiezza: 156.758)[#text("Polo Tecnico Professionale di Lugo")]
-  #riga(831.386, 528.275, 9.68, ampiezza: 98.813)[#text("Prof. Federico Mazzini")]
-]
-
-// Pagina 29 del PDF ICDL “Computer e dispositivi”.
-#pagina-icdl(29, grafica: "/assets/icdl/hardware-14.svg")[
-  #riga(480, 82.34, 35, tinta: rosso, centro: true, ampiezza: 539.574)[#text(weight: "bold", "Componenti di un computer")]
-  #riga(480, 115.79, 27, centro: true, ampiezza: 335.097)[#text(weight: "bold", "Interfacce e porte esterne")]
-  #riga(83.412, 274.106, 15, ampiezza: 130.08)[#text(weight: "bold", "Esempi principali ")]
-  #riga(96.412, 306.106, 15, ampiezza: 423.142)[#text("•")#text(" ")#text("USB (Type A, Type C): collegare tastiere, mouse, memorie ")]
-  #riga(112.453, 326.106, 15, ampiezza: 396.525)[#text("esterne (chiavette), nei dispositivi mobili utilizzata come ")]
-  #riga(112.453, 346.106, 15, ampiezza: 102)[#text("alimentazione ")]
-  #riga(96.412, 378.106, 15, ampiezza: 400.027)[#text("•")#text(" ")#text("HDMI: collegare monitor o proiettori per video e audio ")]
-  #riga(96.412, 410.106, 15, ampiezza: 279.922)[#text("•")#text(" ")#text("Ethernet: collegamento a reti cablate ")]
-  #riga(96.412, 442.106, 15, ampiezza: 263.737)[#text("•")#text(" ")#text("Jack audio: uscita e ingresso audio ")]
-  #riga(96.412, 474.106, 15, ampiezza: 446.662)[#text("•")#text(" ")#text("slot per schede SD, pulsanti di accensione, led di stato e altro")]
-  #riga(84.11, 171.788, 17.5, ampiezza: 816.882)[#text("Le ")#text(weight: "bold", "interfacce")#text(" e le ")#text(weight: "bold", "porte")#text(" ")#text(weight: "bold", "esterne")#text(" permettono al computer di ")#text(weight: "bold", "comunicare con il mondo esterno")#text(", ")]
-  #riga(84.11, 195.288, 17.5, ampiezza: 816.881)[#text("collegando ")#text(weight: "bold", "periferiche")#text(" di input e output, i ")#text(weight: "bold", "collegamenti")#text(" ")#text(weight: "bold", "di")#text(" ")#text(weight: "bold", "rete")#text(" e ")#text(weight: "bold", "sistemi")#text(" ")#text(weight: "bold", "di")#text(" ")#text(weight: "bold", "archiviazione")#text(". Le ")]
-  #riga(84.11, 218.788, 17.5, ampiezza: 816.888)[#text("porte esterne sono i connettori fisici, mentre le interfacce sono le regole e i protocolli che ")]
-  #riga(84.11, 242.288, 17.5, ampiezza: 452.795)[#text("permettono ai dispositivi di comunicare correttamente.")]
-  #riga(29.8, 528.275, 9.68, ampiezza: 156.758)[#text("Polo Tecnico Professionale di Lugo")]
-  #riga(831.386, 528.275, 9.68, ampiezza: 98.813)[#text("Prof. Federico Mazzini")]
-]
-
-#slide("Altri componenti interni", "Grafica, energia, raffreddamento ed espansione")[
-  - *GPU.* Elabora la grafica. Può essere integrata o trovarsi su una scheda dedicata.
-  - *Alimentazione.* L’alimentatore o la batteria forniscono energia ai componenti.
-  - *Raffreddamento.* Dissipatori, ventole o circuiti a liquido allontanano il calore.
-  - *Schede aggiuntive.* Si inseriscono negli slot della scheda madre e aggiungono funzioni come Wi-Fi o audio.
-]
-
-// Pagina 15 del PDF ICDL “Computer e dispositivi”.
-#pagina-icdl(15, grafica: "/assets/icdl/hardware-08.svg")[
+// 18. Hardware.pdf, pagina 8 — Componenti di un computer
+#slide(grafica: "/assets/icdl/hardware-08.svg", titolo: "Componenti di un computer")[
   #riga(480, 82.34, 35, tinta: rosso, centro: true, ampiezza: 539.574)[#text(weight: "bold", "Componenti di un computer")]
   #riga(480, 115.79, 27, centro: true, ampiezza: 55.971)[#text(weight: "bold", "CPU")]
   #riga(47, 196.268, 20, ampiezza: 500.02)[#text("La ")#text(weight: "bold", "CPU")#text(" (")#text(weight: "bold", "Central")#text(" ")#text(weight: "bold", "Processing")#text(" ")#text(weight: "bold", "Unit")#text(") o ")#text(weight: "bold", "processore")#text(", è il ")]
@@ -139,26 +130,29 @@
   #riga(831.386, 528.275, 9.68, ampiezza: 98.813)[#text("Prof. Federico Mazzini")]
 ]
 
-#slide("I transistor", "Dai circuiti ai valori binari")[
-  Una CPU moderna contiene miliardi di *transistor*. Possiamo immaginarli come minuscoli interruttori elettronici: i loro circuiti permettono di rappresentare ed elaborare valori binari.
-
-  #esempio[
-    Un nanometro è un miliardesimo di metro. In uno spessore di 0,06 mm, simile a quello di un capello, entrano 20.000 segmenti da 3 nm.
-  ]
+// 28. Hardware.pdf, pagina 18 — CPU
+#slide(grafica: "/assets/icdl/hardware-18.svg", titolo: "CPU")[
+  #riga(240, 82.84, 35, tinta: rosso, centro: true, ampiezza: 86.226)[#text(weight: "bold", "CPU")]
+  #riga(240, 115.79, 27, centro: true, ampiezza: 241.272)[#text(weight: "bold", "Frequenza di clock")]
+  #riga(54.5, 171.55, 15, ampiezza: 420.702)[#text("La frequenza di clock indica la ")#text(weight: "bold", "velocità")#text(" ")#text(weight: "bold", "con cui la CPU ")]
+  #riga(54.5, 191.55, 15, ampiezza: 421.725)[#text(weight: "bold", "lavora")#text(". Più è alto il clock, più velocemente la CPU esegue ")]
+  #riga(54.5, 211.55, 15, ampiezza: 98.115)[#text("le operazioni. ")]
+  #riga(54.5, 246.55, 15, ampiezza: 421.723)[#text("L’unità di misura è l’")#text(weight: "bold", "Hertz")#text(" (")#text(weight: "bold", "Hz")#text("): oggi i processori normali ")]
+  #riga(54.5, 266.55, 15, ampiezza: 421.719)[#text("hanno frequenze nell’ordine dei GHz -> 1.000.000.000 di ")]
+  #riga(54.5, 286.55, 15, ampiezza: 117.51)[#text("cicli al secondo! ")]
+  #riga(54.5, 321.55, 15, ampiezza: 421.738)[#text("Questi numeri possono sembrare enormi, ma sono ")]
+  #riga(54.5, 341.55, 15, ampiezza: 421.721)[#text("necessari! Anche solo per ")#text(weight: "bold", "eseguire un’app")#text(", ")#text("il computer ")]
+  #riga(54.5, 361.835, 15, ampiezza: 421.722)[#text("deve aggiornare continuamente lo schermo (i pixel che si ")]
+  #riga(54.5, 381.835, 15, ampiezza: 421.725)[#text("accendono e si spengono) e nel frattempo gestire tante ")]
+  #riga(54.5, 401.835, 15, ampiezza: 421.727)[#text("altre cose: “ascoltare” il touch o la tastiera, aggiornare la ")]
+  #riga(54.5, 421.835, 15, ampiezza: 421.721)[#text("connessione a internet, ascoltare l’arrivo delle notifiche, ")]
+  #riga(54.5, 441.835, 15, ampiezza: 233.445)[#text("aggiornare le app in background.")]
+  #riga(29.8, 528.275, 9.68, ampiezza: 156.758)[#text("Polo Tecnico Professionale di Lugo")]
+  #riga(831.386, 528.275, 9.68, ampiezza: 98.813)[#text("Prof. Federico Mazzini")]
 ]
 
-#slide("La frequenza di clock", "Quanti cicli avvengono in un secondo")[
-  Il *clock* scandisce il lavoro della CPU con cicli regolari. *1 GHz* corrisponde a un miliardo di cicli al secondo.
-
-  Per eseguire le istruzioni, il processore usa questi intervalli in modi diversi. La durata del lavoro dipende anche dal programma e dall’architettura della CPU.
-
-  #esempio[
-    Per confrontare due processori, oltre alla frequenza guarda il numero di core e considera il tipo di programma che dovranno eseguire.
-  ]
-]
-
-// Pagina 17 del PDF ICDL “Computer e dispositivi”.
-#pagina-icdl(17, grafica: "/assets/icdl/hardware-19.svg")[
+// 29. Hardware.pdf, pagina 19 — CPU
+#slide(grafica: "/assets/icdl/hardware-19.svg", titolo: "CPU")[
   #riga(240, 82.84, 35, tinta: rosso, centro: true, ampiezza: 86.226)[#text(weight: "bold", "CPU")]
   #riga(240, 115.79, 27, centro: true, ampiezza: 62.613)[#text(weight: "bold", "Core")]
   #riga(58.619, 165.724, 16.5, ampiezza: 409.721)[#text("Una CPU dotata di un singolo core esegue un’unica ")]
@@ -183,30 +177,28 @@
   #riga(831.386, 528.275, 9.68, ampiezza: 98.813)[#text("Prof. Federico Mazzini")]
 ]
 
-#slide("Memoria centrale e secondaria", "Il piano di lavoro e il magazzino")[
-  #tavola("/assets/svg/hardware-software/memorie.svg", altezza: 182pt)
-
-  La *RAM* contiene i dati e le istruzioni in uso. È come un piano di lavoro: i materiali sono a portata di mano.
-
-  La *memoria secondaria* (SSD o HDD) conserva file e programmi anche a computer spento, come un magazzino.
+// 30. Hardware.pdf, pagina 20 — Memoria
+#slide(titolo: "Memoria")[
+  #riga(480, 314.983, 60, tinta: rosso, centro: true, ampiezza: 250.02)[#text(weight: "bold", "Memoria")]
+  #riga(29.8, 528.275, 9.68, ampiezza: 156.758)[#text("Polo Tecnico Professionale di Lugo")]
+  #riga(831.386, 528.275, 9.68, ampiezza: 98.813)[#text("Prof. Federico Mazzini")]
 ]
 
-#slide("Capacità e velocità delle memorie", "Quanti dati e quanto tempo")[
-  La *capacità* indica quanti dati può contenere una memoria. La *velocità di trasferimento* indica quanti dati possiamo leggere o scrivere ogni secondo.
-
-  #table(
-    columns: (1fr, 1.2fr, 1.1fr),
-    table.header([*Memoria*], [*Velocità indicativa*], [*Capacità di esempio*]),
-    [RAM], [20–30 GB/s], [2–64 GB],
-    [SSD], [1–7 GB/s], [128 GB–2 TB],
-    [HDD], [100–200 MB/s], [500 GB–10 TB],
-  )
-
-  Sono valori indicativi. La velocità effettiva dipende anche dal dispositivo, dal collegamento e dal tipo di operazione.
+// 20. Hardware.pdf, pagina 10 — Componenti di un computer
+#slide(grafica: "/assets/icdl/hardware-10.svg", titolo: "Componenti di un computer")[
+  #riga(51.165, 178.065, 20, ampiezza: 557.035)[#text("La ")#text(weight: "bold", "memoria")#text(" ")#text(weight: "bold", "centrale")#text(" è la ")#text(weight: "bold", "principale")#text(" del computer. Viene ")]
+  #riga(51.165, 204.565, 20, ampiezza: 557.037)[#text("utilizzata per ")#text(weight: "bold", "memorizzare")#text(" i ")#text(weight: "bold", "dati")#text(" e i ")#text(weight: "bold", "programmi")#text(" ")]
+  #riga(51.165, 231.065, 20, ampiezza: 557.037)[#text(weight: "bold", "attualmente")#text(" ")#text(weight: "bold", "in")#text(" ")#text(weight: "bold", "esecuzione")#text(". E’ una memoria ")#text(weight: "bold", "temporanea")#text(" ")]
+  #riga(51.165, 257.565, 20, ampiezza: 557.032)[#text("il cui contenuto viene completamente cancellato quando ")]
+  #riga(51.165, 284.065, 20, ampiezza: 206.7)[#text("si spegne il computer.")]
+  #riga(480, 115.79, 27, centro: true, ampiezza: 230.877)[#text(weight: "bold", "Memoria Centrale")]
+  #riga(480, 82.34, 35, tinta: rosso, centro: true, ampiezza: 539.574)[#text(weight: "bold", "Componenti di un computer")]
+  #riga(29.8, 528.275, 9.68, ampiezza: 156.758)[#text("Polo Tecnico Professionale di Lugo")]
+  #riga(831.386, 528.275, 9.68, ampiezza: 98.813)[#text("Prof. Federico Mazzini")]
 ]
 
-// Pagina 20 del PDF ICDL “Computer e dispositivi”.
-#pagina-icdl(20, grafica: "/assets/icdl/hardware-23.svg")[
+// 33. Hardware.pdf, pagina 23 — Memoria
+#slide(grafica: "/assets/icdl/hardware-23.svg", titolo: "Memoria")[
   #riga(47, 171.475, 17.5, ampiezza: 470)[#text("La RAM (Random Access Memory) è una memoria ad accesso casuale.")]
   #riga(47, 190.475, 17.5, ampiezza: 360.238)[#text("Le sue caratteristiche sono:")]
   #riga(72, 207.475, 17.5, ampiezza: 438.523)[#text(weight: "bold", "•")#text(weight: "bold", " ")#text(weight: "bold", "tempo di accesso rapido")#text(" e garantisce alte ")]
@@ -225,8 +217,26 @@
   #riga(831.386, 528.275, 9.68, ampiezza: 98.813)[#text("Prof. Federico Mazzini")]
 ]
 
-// Pagina 22 del PDF ICDL “Computer e dispositivi”.
-#pagina-icdl(22, grafica: "/assets/icdl/hardware-24.svg")[
+// 19. Hardware.pdf, pagina 9 — Componenti di un computer
+#slide(titolo: "Componenti di un computer")[
+  #riga(47, 171.475, 17.5, ampiezza: 870.636)[#text("La memoria secondaria è utilizzata per ")#text(weight: "bold", "memorizzare i dati ")#text("in modo")#text(weight: "bold", " permanente")#text(", cioè fino alla loro ")]
+  #riga(47, 194.975, 17.5, ampiezza: 869.448)[#text("eventuale cancellazione. È caratterizzata da ")#text(weight: "bold", "grande capacità di archiviazione")#text(", ")#text(weight: "bold", "tempi di accesso più lenti ")]
+  #riga(47, 218.475, 17.5, ampiezza: 870.637)[#text("rispetto alla memoria principale e ")#text(weight: "bold", "non volatilità")#text(", poiché i dati rimangono memorizzati anche dopo lo ")]
+  #riga(47, 241.975, 17.5, ampiezza: 232.085)[#text("spegnimento del computer. ")]
+  #riga(47, 288.975, 17.5, ampiezza: 474.18)[#text("Esistono ")#text(weight: "bold", "due principali tipologie")#text(" di memoria secondaria: ")]
+  #riga(72, 324.975, 17.5, ampiezza: 201.244)[#text("•")#text(weight: "bold", " ")#text(weight: "bold", "HDD")#text(" (Hard Disk Drive) ")]
+  #riga(72, 360.975, 17.5, ampiezza: 207.824)[#text("•")#text(weight: "bold", " ")#text(weight: "bold", "SSD")#text(" (Solid State Drive) ")]
+  #riga(47, 432.975, 17.5, ampiezza: 870.635)[#text("Si può immaginare la memoria secondaria come un ")#text(weight: "bold", "magazzino")#text(", uno spazio molto grande in cui ")]
+  #riga(47, 456.475, 17.5, ampiezza: 870.631)[#text("archiviare/salvare dati, file e programmi, mentre la memoria principale rappresenta il bancone di lavoro ")]
+  #riga(47, 479.975, 17.5, ampiezza: 407.943)[#text("su cui i dati vengono elaborati temporaneamente.")]
+  #riga(480, 82.34, 35, tinta: rosso, centro: true, ampiezza: 539.574)[#text(weight: "bold", "Componenti di un computer")]
+  #riga(480, 115.79, 27, centro: true, ampiezza: 266.706)[#text(weight: "bold", "Memoria Secondaria")]
+  #riga(29.8, 528.275, 9.68, ampiezza: 156.758)[#text("Polo Tecnico Professionale di Lugo")]
+  #riga(831.386, 528.275, 9.68, ampiezza: 98.813)[#text("Prof. Federico Mazzini")]
+]
+
+// 34. Hardware.pdf, pagina 24 — Memoria
+#slide(grafica: "/assets/icdl/hardware-24.svg", titolo: "Memoria")[
   #riga(47, 170.096, 16.975, ampiezza: 183.619)[#text(weight: "bold", "Hard Disk Drive(HDD)")#text(" ")]
   #riga(47, 192.096, 16.975, ampiezza: 500.559)[#text("Gli Hard Disk funzionano grazie a ")#text(weight: "bold", "dischi magnetici rotanti ")#text("e ")]
   #riga(47, 214.096, 16.975, ampiezza: 500.55)[#text("parti meccaniche ")#text(weight: "bold", "mobili")#text(" (come le testine di lettura e ")]
@@ -247,55 +257,81 @@
   #riga(480, 82.34, 35, tinta: rosso, centro: true, ampiezza: 172.494)[#text(weight: "bold", "Memoria")]
 ]
 
-#slide("La cache", "Dati a portata di CPU")[
-  #due-colonne(
-    [
-      La *cache* è una memoria più piccola e veloce della RAM, integrata nella CPU o molto vicina a essa.
+// Integrazione syllabus: 1.2.2
+#lezione("Prestazioni del computer", "CPU, RAM e memoria di massa")[
+Le prestazioni dipendono da *più componenti che lavorano insieme*.
 
-      Tiene copie di dati e istruzioni che la CPU potrebbe riusare. Se il dato è già nella cache, la CPU lo ottiene più rapidamente.
-    ],
-    foto("cache", [I livelli di cache L1 e L2 nello schema.], altezza: 245pt),
-    rapporto: (1.2fr, 1fr),
-  )
+- *CPU*: esegue le istruzioni. Contano la sua architettura, il clock e i core; più GHz da soli non bastano a confrontare processori diversi.
+- *RAM*: contiene i dati e i programmi in uso. Se è insufficiente, lavorare con molte applicazioni aperte può rallentare il computer.
+- *Memoria di massa*: conserva file e programmi. Un SSD, rispetto a un HDD, riduce in genere i tempi di avvio e di caricamento.
 ]
 
-#slide("ROM, memoria flash e avvio", "Le prime istruzioni restano disponibili")[
-  La *ROM* (_Read Only Memory_) è una memoria *non volatile* destinata alla lettura di dati già registrati. Può contenere istruzioni fondamentali per un dispositivo.
-
-  Nei computer moderni il *firmware* di avvio è spesso conservato in una memoria *flash*: mantiene i dati a computer spento e consente di aggiornare il firmware.
+// 21. Hardware.pdf, pagina 11 — Componenti di un computer
+#slide(grafica: "/assets/icdl/hardware-11.svg", titolo: "Componenti di un computer")[
+  #riga(480, 82.34, 35, tinta: rosso, centro: true, ampiezza: 539.574)[#text(weight: "bold", "Componenti di un computer")]
+  #riga(480, 115.79, 27, centro: true, ampiezza: 244.566)[#text(weight: "bold", "Periferiche di input")]
+  #riga(75.884, 180.027, 17.5, ampiezza: 808.833)[#text("Una periferica di input è qualsiasi dispositivo che permette al computer di ")#text(weight: "bold", "ricevere dati e comandi ")]
+  #riga(75.884, 203.86, 17.5, ampiezza: 745.57)[#text(weight: "bold", "dall’esterno")#text(". Senza periferiche di input, il computer sarebbe come una scatola chiusa: ")#text(weight: "bold", "non ")]
+  #riga(75.884, 227.692, 17.5, ampiezza: 545.177)[#text(weight: "bold", "riceverebbe alcuna informazione")#text(" e quindi non potrebbe fare nulla.")]
+  #riga(29.8, 528.275, 9.68, ampiezza: 156.758)[#text("Polo Tecnico Professionale di Lugo")]
+  #riga(831.386, 528.275, 9.68, ampiezza: 98.813)[#text("Prof. Federico Mazzini")]
 ]
 
-#slide("L’attività dei pancake", "Ingredienti, strumenti e ricetta")[
-  #due-colonne(
-    [
-      *Ingredienti.* 250 ml di latte, 200 g di farina 00, 65 g di zucchero e 1 uovo.
-
-      *Strumenti.* Una ciotola, una padella e una frusta.
-
-      *Ricetta.* Mescola l’uovo con lo zucchero. Aggiungi latte e farina mescolando. Versa il composto in padella e cuoci per circa 4 minuti.
-    ],
-    foto("pancake", [Pancake pronti da servire.], altezza: 237pt),
-    rapporto: (1.3fr, 1fr),
-  )
+// 22. Hardware.pdf, pagina 12 — Componenti di un computer
+#slide(grafica: "/assets/icdl/hardware-12.svg", titolo: "Componenti di un computer")[
+  #riga(480, 82.34, 35, tinta: rosso, centro: true, ampiezza: 539.574)[#text(weight: "bold", "Componenti di un computer")]
+  #riga(480, 115.79, 27, centro: true, ampiezza: 263.628)[#text(weight: "bold", "Periferiche di output")]
+  #riga(75.884, 192.022, 17.5, ampiezza: 795.148)[#text("Una periferica di output è qualsiasi dispositivo che permette al computer di mostrare risultati e/o ")]
+  #riga(75.884, 215.522, 17.5, ampiezza: 682.682)[#text("comunicare con l’esterno")#text(". Senza output, nessun risultato sarebbe visibile o utilizzabile.")]
+  #riga(29.8, 528.275, 9.68, ampiezza: 156.758)[#text("Polo Tecnico Professionale di Lugo")]
+  #riga(831.386, 528.275, 9.68, ampiezza: 98.813)[#text("Prof. Federico Mazzini")]
 ]
 
-#slide("Due modi di preparare i pancake", "Materiali lontani o sul piano di lavoro")[
-  + *Prima esecuzione.* Gli ingredienti e gli strumenti sono sparsi. Ogni volta che ti serve qualcosa, interrompi la preparazione per andare a prenderlo.
-  + *Seconda esecuzione.* Gli stessi materiali sono sul piano di lavoro. Li raggiungi senza allontanarti.
-
-  #esempio[
-    La ricetta rappresenta il *programma*. Il piano di lavoro rappresenta la *RAM*. Dove metteresti i materiali da conservare quando il lavoro è finito? A quale memoria corrisponde quel posto?
-  ]
+// 23. Hardware.pdf, pagina 13 — Componenti di un computer
+#slide(grafica: "/assets/icdl/hardware-13.svg", titolo: "Componenti di un computer")[
+  #riga(480, 82.34, 35, tinta: rosso, centro: true, ampiezza: 539.574)[#text(weight: "bold", "Componenti di un computer")]
+  #riga(480, 115.79, 27, centro: true, ampiezza: 339.984)[#text(weight: "bold", "Periferiche di input/output")]
+  #riga(75.884, 180.027, 17.5, ampiezza: 785.698)[#text("Una periferica di input/output è un dispositivo con duplice funzione, permette di ")#text(weight: "bold", "ricevere dati e ")]
+  #riga(75.884, 203.86, 17.5, ampiezza: 785.698)[#text(weight: "bold", "fornire risultati")#text(". È quindi necessario che svolga entrambe le funzioni: input e output.")]
+  #riga(29.8, 528.275, 9.68, ampiezza: 156.758)[#text("Polo Tecnico Professionale di Lugo")]
+  #riga(831.386, 528.275, 9.68, ampiezza: 98.813)[#text("Prof. Federico Mazzini")]
 ]
 
-#slide("Completa la mappa", "Componenti e funzioni")[
-  *Parole da inserire:* output, RAM, CPU, cache, input, SSD.
+// Integrazione syllabus: 1.2.3
+#lezione("Periferiche", "Integrate ed esterne")[
+Una periferica può essere *integrata* nel dispositivo oppure *esterna*, collegata tramite un cavo o una connessione senza fili. La funzione rimane la stessa.
 
-  #tavola("/assets/svg/mappa-esercizi-hardware.svg", altezza: 282pt)
+- *Tastiera, mouse e trackpad*: permettono di inserire testo, puntare e dare comandi. Il trackpad svolge la funzione del mouse nei portatili.
+- *Webcam e microfono*: acquisiscono immagini, video e suoni.
+- *Schermo e altoparlanti*: restituiscono immagini e suoni.
+- *Scanner e stampante*: il primo acquisisce un documento su carta, la seconda produce una copia su carta.
 ]
 
-#slide("Prova a ragionare", "Periferiche, CPU e memorie")[
-  + Un touchscreen riproduce un video e rileva il tocco. Quale funzione è input e quale output?
-  + Un documento è aperto ma le ultime modifiche non sono state salvate. Che cosa può succedere se manca la corrente?
-  + Due computer hanno CPU con lo stesso numero di core. Quali altre caratteristiche potrebbero influire sulla rapidità con cui aprono e usano un’app?
+// 24. Hardware.pdf, pagina 14 — Componenti di un computer
+#slide(grafica: "/assets/icdl/hardware-14.svg", titolo: "Componenti di un computer")[
+  #riga(480, 82.34, 35, tinta: rosso, centro: true, ampiezza: 539.574)[#text(weight: "bold", "Componenti di un computer")]
+  #riga(480, 115.79, 27, centro: true, ampiezza: 335.097)[#text(weight: "bold", "Interfacce e porte esterne")]
+  #riga(83.412, 274.106, 15, ampiezza: 130.08)[#text(weight: "bold", "Esempi principali ")]
+  #riga(96.412, 306.106, 15, ampiezza: 423.142)[#text("•")#text(" ")#text("USB (Type A, Type C): collegare tastiere, mouse, memorie ")]
+  #riga(112.453, 326.106, 15, ampiezza: 396.525)[#text("esterne (chiavette), nei dispositivi mobili utilizzata come ")]
+  #riga(112.453, 346.106, 15, ampiezza: 102)[#text("alimentazione ")]
+  #riga(96.412, 378.106, 15, ampiezza: 400.027)[#text("•")#text(" ")#text("HDMI: collegare monitor o proiettori per video e audio ")]
+  #riga(96.412, 410.106, 15, ampiezza: 279.922)[#text("•")#text(" ")#text("Ethernet: collegamento a reti cablate ")]
+  #riga(96.412, 442.106, 15, ampiezza: 263.737)[#text("•")#text(" ")#text("Jack audio: uscita e ingresso audio ")]
+  #riga(96.412, 474.106, 15, ampiezza: 446.662)[#text("•")#text(" ")#text("slot per schede SD, pulsanti di accensione, led di stato e altro")]
+  #riga(84.11, 171.788, 17.5, ampiezza: 816.882)[#text("Le ")#text(weight: "bold", "interfacce")#text(" e le ")#text(weight: "bold", "porte")#text(" ")#text(weight: "bold", "esterne")#text(" permettono al computer di ")#text(weight: "bold", "comunicare con il mondo esterno")#text(", ")]
+  #riga(84.11, 195.288, 17.5, ampiezza: 816.881)[#text("collegando ")#text(weight: "bold", "periferiche")#text(" di input e output, i ")#text(weight: "bold", "collegamenti")#text(" ")#text(weight: "bold", "di")#text(" ")#text(weight: "bold", "rete")#text(" e ")#text(weight: "bold", "sistemi")#text(" ")#text(weight: "bold", "di")#text(" ")#text(weight: "bold", "archiviazione")#text(". Le ")]
+  #riga(84.11, 218.788, 17.5, ampiezza: 816.888)[#text("porte esterne sono i connettori fisici, mentre le interfacce sono le regole e i protocolli che ")]
+  #riga(84.11, 242.288, 17.5, ampiezza: 452.795)[#text("permettono ai dispositivi di comunicare correttamente.")]
+  #riga(29.8, 528.275, 9.68, ampiezza: 156.758)[#text("Polo Tecnico Professionale di Lugo")]
+  #riga(831.386, 528.275, 9.68, ampiezza: 98.813)[#text("Prof. Federico Mazzini")]
+]
+
+// Integrazione syllabus: 1.2.4
+#lezione("Porte di input/output", "USB e HDMI")[
+La porta *USB* permette di collegare periferiche e trasferire dati. Può fornire anche alimentazione: ad esempio per una chiavetta, un mouse o la ricarica di un dispositivo.
+
+*USB-A* e *USB-C* indicano forme diverse del connettore. Il connettore, da solo, non indica tutte le funzioni o la velocità disponibili.
+
+La porta *HDMI* trasporta *video e audio digitali*. Si usa, ad esempio, per collegare un computer a un monitor, a un televisore o al proiettore della classe.
 ]
