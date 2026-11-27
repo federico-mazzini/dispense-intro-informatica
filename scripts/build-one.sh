@@ -3,7 +3,7 @@ set -euo pipefail
 cd "$(dirname "${BASH_SOURCE[0]}")/.."
 argomento="${1:?Indicare una cartella numerata}"
 case "$argomento" in
-  1-file-cartelle|2-inviare-condividere-file|3-bit-byte-dimensioni|4-introduzione-computer|5-hardware|6-software|7-funzionamento-computer) ;;
+  1-file-cartelle|3-bit-byte-dimensioni|4-introduzione-computer|5-hardware|6-software) ;;
   *) echo "Argomento non riconosciuto: $argomento" >&2; exit 1 ;;
 esac
 principali=( "src/${argomento}/""Dispense - "*.typ )

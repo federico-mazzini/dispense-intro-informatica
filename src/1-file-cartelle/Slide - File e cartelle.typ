@@ -175,7 +175,7 @@ La compressione può ridurre la dimensione dei file, ma il risultato dipende dal
 // Pagina 31 del PDF ICDL “Gestione di file”.
 #schema-file-icdl("Estrarre uno ZIP", "Ritrovare i file e le cartelle", "/assets/svg/estrazione-zip.svg", nota: [*Estrarre uno ZIP* significa copiare i file e le cartelle che contiene in una cartella del computer. Anche lo ZIP originale rimane disponibile.])
 
-// Invio e condivisione: contenuti integrati dalla presentazione 02 e riorganizzati.
+// Invio e condivisione dei file.
 #apertura("Inviare e condividere file", "")
 
 #slide("Inviare e condividere un file", "Una copia oppure l’accesso allo stesso file")[

@@ -17,20 +17,6 @@ root = "file:."
 system-fonts = true
 
 [[document]]
-id = "file:src/2-inviare-condividere-file/Dispense - Inviare e condividere file.typ"
-inputs = []
-main = "file:src/2-inviare-condividere-file/Dispense - Inviare e condividere file.typ"
-root = "file:."
-system-fonts = true
-
-[[document]]
-id = "file:src/2-inviare-condividere-file/Slide - Inviare e condividere file.typ"
-inputs = []
-main = "file:src/2-inviare-condividere-file/Slide - Inviare e condividere file.typ"
-root = "file:."
-system-fonts = true
-
-[[document]]
 id = "file:src/3-bit-byte-dimensioni/Dispense - Bit, byte e dimensioni dei file.typ"
 inputs = []
 main = "file:src/3-bit-byte-dimensioni/Dispense - Bit, byte e dimensioni dei file.typ"
@@ -86,26 +72,8 @@ main = "file:src/6-software/Slide - Il software.typ"
 root = "file:."
 system-fonts = true
 
-[[document]]
-id = "file:src/7-funzionamento-computer/Dispense - Come funziona un computer.typ"
-inputs = []
-main = "file:src/7-funzionamento-computer/Dispense - Come funziona un computer.typ"
-root = "file:."
-system-fonts = true
-
-[[document]]
-id = "file:src/7-funzionamento-computer/Slide - Come funziona un computer.typ"
-inputs = []
-main = "file:src/7-funzionamento-computer/Slide - Come funziona un computer.typ"
-root = "file:."
-system-fonts = true
-
 [[route]]
 id = "file:src/1-file-cartelle/Dispense - File e cartelle.typ"
-priority = 256
-
-[[route]]
-id = "file:src/2-inviare-condividere-file/Dispense - Inviare e condividere file.typ"
 priority = 256
 
 [[route]]
@@ -125,15 +93,7 @@ id = "file:src/6-software/Dispense - Il software.typ"
 priority = 256
 
 [[route]]
-id = "file:src/7-funzionamento-computer/Dispense - Come funziona un computer.typ"
-priority = 256
-
-[[route]]
 id = "file:src/1-file-cartelle/Slide - File e cartelle.typ"
-priority = 256
-
-[[route]]
-id = "file:src/2-inviare-condividere-file/Slide - Inviare e condividere file.typ"
 priority = 256
 
 [[route]]
@@ -152,10 +112,6 @@ priority = 256
 id = "file:src/6-software/Slide - Il software.typ"
 priority = 256
 
-[[route]]
-id = "file:src/7-funzionamento-computer/Slide - Come funziona un computer.typ"
-priority = 256
-
 [[task]]
 document = "file:src/1-file-cartelle/Dispense - File e cartelle.typ"
 id = "file:src/1-file-cartelle/Dispense - File e cartelle.typ"
@@ -167,20 +123,6 @@ when = "onSave"
 document = "file:src/1-file-cartelle/Slide - File e cartelle.typ"
 id = "file:src/1-file-cartelle/Slide - File e cartelle.typ"
 output = "dist/slide/01 - File e cartelle"
-type = "export-pdf"
-when = "onSave"
-
-[[task]]
-document = "file:src/2-inviare-condividere-file/Dispense - Inviare e condividere file.typ"
-id = "file:src/2-inviare-condividere-file/Dispense - Inviare e condividere file.typ"
-output = "dist/dispense/02 - Inviare e condividere file"
-type = "export-pdf"
-when = "onSave"
-
-[[task]]
-document = "file:src/2-inviare-condividere-file/Slide - Inviare e condividere file.typ"
-id = "file:src/2-inviare-condividere-file/Slide - Inviare e condividere file.typ"
-output = "dist/slide/02 - Inviare e condividere file"
 type = "export-pdf"
 when = "onSave"
 
@@ -237,19 +179,5 @@ when = "onSave"
 document = "file:src/6-software/Slide - Il software.typ"
 id = "file:src/6-software/Slide - Il software.typ"
 output = "dist/slide/06 - Il software"
-type = "export-pdf"
-when = "onSave"
-
-[[task]]
-document = "file:src/7-funzionamento-computer/Dispense - Come funziona un computer.typ"
-id = "file:src/7-funzionamento-computer/Dispense - Come funziona un computer.typ"
-output = "dist/dispense/07 - Come funziona un computer"
-type = "export-pdf"
-when = "onSave"
-
-[[task]]
-document = "file:src/7-funzionamento-computer/Slide - Come funziona un computer.typ"
-id = "file:src/7-funzionamento-computer/Slide - Come funziona un computer.typ"
-output = "dist/slide/07 - Come funziona un computer"
 type = "export-pdf"
 when = "onSave"

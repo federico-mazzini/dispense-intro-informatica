@@ -4,8 +4,9 @@
 
 - Mantieni `README.md` con i soli link ai PDF: una riga per argomento, con dispensa e slide. Le note operative vanno in questo file.
 - Ogni cartella numerata di `src/` contiene due sorgenti: `Dispense - Titolo.typ` per la dispensa completa di teoria ed esercizi e `Slide - Titolo.typ` per la presentazione. Non separare nuovamente teoria, esercizi e main.
+- L’argomento 01 raccoglie file e cartelle, invio e condivisione, con teoria, esercizi, slide e domande del test. Il precedente argomento 02 è stato accorpato nella 01 e rimosso; non ricrearlo separatamente. L’argomento 07 è stato eliminato senza trasferirne i contenuti; non reinserirlo automaticamente. Gli altri argomenti mantengono i numeri 03–06 e i nomi pubblici dei PDF.
 - Conserva le eventuali traduzioni nelle sottocartelle dedicate, come `src/3-bit-byte-dimensioni/ar/`.
-- Gli stili condivisi sono in `styles/`, i diagrammi in `assets/svg/`, le fotografie in `assets/immagini/`. Le domande disponibili sono distribuite per argomento nei file `Test - Titolo.txt` delle cartelle numerate di `src/` (attualmente 1, 2 e 3). Mantieni solo domande e alternative, con numerazione progressiva per argomento, senza gruppi, soluzioni o indicazioni della risposta esatta; non creare un archivio duplicato in `qst/`.
+- Gli stili condivisi sono in `styles/`, i diagrammi in `assets/svg/`, le fotografie in `assets/immagini/`. Le domande disponibili sono distribuite per argomento nei file `Test - Titolo.txt` delle cartelle numerate di `src/` (attualmente 1 e 3). Mantieni solo domande e alternative, con numerazione progressiva per argomento, senza gruppi, soluzioni o indicazioni della risposta esatta; non creare un archivio duplicato in `qst/`.
 - I nomi dei sorgenti non contengono numeri. I PDF conservano il formato `NN - Titolo.pdf`: il numero si ricava dalla cartella numerata, senza aggiungere i prefissi Dispense o Slide. Mantieni questa corrispondenza anche nella configurazione Tinymist.
 - Non versionare `dist/`, `tmp/` o `backup/`. Mantieni stabili i nomi dei PDF e i link pubblici.
 
@@ -41,12 +42,12 @@ Mantieni solo gli script con una funzione distinta. Non aggiungere scorciatoie p
 ## VS Code
 
 - `.vscode/settings.json` abilita l’esportazione PDF al salvataggio con Tinymist.
-- `bash scripts/setup-vscode.sh` registra le sette dispense e le sette presentazioni in `tinymist.lock`. Usalo dopo rinomine dei documenti o se l’associazione si perde; poi esegui **Developer: Reload Window**.
+- `bash scripts/setup-vscode.sh` registra le cinque dispense e le cinque presentazioni in `tinymist.lock`. Usalo dopo rinomine dei documenti o se l’associazione si perde; poi esegui **Developer: Reload Window**.
 - Per la compilazione continua puoi usare `typst watch --root . "src/1-file-cartelle/Dispense - File e cartelle.typ" "dist/dispense/01 - File e cartelle.pdf"`.
 
 ## Contenuti e riferimenti
 
 - Le dispense hanno formato A4 e colori distinti, con font e componenti grafici condivisi. Le presentazioni sono in formato 16:9 e riprendono la grafica del repository `federico-mazzini/icdl`; il modello comune è `styles/slides.typ`.
 - Le presentazioni 04, 05 e 06 includono 22 pagine di ICDL – Computer e dispositivi con testi, grafica e numeri originali. Riferimento: https://github.com/federico-mazzini/icdl/blob/2415280d86bff968343166670cba272a323717c0/src/1_computer_dispositivi.typ.
-- La dispensa su bit e byte deriva dall’archivio `dispensa_bit_byte_libro_classico_revisionata_sorgenti.zip`; quelle su file e cartelle e su invio e condivisione riprendono pagine didattiche Notion.
+- La dispensa su bit e byte deriva dall’archivio `dispensa_bit_byte_libro_classico_revisionata_sorgenti.zip`; quella su file e cartelle, invio e condivisione riprende pagine didattiche Notion.
 - Mantieni la convenzione scolastica delle conversioni basate su 1024 nella dispensa su bit e byte e gli elenchi di parole degli esercizi mescolati.

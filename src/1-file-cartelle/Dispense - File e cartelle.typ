@@ -2,7 +2,7 @@
 #import "/styles/didattica.typ": richiamo, diagramma
 #show: dispensa.with(
   titolo: "File e cartelle",
-  sottotitolo: "Riconoscere i file, organizzare le cartelle e leggere i percorsi.",
+  sottotitolo: "Riconoscere e organizzare i file; inviare copie e condividere materiali.",
   numerazione: "1.",
   accento: verde,
   sfondo: rgb("#F0F7F2"),
@@ -217,6 +217,128 @@ Creare uno ZIP viene spesso indicato con il comando *Comprimi*. Il nome del coma
 ]
 
 Prima di inviare uno ZIP via email, controlla che la sua dimensione non superi il limite degli allegati.
+
+#pagebreak()
+
+// Invio e condivisione dei file.
+= Inviare e condividere un file
+
+== Inviare: consegnare una copia
+
+Quando alleghi un file a un’email, il destinatario riceve *una copia* del file in quel momento.
+
+- Può scaricarla e conservarla.
+- Se in seguito modifichi il tuo file, *la copia già inviata non cambia*.
+- Puoi inviare, ad esempio, un *PDF* da leggere oppure un file modificabile, come `.docx`, se chi lo riceve deve lavorare sulla propria copia.
+
+#esempio-teoria[
+  Scrivi gli appunti su Documenti Google → li esporti in *PDF* → alleghi il PDF all’email. Chi lo riceve vede quella versione degli appunti.
+]
+
+== Come si invia un file?
+
+Possiamo far arrivare una copia del file a un’altra persona in diversi modi.
+
+- *Email:* scriviamo un messaggio, indichiamo il destinatario e aggiungiamo il file come *allegato*. Prima di inviare, controlliamo di aver scelto il file corretto.
+- *Messaggistica:* apriamo la chat del destinatario e usiamo il comando per *allegare un file*, scegliendolo dal dispositivo. Poi inviamo il messaggio con l’allegato.
+- *Trasferimento diretto con USB:* colleghiamo una *chiavetta USB* al computer e vi copiamo il file. Chi riceve la chiavetta può collegarla al proprio computer e copiare il file nella sua memoria. Non serve Internet.
+
+Per email e messaggistica, controlliamo che la *dimensione del file* rientri nei limiti del servizio utilizzato.
+
+#pagebreak()
+
+== Condividere: dare accesso allo stesso materiale
+
+Con Google Drive o altri servizi cloud si può *condividere un file o una cartella* con altre persone, senza mandarne una nuova copia ogni volta.
+
+- Chi ha accesso può vedere *la versione aggiornata* del materiale.
+- Decidi *con chi* condividere e *quali permessi* concedere.
+
+Un *link* è un collegamento che permette di raggiungere un file o una cartella. Puoi copiarlo e inviarlo, per esempio, in un’email.
+
+#table(
+  columns: (1fr, 2.5fr),
+  table.header([Permesso], [Cosa permette di fare]),
+  [*Visualizzatore*], [Leggere il materiale, senza modificarlo direttamente.],
+  [*Editor*], [Modificare il materiale, se il tipo di file lo permette.],
+)
+
+#esempio-teoria[
+  Scrivi gli appunti su Documenti Google → premi *Condividi* → dai al docente il permesso di *Visualizzatore*. Se aggiorni gli appunti, il docente può leggere la versione aggiornata dallo stesso link.
+]
+
+#da-ricordare[Il link da solo non basta][
+  Chi riceve il link deve avere il permesso di aprire il materiale. Prima di inviarlo, controlla di aver dato l’accesso alla persona giusta e scelto se può solo leggere o anche modificare.
+]
+
+#pagebreak()
+
+= Scegliere se inviare o condividere
+
+Prima di inviare o condividere un file, è utile farsi queste domande.
+
+#[
+#show heading.where(level: 2): set block(
+  stroke: (left: 2pt + verde),
+  inset: (left: 9pt, y: 4pt),
+)
+
+== Il destinatario deve solo leggere o anche modificare?
+
+- Se deve *leggere un documento mantenendo l’impaginazione*, spesso conviene il *PDF*.
+- Se deve *modificare lo stesso documento insieme a te*, conviene la *condivisione* con permesso di *Editor*.
+- Se deve lavorare su *una propria copia*, puoi inviargli un file modificabile.
+
+Il *PDF è un formato di file*, mentre l’allegato e il link sono modi per farlo arrivare agli altri. Puoi quindi inviare un PDF come allegato oppure caricarlo su Drive e condividerlo con un link.
+
+== Il file è definitivo o potrebbe ancora cambiare?
+
+- *Versione da consegnare:* se vuoi che chi riceve conservi quella versione del file, puoi *inviare una copia*.
+- *Materiale che cambia:* se vuoi che chi riceve veda anche le modifiche successive, puoi *condividere il file*.
+
+== Quanti file sono? Quanto pesano?
+
+- *Un file piccolo:* si può scegliere tra invio e condivisione in base allo scopo.
+- *Una cartella con molti file:* puoi condividere la cartella su Drive oppure creare *un unico file ZIP* e inviarlo.
+- *Un file molto grande:* spesso è più pratico condividerlo con un link Drive, perché le email hanno limiti per gli allegati.
+]
+
+#pagebreak()
+
+= Inviare e condividere una cartella
+
+Una cartella non si allega direttamente a un’email come un singolo documento. Si hanno due possibilità.
+
+== A. Voglio inviare una copia di tutto il contenuto
+
+Cartella → *creo uno ZIP* → allego il file `.zip` all’email.
+
+Lo ZIP è *un file unico* che conserva i file e la struttura delle sottocartelle. Chi lo riceve può *estrarlo* per tornare a lavorare sui singoli documenti.
+
+== B. Voglio dare accesso alla cartella e ai suoi aggiornamenti
+
+Cartella su Drive → *Condividi* → scelgo le persone e i permessi → invio il link.
+
+#richiamo[
+  *Attenzione allo ZIP* \
+  Lo ZIP raccoglie più file e cartelle in un solo file, che puoi poi allegare o condividere. Prima di allegarlo, controlla che la sua dimensione non superi il limite dell’email.
+]
+
+= Riepilogo: quale soluzione uso?
+
+#table(
+  columns: (1.45fr, 1.05fr, 1.5fr),
+  table.header([Situazione], [Scelta consigliata], [Perché?]),
+  [Un PDF piccolo da consegnare una volta], [*Allegato email*], [Il destinatario riceve una copia precisa.],
+  [Un documento da aggiornare insieme], [*Condivisione Drive*], [Le persone con il permesso di Editor lavorano sullo stesso documento.],
+  [Una cartella da spedire come copia], [*ZIP + invio*], [Più file diventano un solo archivio.],
+  [Una cartella con contenuti che cambiano nel tempo], [*Cartella Drive condivisa*], [Non devo creare uno ZIP a ogni aggiornamento.],
+  [Un file troppo grande per l’invio], [*Link Drive*], [Evito il limite di dimensione degli allegati.],
+)
+
+#da-ricordare[Scegliere in base allo scopo][
+  Invia un allegato per consegnare una copia. Condividi il materiale per dare accesso allo stesso file o alla stessa cartella, anche dopo le modifiche.
+]
 ]
 
 #pagebreak()
@@ -294,40 +416,7 @@ Per ogni attività scegli un’estensione adatta tra quelle proposte. Ogni esten
 
 #pagebreak()
 
-= 5. Vero o falso? Motiva
-
-Spunta una casella e spiega la tua scelta.
-
-#affermazione(1)[Una cartella può contenere sia file sia altre cartelle.]
-#affermazione(2)[L’estensione e il percorso di un file indicano la stessa cosa.]
-#affermazione(3)[Un PDF è sempre impossibile da modificare.]
-#affermazione(4)[Uno ZIP conserva anche l’organizzazione delle sottocartelle.]
-
-= 6. Scegli la risposta
-
-Per ogni domanda scegli una sola risposta.
-
-*1. Quale elemento indica la posizione di un file?*
-
-#scelta[Il percorso] #h(5mm) #scelta[L’estensione] #h(5mm) #scelta[Il formato PDF]
-
-#v(7pt)
-*2. Estraendo uno ZIP, che cosa ottieni?*
-
-#scelta[File e cartelle separati] \
-#scelta[Un PDF di tutti i documenti] \
-#scelta[Una cartella che aggiorna automaticamente lo ZIP]
-
-#v(7pt)
-*3. Quale affermazione sul cloud è corretta?*
-
-#scelta[I file non si trovano su alcun computer] \
-#scelta[I file sono conservati su server raggiungibili tramite Internet] \
-#scelta[I file non possono essere organizzati in cartelle]
-
-#pagebreak()
-
-= 7. Leggi l’albero delle cartelle
+= 5. Leggi l’albero delle cartelle
 
 Osserva l’albero: rispondi usando i nomi esatti dei materiali.
 
@@ -337,31 +426,9 @@ Osserva l’albero: rispondi usando i nomi esatti dei materiali.
 #quesito(2, righe: 1)[In quale cartella si trova `Tema.docx`? Quali file contiene `Informatica`?]
 #quesito(3, righe: 1)[Quanti file sono rappresentati in tutto? Conta solo i file, escludendo le cartelle.]
 
-= 8. Completa e leggi i percorsi
-
-Supponi che `Documenti` sia una cartella creata nell’unità `C:` di un computer Windows.
-
-*1.* Completa il percorso che porta al foglio di calcolo dell’albero.
-
-`C:\Documenti\Classe 1A\`#vuoto(31mm)`\Esercizi.xlsx`
-
-*2.* Scrivi il percorso completo di `Lettura.pdf`.
-#risposta(righe: 1)
-
-*3.* Considera `C:\Documenti\Classe 1A\Informatica\Dispensa.pdf`. Qual è il file? Qual è la cartella che lo contiene direttamente?
-#risposta(righe: 1)
-
 #pagebreak()
 
-= 9. Trova e correggi gli errori
-
-In ciascuna frase c’è un errore. Riscrivila correttamente.
-
-#quesito(1)[«Nel nome `Appunti.txt`, l’estensione è Appunti.»]
-#quesito(2)[«Esportando una relazione in PDF, l’originale modificabile viene eliminato.»]
-#quesito(3)[«Se aggiungo un file alla cartella estratta, anche il vecchio ZIP si aggiorna.»]
-
-= 10. Progetta un archivio ordinato
+= 6. Progetta un archivio ordinato
 
 Nella cartella `Classe 1A` trovi questi file tutti mescolati:
 
@@ -377,13 +444,7 @@ Disegna un albero con tre sottocartelle (*Italiano*, *Informatica*, *Matematica*
 
 #pagebreak()
 
-= 11. Ragiona sui PDF
-
-#quesito(1)[Devi consegnare una relazione definitiva, destinata alla lettura e alla stampa su dispositivi diversi. Quale formato scegli e perché?]
-#quesito(2)[Hai esportato `Ricerca.pdf` da un documento modificabile. Dopo correggi una frase nell’originale. La copia PDF già esportata contiene la correzione? Che cosa fai per ottenere un PDF aggiornato?]
-#quesito(3)[Un compagno dice: «Il PDF contiene solo immagini e non può avere collegamenti o moduli». Spiega perché non è corretto.]
-
-= 12. Metti in ordine e risolvi
+= 7. Metti in ordine e risolvi
 
 *1. Creare e inviare uno ZIP.* Numera le azioni da 1 a 4, partendo dai materiali ancora da organizzare.
 
@@ -401,49 +462,67 @@ Disegna un albero con tre sottocartelle (*Italiano*, *Informatica*, *Matematica*
 
 #pagebreak()
 
-= 13. Spiega perché: i file ZIP
+// Esercizi su invio e condivisione, con numerazione progressiva.
+#titolo-sezione[Esercizi: inviare e condividere]
 
-Rispondi alle cinque domande, motivando le tue scelte.
+= 8. Completa il testo
 
-#quesito(1, righe: 3)[Perché uno ZIP è comodo quando devo inviare una cartella con 20 file?]
-#quesito(2, righe: 3)[Che differenza c’è tra *estrarre* uno ZIP e *creare* uno ZIP?]
-#quesito(3, righe: 3)[Se aggiungo un’immagine nella cartella estratta, cambia anche il vecchio ZIP?]
-#quesito(4, righe: 3)[Quando è meglio usare una *cartella Drive condivisa* anziché inviare uno ZIP? Pensa a materiali che cambiano ogni giorno.]
-#quesito(5, righe: 3)[Devo inviare una cartella molto grande: basta creare uno ZIP per poterla allegare a qualsiasi email?]
+Usa ogni parola una sola volta.
+
+#richiamo[
+  *PAROLE:* Editor · Visualizzatore · copia · ZIP · aggiornata
+]
+
+Con un allegato email invio una #vuoto(30mm) del file. Con la condivisione chi ha accesso può vedere la versione #vuoto(32mm) del materiale.
+
+Il permesso di #vuoto(35mm) permette di leggere senza modificare direttamente; quello di #vuoto(25mm) permette di modificare, se il tipo di file lo consente.
+
+Per raccogliere una cartella con le sue sottocartelle in un unico file da inviare posso creare uno #vuoto(22mm).
+
+= 9. Vero o falso? Motiva
+
+Spunta una casella e spiega la tua scelta.
+
+#affermazione(1)[Se correggo il documento originale, si aggiorna anche l’allegato già ricevuto dal docente.]
+#affermazione(2)[Posso inviare per email il link a una cartella condivisa.]
+#affermazione(3)[Creare uno ZIP garantisce che il file rientri nel limite di qualsiasi email.]
 
 #pagebreak()
 
-= 14. Sperimenta in laboratorio
+= 10. Associa situazione e soluzione
 
-Usa materiali di prova creati da te per svolgere le attività.
+Scegli tra le quattro soluzioni proposte. Usa ciascuna una sola volta.
 
-== A. Organizza e osserva
-
-Crea la cartella `Laboratorio file` con le sottocartelle `Italiano` e `Informatica`. Inserisci un documento in ciascuna sottocartella. Leggi i nomi completi, incluse le estensioni, e individua i percorsi.
+*A.* Allegato PDF · *B.* Condivisione con permesso di Editor \
+*C.* Condivisione con permesso di Visualizzatore · *D.* ZIP allegato all’email
 
 #table(
-  columns: (0.9fr, 0.65fr, 0.9fr, 1.8fr), inset: (x: 7pt, y: 14pt),
-  table.header([Nome del file], [Estensione], [Cartella che lo contiene], [Percorso completo]),
-  [], [], [], [],
-  [], [], [], [],
+  columns: (3fr, 0.65fr), inset: (x: 7pt, y: 10pt),
+  table.header([Situazione], [Lettera]),
+  [Il docente deve leggere una relazione definitiva mantenendo l’impaginazione. Il PDF è piccolo.], [],
+  [Un compagno deve correggere lo stesso documento insieme a me.], [],
+  [Il docente deve vedere gli aggiornamenti dei miei appunti, senza modificarli.], [],
+  [Devo spedire una copia di una cartella mantenendo le sottocartelle. L’archivio rientra nel limite degli allegati.], [],
 )
 
-== B. Esporta, comprimi ed estrai
+= 11. Riordina le operazioni
 
-+ Esporta uno dei documenti in *PDF*. Apri il PDF e confrontalo con l’originale: l’aspetto è lo stesso? L’originale è ancora disponibile?
-+ Crea `Laboratorio file.zip` dalla cartella di lavoro.
-+ Estrai lo ZIP in una cartella diversa da quella originale. Controlla che siano presenti entrambe le sottocartelle e tutti i file.
-+ Nella cartella estratta crea `Nuovo appunto.txt`. Riapri lo ZIP originale e controlla se contiene anche questo nuovo file.
+Numera da 1 a 4 le azioni per condividere un documento modificabile con un compagno.
 
-*Che cosa hai osservato sul PDF e sullo ZIP?*
-#risposta(righe: 3)
+#table(
+  columns: (0.45fr, 3fr),
+  table.header([Ordine], [Azione]),
+  [], [Invio al compagno il link al documento condiviso.],
+  [], [Indico il compagno con cui condividere il documento.],
+  [], [Apro le opzioni di condivisione del documento.],
+  [], [Imposto il permesso di Editor e confermo la condivisione.],
+)
 
-== C. Crea una breve guida
+= 12. Risolvi il caso
 
-Scrivi un documento intitolato *Come organizzo e preparo i miei materiali*. Inserisci un albero delle cartelle create, un esempio di percorso completo e una spiegazione delle differenze tra *cartella*, *PDF* e *ZIP*. Esporta la guida in PDF.
+La cartella di un progetto di classe cambia ogni giorno. Un compagno deve aggiornare i materiali insieme a te; il docente deve poterli leggere senza modificarli. Lo ZIP della cartella occupa 60 MB, mentre l’email accetta allegati al massimo di 25 MB.
 
-#richiamo[
-  *CONTROLLO FINALE* \
-  Nomi chiari · estensioni corrette · cartelle ordinate · PDF leggibile · ZIP completo di tutte le sottocartelle.
-]
+Proponi una soluzione che permetta a entrambi di accedere agli aggiornamenti. Indica i permessi per il compagno e per il docente e spiega perché inviare quello ZIP come allegato non risolve il problema.
+
+#risposta(righe: 4)
 ]
