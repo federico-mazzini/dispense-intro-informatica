@@ -1,0 +1,128 @@
+1. [Risposta singola] Quale frase descrive correttamente un file?
+A) È un insieme di dati digitali identificato da un nome.
+B) È una parte fisica del computer che conserva documenti.
+C) È una cartella che contiene un solo documento.
+D) È il nome del programma con cui scriviamo.
+
+2. [Risposta singola] Nel file Vacanze.png, qual è il nome senza estensione?
+A) png
+B) Vacanze
+C) Vacanze.png
+D) .Vacanze
+
+3. [Risposta multipla] Quali associazioni sono corrette?
+A) .docx → documento Word.
+B) .jpg → immagine.
+C) .mp3 → video.
+D) .mp4 → video.
+
+4. [Risposta singola] Rinomini Ricerca.docx in Ricerca.pdf, cambiando soltanto l’estensione. Hai creato correttamente un PDF?
+A) Sì, perché il formato dipende soltanto dal nome.
+B) Sì, se il documento contiene anche immagini.
+C) No, per ottenere il PDF serve esportare o salvare il documento nel formato adatto.
+D) No, perché un documento Word non può essere trasformato in PDF.
+
+5. [Risposta singola] Che cos’è una sottocartella?
+A) Una cartella contenuta in un’altra cartella.
+B) Una cartella che contiene soltanto immagini.
+C) Un file salvato senza estensione.
+D) Una cartella che occupa meno di 1 MB.
+
+6. [Risposta multipla] Osserva questa struttura. Quali affermazioni sono corrette?
+
+Materiali
+├── Storia
+│   ├── Mappa.pdf
+│   └── Ricerca.docx
+└── Scienze
+    └── Esperimento.mp4
+A) Storia è una sottocartella di Materiali.
+B) Esperimento.mp4 si trova nella cartella Storia.
+C) Storia contiene due file.
+D) Nell’albero sono rappresentati tre file.
+
+7. [Risposta singola] Qual è il percorso corretto di Esperimento.mp4 nell’albero della domanda precedente?
+A) Materiali\Storia\Esperimento.mp4
+B) Materiali\Scienze\Esperimento.mp4
+C) Scienze\Materiali\Esperimento.mp4
+D) Materiali\Esperimento.mp4\Scienze
+
+8. [Risposta singola] Hai molti materiali scolastici tutti mescolati. Quale soluzione rende più facile cercarli?
+A) Cambiare l’estensione di tutti i file in .pdf.
+B) Assegnare nomi casuali per evitare ripetizioni.
+C) Creare cartelle per materia e usare nomi chiari per i file.
+D) Creare una sola cartella chiamata Tutto e lasciare i nomi Documento1, Documento2 e così via.
+
+9. [Risposta singola] Hai salvato correttamente una ricerca su un servizio cloud. Come puoi ritrovarla da un altro computer?
+A) Aprendo una cartella locale con lo stesso nome.
+B) Accedendo al servizio cloud con il tuo account.
+C) Creando un nuovo documento con lo stesso titolo.
+D) Installando lo stesso programma usato per scriverla.
+
+10. [Risposta multipla] Quali affermazioni sono corrette?
+A) Un file salvato localmente può essere aperto senza Internet, se è disponibile il programma adatto.
+B) I servizi cloud conservano i file su altri computer chiamati server.
+C) Creare sul computer una cartella chiamata Cloud trasferisce automaticamente i file online.
+D) Anche nel cloud si possono creare sottocartelle.
+
+11. [Risposta singola] Devi stampare una ricerca mantenendo generalmente stabile la disposizione di testo e immagini. Quale formato è adatto?
+A) PDF.
+B) MP3.
+C) ZIP, perché la compressione mantiene l’impaginazione.
+D) DOCX rinominato in JPG.
+
+12. [Risposta singola] Hai un documento Word e una copia esportata in PDF. Correggi il documento Word, ma il PDF mostra ancora il vecchio testo. Perché?
+A) Il PDF è una copia e non riceve automaticamente le modifiche dell’originale.
+B) Il PDF si aggiorna soltanto cambiandogli nome.
+C) Le correzioni compaiono nel PDF soltanto dopo aver eliminato il Word.
+D) Il PDF può mostrare soltanto la prima versione di qualsiasi documento.
+
+13. [Risposta multipla] Quali affermazioni sui PDF sono corrette?
+A) Sono utili per distribuire documenti già impaginati.
+B) Possono contenere fotografie e tabelle.
+C) Sono sempre più piccoli del documento originale.
+D) Quando si esporta un PDF, il documento originale può rimanere disponibile.
+
+14. [Risposta singola] Hai una cartella con fotografie e documenti e vuoi raccoglierli in un unico file. Quale operazione è adatta?
+A) Creare un archivio ZIP.
+B) Cambiare l’estensione della cartella in .pdf.
+C) Dare a tutti i file lo stesso nome.
+D) Aprire tutti i documenti nello stesso momento.
+
+15. [Risposta multipla] Quali affermazioni sugli ZIP sono corrette?
+A) Possono contenere documenti e immagini insieme.
+B) La cartella originale può rimanere disponibile dopo la creazione dello ZIP.
+C) Creare uno ZIP trasforma tutti i materiali in PDF.
+D) La compressione non riduce sempre la dimensione nella stessa misura.
+
+16. [Risposta singola] Dopo aver estratto uno ZIP, che cosa trovi nella cartella scelta per l’estrazione?
+A) I file e le cartelle che erano contenuti nell’archivio.
+B) Soltanto una lista con i nomi dei file.
+C) Tutti i documenti trasformati nello stesso formato.
+D) Una nuova copia compressa dello ZIP.
+
+17. [Vero o falso] Una cartella chiamata Fotografie può contenere anche un documento Word.
+A) Vero
+B) Falso
+
+18. [Vero o falso] Due file con la stessa estensione devono avere la stessa dimensione.
+A) Vero
+B) Falso
+
+19. [Vero o falso] In un percorso, cambiare l’ordine delle cartelle non cambia la posizione indicata.
+A) Vero
+B) Falso
+
+20. [Vero o falso] Nel cloud i file possono essere organizzati in cartelle e sottocartelle.
+A) Vero
+B) Falso
+
+21. [Vero o falso] Esportare un documento in PDF elimina automaticamente il documento originale.
+A) Vero
+B) Falso
+
+22. [Vero o falso] Estrarre uno ZIP permette di ritrovare all’esterno dell’archivio i materiali che contiene.
+A) Vero
+B) Falso
+
+23. [Risposta aperta] File e cartelle: spiega che cosa sono un file, una cartella e una sottocartella e a che cosa servono.

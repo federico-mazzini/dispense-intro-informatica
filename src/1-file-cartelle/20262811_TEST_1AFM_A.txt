@@ -1,0 +1,91 @@
+1. [Risposta singola] Che cos'è un file?
+A) Un dispositivo utilizzato per memorizzare informazioni
+B) Un insieme di dati digitali salvati con un nome
+C) Un programma utilizzato per navigare su Internet
+D) Una cartella che contiene obbligatoriamente altre cartelle
+
+2. [Risposta singola] Nel file Relazione_finale.docx, qual è l'estensione?
+A) .finale
+B) .docx
+C) .Relazione
+D) .documento
+
+3. [Risposta singola] Quale estensione è tipica di un file video?
+A) .xlsx
+B) .txt
+C) .mp4
+D) .pdf
+
+4. [Risposta singola] Quale estensione è tipica di una presentazione PowerPoint?
+A) .pptx
+B) .jpg
+C) .mp3
+D) .zip
+
+5. [Vero o falso] Una cartella può contenere contemporaneamente file e altre cartelle.
+A) Vero
+B) Falso
+
+6. [Risposta singola] Qual è il principale vantaggio di esportare un documento in PDF?
+A) Ridurre sempre la dimensione del documento
+B) Mantenere generalmente stabile l'impaginazione del documento
+C) Rendere impossibile qualsiasi modifica
+D) Consentire l'apertura soltanto tramite Internet
+
+7. [Risposta singola] A che cosa serve principalmente un archivio ZIP?
+A) A correggere automaticamente gli errori nei file
+B) Ad aprire pagine Web
+C) A trasformare i file in immagini
+D) A raccogliere file e cartelle in un unico archivio
+
+8. [Vero o falso] Un file salvato esclusivamente sul disco interno di un computer è automaticamente accessibile da qualsiasi altro computer, senza trasferirlo.
+A) Vero
+B) Falso
+
+9. [Risposta singola] Osserva il percorso D:\Scuola\Informatica\Verifiche\Prova.pdf. Qual è la cartella che contiene direttamente il file?
+A) Scuola
+B) Informatica
+C) Verifiche
+D) Prova.pdf
+
+10. [Risposta singola] Hai caricato correttamente un documento su un servizio cloud. Il tuo computer si rompe. Che cosa puoi fare?
+A) Recuperarlo soltanto riparando il computer
+B) Accedere al servizio cloud da un altro dispositivo con il tuo account
+C) Non puoi più recuperare il documento
+D) Recuperarlo soltanto se avevi collegato una chiavetta USB
+
+11. [Risposta singola] Esporti Tesina.docx in Tesina.pdf. Successivamente modifichi il documento Word. Come ottieni un PDF che includa le correzioni?
+A) Esportando nuovamente il documento aggiornato
+B) Aspettando che il PDF si aggiorni automaticamente
+C) Cambiando il nome del PDF
+D) Non puoi ottenere un PDF aggiornato
+
+12. [Risposta singola] Rinomini il file Foto.jpg in Foto.pdf, cambiando soltanto l'estensione. Che cosa succede?
+A) L'immagine viene convertita correttamente in un PDF
+B) Il file viene automaticamente eliminato
+C) La dimensione del file viene ridotta
+D) Cambia il nome, ma il contenuto non viene convertito in PDF
+
+13. [Risposta singola] Osserva la struttura:
+
+D:
+└── Lavori
+    ├── Storia
+    │   └── Testo.docx
+    └── Informatica
+        ├── Lezioni
+        │   └── Appunti.pdf
+        └── Esercizi
+            └── Soluzioni.xlsx
+
+Qual è il percorso completo del file Soluzioni.xlsx?
+A) D:\Lavori\Informatica\Lezioni\Soluzioni.xlsx
+B) D:\Lavori\Esercizi\Informatica\Soluzioni.xlsx
+C) D:\Lavori\Informatica\Esercizi\Soluzioni.xlsx
+D) D:\Informatica\Lavori\Esercizi\Soluzioni.xlsx
+
+14. [Risposta singola] Devi inviare una cartella da 34 MB. Dopo averla compressa, ottieni un file ZIP da 28 MB. Il servizio email accetta allegati di massimo 25 MB. Quale soluzione è corretta?
+A) Allegare comunque lo ZIP, perché è compresso
+B) Rinominare lo ZIP con estensione .pdf
+C) Caricare lo ZIP su un servizio cloud e condividere un collegamento accessibile al destinatario
+D) Estrarre lo ZIP per ridurne ulteriormente la dimensione

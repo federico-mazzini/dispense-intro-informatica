@@ -1,0 +1,101 @@
+1. [Risposta singola] Il numero 20, da solo, è un dato. Quale frase gli attribuisce un significato preciso?
+A) 20 è scritto con due cifre.
+B) Nell’aula ci sono 20 studenti.
+C) 20 è un numero.
+D) Ho copiato il numero 20.
+
+2. [Risposta singola] Quali valori può assumere un bit?
+A) Da 0 a 9.
+B) 0 oppure 1.
+C) 1 oppure 8.
+D) Qualsiasi numero intero.
+
+3. [Risposta multipla] Quali affermazioni sono corrette?
+A) Un byte è formato da otto bit.
+B) La lettera B indica il byte.
+C) Un bit è formato da otto byte.
+D) Due byte corrispondono a sedici bit.
+
+4. [Risposta singola] Quanti byte corrispondono a 32 bit?
+A) 4 byte.
+B) 8 byte.
+C) 24 byte.
+D) 256 byte.
+
+5. [Risposta singola] Che cosa indica la dimensione di un file?
+A) La quantità di dati che contiene.
+B) Il numero di parole del suo nome.
+C) Il tempo necessario per comprenderlo.
+D) Il numero di volte in cui è stato aperto.
+
+6. [Risposta multipla] Due fotografie hanno entrambe estensione .jpg. Quali affermazioni sono corrette?
+A) Possono avere dimensioni diverse.
+B) Devono contenere la stessa immagine.
+C) La loro dimensione dipende dalla quantità di dati contenuti.
+D) Devono occupare lo stesso spazio perché hanno la stessa estensione.
+
+7. [Risposta singola] Quale file occupa più spazio?
+A) Un file da 500 KB.
+B) Un file da 1 MB.
+C) Un file da 900 KB.
+D) Un file da 100 KB.
+
+8. [Risposta singola] Quanti KB corrispondono a 3,2 MB?
+A) 3200 KB.
+B) 3276,8 KB.
+C) 32.768 KB.
+D) 0,003125 KB.
+
+9. [Risposta singola] Quanti MB corrispondono a 2560 KB?
+A) 2,56 MB.
+B) 25 MB.
+C) 2,5 MB.
+D) 2621,44 MB.
+
+10. [Risposta singola] Quanti byte corrispondono a 3,25 MB?
+A) 3328 B.
+B) 3.250.000 B.
+C) 26 B.
+D) 3.407.872 B.
+
+11. [Risposta singola] Quanti KB corrispondono a 0,5 GB?
+A) 512 KB.
+B) 524.288 KB.
+C) 500.000 KB.
+D) 52.428,8 KB.
+
+12. [Risposta singola] Esprimi la dimensione di un file prima come 2048 MB e poi come 2 GB. Che cosa cambia?
+A) Il file contiene meno dati.
+B) Cambiano il numero e l’unità usati per descriverlo, ma non lo spazio occupato.
+C) Il file viene compresso.
+D) Il file cambia formato.
+
+13. [Risposta singola] Una cartella contiene tre fotografie da 2 MB ciascuna e un documento da 512 KB. Quanto occupano complessivamente?
+A) 6 MB.
+B) 6,5 MB.
+C) 8 MB.
+D) 6,512 MB.
+
+14. [Risposta singola] Una chiavetta da 8 GB ha 5 GB già occupati. Vuoi aggiungere un video da 2 GB e un altro da 1,5 GB. Quale affermazione è corretta?
+A) Entrano entrambi e rimane 1 GB libero.
+B) Entrano entrambi perché ciascuno è più piccolo di 3 GB.
+C) Non entrano entrambi: mancano 0,5 GB.
+D) Occupano esattamente lo spazio rimasto.
+
+15. [Vero o falso] Un byte contiene otto bit.
+A) Vero
+B) Falso
+
+16. [Vero o falso] Un file da 2 MB occupa meno spazio di un file da 900 KB.
+A) Vero
+B) Falso
+
+17. [Vero o falso] Due file con la stessa dimensione possono avere contenuti diversi.
+A) Vero
+B) Falso
+
+18. [Vero o falso] Cambiare l’unità con cui descrivo la dimensione di un file non cambia il suo contenuto.
+A) Vero
+B) Falso
+
+19. [Risposta aperta] Dati e informazioni: spiega con parole tue la differenza tra un dato e un’informazione. Fai un esempio.
