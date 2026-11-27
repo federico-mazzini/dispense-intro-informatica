@@ -24,8 +24,10 @@ jobs:
           typst-version: '0.15.1'
       - name: Installa i font dei diagrammi
         run: |
-          sudo apt-get update
-          sudo apt-get install --no-install-recommends -y fonts-liberation
+          # Per i font bastano i repository Ubuntu; quelli esterni del runner
+          # possono essere indisponibili e bloccare una compilazione valida.
+          sudo apt-get -o Dir::Etc::sourcelist=/etc/apt/sources.list.d/ubuntu.sources -o Dir::Etc::sourceparts=- update
+          sudo apt-get -o Dir::Etc::sourcelist=/etc/apt/sources.list.d/ubuntu.sources -o Dir::Etc::sourceparts=- install --no-install-recommends -y fonts-liberation
       - name: Compila dispense e slide
         run: |
           bash scripts/build-all.sh
