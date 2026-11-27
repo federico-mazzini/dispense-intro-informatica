@@ -4,9 +4,9 @@
 
 - Mantieni `README.md` con i soli link ai PDF: una riga per argomento, con dispensa e slide. Le note operative vanno in questo file.
 - Ogni cartella numerata di `src/` contiene due sorgenti: `Dispense - Titolo.typ` per la dispensa completa di teoria ed esercizi e `Slide - Titolo.typ` per la presentazione. Non separare nuovamente teoria, esercizi e main.
-- L’argomento 01 raccoglie file e cartelle, invio e condivisione, con teoria, esercizi, slide e domande del test. Il precedente argomento 02 è stato accorpato nella 01 e rimosso; non ricrearlo separatamente. L’argomento 07 è stato eliminato senza trasferirne i contenuti; non reinserirlo automaticamente. Gli altri argomenti mantengono i numeri 03–06 e i nomi pubblici dei PDF.
-- Conserva le eventuali traduzioni nelle sottocartelle dedicate, come `src/3-bit-byte-dimensioni/ar/`.
-- Gli stili condivisi sono in `styles/`, i diagrammi in `assets/svg/`, le fotografie in `assets/immagini/`. Le domande disponibili sono distribuite per argomento nei file `Test - Titolo.txt` delle cartelle numerate di `src/` (attualmente 1 e 3). Mantieni solo domande e alternative, con numerazione progressiva per argomento, senza gruppi, soluzioni o indicazioni della risposta esatta; non creare un archivio duplicato in `qst/`.
+- L’argomento 01 raccoglie file e cartelle, invio e condivisione, con teoria, esercizi, slide e domande del test. Invio e condivisione non devono essere ricreati come argomento separato. Il materiale «Come funziona un computer» è stato eliminato senza trasferirne i contenuti; non reinserirlo automaticamente. La numerazione corrente è consecutiva: 01 File e cartelle, 02 Bit, byte e dimensioni dei file, 03 Introduzione ai computer, 04 Hardware, 05 Il software.
+- Conserva le eventuali traduzioni nelle sottocartelle dedicate, come `src/2-bit-byte-dimensioni/ar/`.
+- Gli stili condivisi sono in `styles/`, i diagrammi in `assets/svg/`, le fotografie in `assets/immagini/`. Le domande disponibili sono distribuite per argomento nei file `Test - Titolo.txt` delle cartelle numerate di `src/` (attualmente 1 e 2). Mantieni solo domande e alternative, con numerazione progressiva per argomento, senza gruppi, soluzioni o indicazioni della risposta esatta; non creare un archivio duplicato in `qst/`.
 - I nomi dei sorgenti non contengono numeri. I PDF conservano il formato `NN - Titolo.pdf`: il numero si ricava dalla cartella numerata, senza aggiungere i prefissi Dispense o Slide. Mantieni questa corrispondenza anche nella configurazione Tinymist.
 - Non versionare `dist/`, `tmp/` o `backup/`. Mantieni stabili i nomi dei PDF e i link pubblici.
 
@@ -48,6 +48,6 @@ Mantieni solo gli script con una funzione distinta. Non aggiungere scorciatoie p
 ## Contenuti e riferimenti
 
 - Le dispense hanno formato A4 e colori distinti, con font e componenti grafici condivisi. Le presentazioni sono in formato 16:9 e riprendono la grafica del repository `federico-mazzini/icdl`; il modello comune è `styles/slides.typ`.
-- Le presentazioni 04, 05 e 06 includono 22 pagine di ICDL – Computer e dispositivi con testi, grafica e numeri originali. Riferimento: https://github.com/federico-mazzini/icdl/blob/2415280d86bff968343166670cba272a323717c0/src/1_computer_dispositivi.typ.
+- Le presentazioni 03, 04 e 05 includono 22 pagine di ICDL – Computer e dispositivi con testi, grafica e numeri originali. Riferimento: https://github.com/federico-mazzini/icdl/blob/2415280d86bff968343166670cba272a323717c0/src/1_computer_dispositivi.typ.
 - La dispensa su bit e byte deriva dall’archivio `dispensa_bit_byte_libro_classico_revisionata_sorgenti.zip`; quella su file e cartelle, invio e condivisione riprende pagine didattiche Notion.
 - Mantieni la convenzione scolastica delle conversioni basate su 1024 nella dispensa su bit e byte e gli elenchi di parole degli esercizi mescolati.

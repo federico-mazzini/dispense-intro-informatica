@@ -3,7 +3,7 @@
 
 #show: presentazione.with("Il software")
 #let foto(nome, didascalia, altezza: 155pt) = figura(
-  "/assets/immagini/6-software/" + nome + ".jpg", didascalia, altezza: altezza,
+  "/assets/immagini/5-software/" + nome + ".jpg", didascalia, altezza: altezza,
 )
 
 #apertura("Il software", "Programmi, sistema operativo e applicazioni")

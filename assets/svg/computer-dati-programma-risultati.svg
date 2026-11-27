@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="900" height="220" viewBox="0 0 900 220">
+  <style>text{font-family:Arial,Liberation Sans,sans-serif;fill:#202020;font-size:26px}.small{font-size:21px}</style>
+  <rect x="12" y="55" width="190" height="105" rx="15" fill="#daeacf" stroke="#707a6a" stroke-width="1.5"/>
+  <text x="107" y="100" text-anchor="middle">Input</text>
+  <text x="107" y="131" text-anchor="middle" class="small">dati in ingresso</text>
+  <path d="M220 97H270V85L294 108L270 131V119H220Z" fill="#fff2ca" stroke="#888" stroke-width="1.5"/>
+  <rect x="312" y="16" width="276" height="187" rx="15" fill="#daeacf" stroke="#707a6a" stroke-width="1.5"/>
+  <text x="450" y="53" text-anchor="middle">Computer</text>
+  <rect x="331" y="73" width="238" height="67" rx="3" fill="#fff" stroke="#707a6a" stroke-width="1.5"/>
+  <text x="450" y="116" text-anchor="middle">Elaborazione</text>
+  <text x="450" y="175" text-anchor="middle" class="small">secondo un programma</text>
+  <path d="M606 97H656V85L680 108L656 131V119H606Z" fill="#fff2ca" stroke="#888" stroke-width="1.5"/>
+  <rect x="698" y="55" width="190" height="105" rx="15" fill="#daeacf" stroke="#707a6a" stroke-width="1.5"/>
+  <text x="793" y="100" text-anchor="middle">Output</text>
+  <text x="793" y="131" text-anchor="middle" class="small">risultati</text>
+</svg>

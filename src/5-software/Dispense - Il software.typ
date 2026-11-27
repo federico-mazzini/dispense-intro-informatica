@@ -1,5 +1,5 @@
 #import "/styles/percorso-computer.typ": *
-#show: percorso.with(titolo: "Il software", numero: "06", accento: rgb("#704397"), sfondo: rgb("#F5F0FA"))
+#show: percorso.with(titolo: "Il software", numero: "05", accento: rgb("#704397"), sfondo: rgb("#F5F0FA"))
 
 #[
 #import "/styles/percorso-computer.typ": richiamo
@@ -10,7 +10,7 @@
 
 #let foto(nome, larghezza: 100%, altezza: 24mm, didascalia: none) = block(width: 100%, breakable: false)[
   #align(center, image(
-    "/assets/immagini/6-software/" + nome + ".jpg",
+    "/assets/immagini/5-software/" + nome + ".jpg",
     width: larghezza, height: altezza, fit: "contain",
   ))
   #if didascalia != none [

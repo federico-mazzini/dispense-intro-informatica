@@ -3,7 +3,7 @@
 
 #show: presentazione.with("Introduzione ai computer")
 #let foto(nome, didascalia, altezza: 155pt) = figura(
-  "/assets/immagini/4-introduzione-computer/" + nome + ".jpg", didascalia, altezza: altezza,
+  "/assets/immagini/3-introduzione-computer/" + nome + ".jpg", didascalia, altezza: altezza,
 )
 
 #apertura("Introduzione ai computer", "Dispositivi, hardware e software")

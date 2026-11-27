@@ -17,58 +17,58 @@ root = "file:."
 system-fonts = true
 
 [[document]]
-id = "file:src/3-bit-byte-dimensioni/Dispense - Bit, byte e dimensioni dei file.typ"
+id = "file:src/2-bit-byte-dimensioni/Dispense - Bit, byte e dimensioni dei file.typ"
 inputs = []
-main = "file:src/3-bit-byte-dimensioni/Dispense - Bit, byte e dimensioni dei file.typ"
+main = "file:src/2-bit-byte-dimensioni/Dispense - Bit, byte e dimensioni dei file.typ"
 root = "file:."
 system-fonts = true
 
 [[document]]
-id = "file:src/3-bit-byte-dimensioni/Slide - Bit, byte e dimensioni dei file.typ"
+id = "file:src/2-bit-byte-dimensioni/Slide - Bit, byte e dimensioni dei file.typ"
 inputs = []
-main = "file:src/3-bit-byte-dimensioni/Slide - Bit, byte e dimensioni dei file.typ"
+main = "file:src/2-bit-byte-dimensioni/Slide - Bit, byte e dimensioni dei file.typ"
 root = "file:."
 system-fonts = true
 
 [[document]]
-id = "file:src/4-introduzione-computer/Dispense - Introduzione ai computer.typ"
+id = "file:src/3-introduzione-computer/Dispense - Introduzione ai computer.typ"
 inputs = []
-main = "file:src/4-introduzione-computer/Dispense - Introduzione ai computer.typ"
+main = "file:src/3-introduzione-computer/Dispense - Introduzione ai computer.typ"
 root = "file:."
 system-fonts = true
 
 [[document]]
-id = "file:src/4-introduzione-computer/Slide - Introduzione ai computer.typ"
+id = "file:src/3-introduzione-computer/Slide - Introduzione ai computer.typ"
 inputs = []
-main = "file:src/4-introduzione-computer/Slide - Introduzione ai computer.typ"
+main = "file:src/3-introduzione-computer/Slide - Introduzione ai computer.typ"
 root = "file:."
 system-fonts = true
 
 [[document]]
-id = "file:src/5-hardware/Dispense - Hardware.typ"
+id = "file:src/4-hardware/Dispense - Hardware.typ"
 inputs = []
-main = "file:src/5-hardware/Dispense - Hardware.typ"
+main = "file:src/4-hardware/Dispense - Hardware.typ"
 root = "file:."
 system-fonts = true
 
 [[document]]
-id = "file:src/5-hardware/Slide - Hardware.typ"
+id = "file:src/4-hardware/Slide - Hardware.typ"
 inputs = []
-main = "file:src/5-hardware/Slide - Hardware.typ"
+main = "file:src/4-hardware/Slide - Hardware.typ"
 root = "file:."
 system-fonts = true
 
 [[document]]
-id = "file:src/6-software/Dispense - Il software.typ"
+id = "file:src/5-software/Dispense - Il software.typ"
 inputs = []
-main = "file:src/6-software/Dispense - Il software.typ"
+main = "file:src/5-software/Dispense - Il software.typ"
 root = "file:."
 system-fonts = true
 
 [[document]]
-id = "file:src/6-software/Slide - Il software.typ"
+id = "file:src/5-software/Slide - Il software.typ"
 inputs = []
-main = "file:src/6-software/Slide - Il software.typ"
+main = "file:src/5-software/Slide - Il software.typ"
 root = "file:."
 system-fonts = true
 
@@ -77,19 +77,19 @@ id = "file:src/1-file-cartelle/Dispense - File e cartelle.typ"
 priority = 256
 
 [[route]]
-id = "file:src/3-bit-byte-dimensioni/Dispense - Bit, byte e dimensioni dei file.typ"
+id = "file:src/2-bit-byte-dimensioni/Dispense - Bit, byte e dimensioni dei file.typ"
 priority = 256
 
 [[route]]
-id = "file:src/4-introduzione-computer/Dispense - Introduzione ai computer.typ"
+id = "file:src/3-introduzione-computer/Dispense - Introduzione ai computer.typ"
 priority = 256
 
 [[route]]
-id = "file:src/5-hardware/Dispense - Hardware.typ"
+id = "file:src/4-hardware/Dispense - Hardware.typ"
 priority = 256
 
 [[route]]
-id = "file:src/6-software/Dispense - Il software.typ"
+id = "file:src/5-software/Dispense - Il software.typ"
 priority = 256
 
 [[route]]
@@ -97,19 +97,19 @@ id = "file:src/1-file-cartelle/Slide - File e cartelle.typ"
 priority = 256
 
 [[route]]
-id = "file:src/3-bit-byte-dimensioni/Slide - Bit, byte e dimensioni dei file.typ"
+id = "file:src/2-bit-byte-dimensioni/Slide - Bit, byte e dimensioni dei file.typ"
 priority = 256
 
 [[route]]
-id = "file:src/4-introduzione-computer/Slide - Introduzione ai computer.typ"
+id = "file:src/3-introduzione-computer/Slide - Introduzione ai computer.typ"
 priority = 256
 
 [[route]]
-id = "file:src/5-hardware/Slide - Hardware.typ"
+id = "file:src/4-hardware/Slide - Hardware.typ"
 priority = 256
 
 [[route]]
-id = "file:src/6-software/Slide - Il software.typ"
+id = "file:src/5-software/Slide - Il software.typ"
 priority = 256
 
 [[task]]
@@ -127,57 +127,57 @@ type = "export-pdf"
 when = "onSave"
 
 [[task]]
-document = "file:src/3-bit-byte-dimensioni/Dispense - Bit, byte e dimensioni dei file.typ"
-id = "file:src/3-bit-byte-dimensioni/Dispense - Bit, byte e dimensioni dei file.typ"
-output = "dist/dispense/03 - Bit, byte e dimensioni dei file"
+document = "file:src/2-bit-byte-dimensioni/Dispense - Bit, byte e dimensioni dei file.typ"
+id = "file:src/2-bit-byte-dimensioni/Dispense - Bit, byte e dimensioni dei file.typ"
+output = "dist/dispense/02 - Bit, byte e dimensioni dei file"
 type = "export-pdf"
 when = "onSave"
 
 [[task]]
-document = "file:src/3-bit-byte-dimensioni/Slide - Bit, byte e dimensioni dei file.typ"
-id = "file:src/3-bit-byte-dimensioni/Slide - Bit, byte e dimensioni dei file.typ"
-output = "dist/slide/03 - Bit, byte e dimensioni dei file"
+document = "file:src/2-bit-byte-dimensioni/Slide - Bit, byte e dimensioni dei file.typ"
+id = "file:src/2-bit-byte-dimensioni/Slide - Bit, byte e dimensioni dei file.typ"
+output = "dist/slide/02 - Bit, byte e dimensioni dei file"
 type = "export-pdf"
 when = "onSave"
 
 [[task]]
-document = "file:src/4-introduzione-computer/Dispense - Introduzione ai computer.typ"
-id = "file:src/4-introduzione-computer/Dispense - Introduzione ai computer.typ"
-output = "dist/dispense/04 - Introduzione ai computer"
+document = "file:src/3-introduzione-computer/Dispense - Introduzione ai computer.typ"
+id = "file:src/3-introduzione-computer/Dispense - Introduzione ai computer.typ"
+output = "dist/dispense/03 - Introduzione ai computer"
 type = "export-pdf"
 when = "onSave"
 
 [[task]]
-document = "file:src/4-introduzione-computer/Slide - Introduzione ai computer.typ"
-id = "file:src/4-introduzione-computer/Slide - Introduzione ai computer.typ"
-output = "dist/slide/04 - Introduzione ai computer"
+document = "file:src/3-introduzione-computer/Slide - Introduzione ai computer.typ"
+id = "file:src/3-introduzione-computer/Slide - Introduzione ai computer.typ"
+output = "dist/slide/03 - Introduzione ai computer"
 type = "export-pdf"
 when = "onSave"
 
 [[task]]
-document = "file:src/5-hardware/Dispense - Hardware.typ"
-id = "file:src/5-hardware/Dispense - Hardware.typ"
-output = "dist/dispense/05 - Hardware"
+document = "file:src/4-hardware/Dispense - Hardware.typ"
+id = "file:src/4-hardware/Dispense - Hardware.typ"
+output = "dist/dispense/04 - Hardware"
 type = "export-pdf"
 when = "onSave"
 
 [[task]]
-document = "file:src/5-hardware/Slide - Hardware.typ"
-id = "file:src/5-hardware/Slide - Hardware.typ"
-output = "dist/slide/05 - Hardware"
+document = "file:src/4-hardware/Slide - Hardware.typ"
+id = "file:src/4-hardware/Slide - Hardware.typ"
+output = "dist/slide/04 - Hardware"
 type = "export-pdf"
 when = "onSave"
 
 [[task]]
-document = "file:src/6-software/Dispense - Il software.typ"
-id = "file:src/6-software/Dispense - Il software.typ"
-output = "dist/dispense/06 - Il software"
+document = "file:src/5-software/Dispense - Il software.typ"
+id = "file:src/5-software/Dispense - Il software.typ"
+output = "dist/dispense/05 - Il software"
 type = "export-pdf"
 when = "onSave"
 
 [[task]]
-document = "file:src/6-software/Slide - Il software.typ"
-id = "file:src/6-software/Slide - Il software.typ"
-output = "dist/slide/06 - Il software"
+document = "file:src/5-software/Slide - Il software.typ"
+id = "file:src/5-software/Slide - Il software.typ"
+output = "dist/slide/05 - Il software"
 type = "export-pdf"
 when = "onSave"

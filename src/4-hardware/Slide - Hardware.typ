@@ -3,7 +3,7 @@
 
 #show: presentazione.with("Hardware")
 #let foto(nome, didascalia, altezza: 155pt) = figura(
-  "/assets/immagini/5-hardware/" + nome + ".jpg", didascalia, altezza: altezza,
+  "/assets/immagini/4-hardware/" + nome + ".jpg", didascalia, altezza: altezza,
 )
 
 #apertura("Hardware", "Componenti, periferiche e memorie")
